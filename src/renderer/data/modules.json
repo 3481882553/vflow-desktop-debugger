@@ -1,0 +1,538 @@
+[
+  {
+    "id": "vflow.device.delay",
+    "name": "Delay"
+  },
+  {
+    "id": "vflow.device.toast",
+    "name": "Show Toast"
+  },
+  {
+    "id": "vflow.system.get.clipboard",
+    "name": "Get Clipboard"
+  },
+  {
+    "id": "vflow.system.launch.app",
+    "name": "Launch App/Activity"
+  },
+  {
+    "id": "vflow.system.close.app",
+    "name": "Close App"
+  },
+  {
+    "id": "vflow.system.brightness",
+    "name": "Screen Brightness"
+  },
+  {
+    "id": "vflow.system.set.clipboard",
+    "name": "Set Clipboard"
+  },
+  {
+    "id": "vflow.system.sleep.screen",
+    "name": "Sleep Screen"
+  },
+  {
+    "id": "vflow.system.wake.screen",
+    "name": "Wake Screen (No Password)"
+  },
+  {
+    "id": "vflow.data.input",
+    "name": "Request Input"
+  },
+  {
+    "id": "vflow.device.click",
+    "name": "Click"
+  },
+  {
+    "id": "vflow.interaction.input.text",
+    "name": "Input Text"
+  },
+  {
+    "id": "vflow.logic.stop.workflow",
+    "name": "Stop Workflow"
+  },
+  {
+    "id": "vflow.logic.break.loop",
+    "name": "Break Loop"
+  },
+  {
+    "id": "vflow.logic.continue.loop",
+    "name": "Continue Loop"
+  },
+  {
+    "id": "vflow.variable.get",
+    "name": "Get Variable"
+  },
+  {
+    "id": "vflow.network.get.ip",
+    "name": "Get IP Address"
+  },
+  {
+    "id": "vflow.trigger.manual",
+    "name": "Manual Trigger"
+  },
+  {
+    "id": "vflow.file.save.image",
+    "name": "Save Image"
+  },
+  {
+    "id": "vflow.notification.send.notification",
+    "name": "Send Notification"
+  },
+  {
+    "id": "vflow.trigger.time",
+    "name": "Timed Trigger"
+  },
+  {
+    "id": "vflow.trigger.app.start",
+    "name": "App Event"
+  },
+  {
+    "id": "vflow.trigger.battery",
+    "name": "Battery Trigger"
+  },
+  {
+    "id": "vflow.trigger.bluetooth",
+    "name": "Bluetooth Trigger"
+  },
+  {
+    "id": "vflow.trigger.key.event",
+    "name": "Key Event Trigger"
+  },
+  {
+    "id": "vflow.trigger.notification",
+    "name": "Notification Trigger"
+  },
+  {
+    "id": "vflow.trigger.element",
+    "name": "Element Trigger"
+  },
+  {
+    "id": "vflow.trigger.gkd",
+    "name": "GKD Subscription Trigger"
+  },
+  {
+    "id": "vflow.trigger.sms",
+    "name": "SMS Trigger"
+  },
+  {
+    "id": "vflow.trigger.wifi",
+    "name": "Wi-Fi Trigger"
+  },
+  {
+    "id": "vflow.trigger.location",
+    "name": "Location Trigger"
+  },
+  {
+    "id": "vflow.variable.create",
+    "name": "Create Variable"
+  },
+  {
+    "id": "vflow.variable.load",
+    "name": "Load Variables"
+  },
+  {
+    "id": "vflow.variable.modify",
+    "name": "Modify Variable"
+  },
+  {
+    "id": "vflow.variable.random",
+    "name": "Create Random Variable"
+  },
+  {
+    "id": "vflow.data.text.processing",
+    "name": "Text Processing"
+  },
+  {
+    "id": "vflow.data.calculation",
+    "name": "Calculate"
+  },
+  {
+    "id": "vflow.data.base64",
+    "name": "Base64 Encode/Decode"
+  },
+  {
+    "id": "vflow.data.parse.json",
+    "name": "Parse JSON"
+  },
+  {
+    "id": "vflow.data.comment",
+    "name": "Comment"
+  },
+  {
+    "id": "vflow.network.http.request",
+    "name": "HTTP Request"
+  },
+  {
+    "id": "vflow.network.feishu.upload",
+    "name": "Feishu Upload Media"
+  },
+  {
+    "id": "vflow.logic.if.start",
+    "name": "If"
+  },
+  {
+    "id": "vflow.logic.if.middle",
+    "name": "Else"
+  },
+  {
+    "id": "vflow.logic.if.end",
+    "name": "End If"
+  },
+  {
+    "id": "vflow.logic.loop.start",
+    "name": "Loop"
+  },
+  {
+    "id": "vflow.logic.loop.end",
+    "name": "End Loop"
+  },
+  {
+    "id": "vflow.logic.while.start",
+    "name": "Loop Until"
+  },
+  {
+    "id": "vflow.logic.while.end",
+    "name": "End Loop"
+  },
+  {
+    "id": "vflow.logic.foreach.start",
+    "name": "For Each"
+  },
+  {
+    "id": "vflow.logic.foreach.end",
+    "name": "End For Each"
+  },
+  {
+    "id": "vflow.logic.jump",
+    "name": "Jump to Step"
+  },
+  {
+    "id": "vflow.logic.call.workflow",
+    "name": "Call Workflow"
+  },
+  {
+    "id": "vflow.logic.return",
+    "name": "Stop and Return"
+  },
+  {
+    "id": "vflow.core.capture.screen",
+    "name": "Capture Screen"
+  },
+  {
+    "id": "vflow.core.shell.command",
+    "name": "Execute Shell Command"
+  },
+  {
+    "id": "vflow.core.press.key",
+    "name": "Press Key"
+  },
+  {
+    "id": "vflow.core.screen.status",
+    "name": "Read Screen Status"
+  },
+  {
+    "id": "vflow.core.sleep.screen",
+    "name": "Sleep Screen"
+  },
+  {
+    "id": "vflow.core.wake.screen",
+    "name": "Wake Screen"
+  },
+  {
+    "id": "vflow.ui.component.button",
+    "name": "Button"
+  },
+  {
+    "id": "vflow.ui.component.input",
+    "name": "Input Field"
+  },
+  {
+    "id": "vflow.ui.component.switch",
+    "name": "Switch"
+  },
+  {
+    "id": "vflow.ui.component.text",
+    "name": "Text Display"
+  },
+  {
+    "id": "vflow.ui.activity.start",
+    "name": "Create Activity"
+  },
+  {
+    "id": "vflow.ui.activity.show",
+    "name": "Show Activity (Event Loop)"
+  },
+  {
+    "id": "vflow.ui.activity.end",
+    "name": "End Activity"
+  },
+  {
+    "id": "vflow.ui.float.start",
+    "name": "Create Float Window"
+  },
+  {
+    "id": "vflow.ui.float.show",
+    "name": "Show Float Window (Event Loop)"
+  },
+  {
+    "id": "vflow.ui.float.end",
+    "name": "End Float Window"
+  },
+  {
+    "id": "vflow.ui.interaction.on.event",
+    "name": "On Component Event"
+  },
+  {
+    "id": "vflow.ui.interaction.on.event.end",
+    "name": "End Event Listener"
+  },
+  {
+    "id": "vflow.ui.interaction.update",
+    "name": "Update Component"
+  },
+  {
+    "id": "vflow.ui.interaction.get.value",
+    "name": "Get Component"
+  },
+  {
+    "id": "vflow.ui.interaction.exit",
+    "name": "Exit Activity"
+  },
+  {
+    "id": "vflow.data.quick.view",
+    "name": "Quick View"
+  },
+  {
+    "id": "vflow.system.share",
+    "name": "Share"
+  },
+  {
+    "id": "vflow.system.wifi",
+    "name": "Wi-Fi Settings"
+  },
+  {
+    "id": "vflow.system.read.sms",
+    "name": "Read SMS"
+  },
+  {
+    "id": "vflow.system.invoke",
+    "name": "General Invoke"
+  },
+  {
+    "id": "vflow.system.get.usage.stats",
+    "name": "Get App Usage Stats"
+  },
+  {
+    "id": "vflow.system.bluetooth",
+    "name": "Bluetooth Settings"
+  },
+  {
+    "id": "vflow.shizuku.shell.command",
+    "name": "Execute Shell Command"
+  },
+  {
+    "id": "vflow.shizuku.alipay.shortcuts",
+    "name": "Alipay"
+  },
+  {
+    "id": "vflow.shizuku.wechat.shortcuts",
+    "name": "WeChat"
+  },
+  {
+    "id": "vflow.shizuku.coloros.shortcuts",
+    "name": "ColorOS"
+  },
+  {
+    "id": "vflow.shizuku.gemini.shortcut",
+    "name": "Gemini Assistant"
+  },
+  {
+    "id": "vflow.file.adjust.image",
+    "name": "Adjust Image"
+  },
+  {
+    "id": "vflow.file.rotate.image",
+    "name": "Rotate Image"
+  },
+  {
+    "id": "vflow.interaction.find.element",
+    "name": "Find Element"
+  },
+  {
+    "id": "vflow.device.find.text",
+    "name": "Find Text"
+  },
+  {
+    "id": "vflow.interaction.operit",
+    "name": "Operit Interaction"
+  },
+  {
+    "id": "vflow.ai.completion",
+    "name": "AI Chat"
+  },
+  {
+    "id": "vflow.notification.find",
+    "name": "Find Notification"
+  },
+  {
+    "id": "vflow.notification.remove",
+    "name": "Remove Notification"
+  },
+  {
+    "id": "vflow.trigger.share",
+    "name": "Receive Share"
+  },
+  {
+    "id": "vflow.data.text.split",
+    "name": "Text Split"
+  },
+  {
+    "id": "vflow.data.text.replace",
+    "name": "Text Replace"
+  },
+  {
+    "id": "vflow.data.text.extract",
+    "name": "Extract Text"
+  },
+  {
+    "id": "vflow.scripted",
+    "name": "Dynamic Script"
+  },
+  {
+    "id": "vflow.core.touch.replay",
+    "name": "Touch Replay"
+  },
+  {
+    "id": "vflow.system.lua",
+    "name": "Lua Script"
+  },
+  {
+    "id": "vflow.system.js",
+    "name": "JavaScript Script"
+  },
+  {
+    "id": "vflow.ai.agent",
+    "name": "AI Agent"
+  },
+  {
+    "id": "vflow.ai.autoglm",
+    "name": "AutoGLM Agent"
+  },
+  {
+    "id": "vflow.core.bluetooth",
+    "name": "Bluetooth Control"
+  },
+  {
+    "id": "vflow.core.get.clipboard",
+    "name": "Get Clipboard"
+  },
+  {
+    "id": "vflow.core.input.text",
+    "name": "Input Text"
+  },
+  {
+    "id": "vflow.core.screen.operation",
+    "name": "Screen Operation"
+  },
+  {
+    "id": "vflow.core.set.clipboard",
+    "name": "Set Clipboard"
+  },
+  {
+    "id": "vflow.device.send.key.event",
+    "name": "Global Action"
+  },
+  {
+    "id": "vflow.file.apply.mask",
+    "name": "Apply Mask"
+  },
+  {
+    "id": "vflow.file.import.image",
+    "name": "Import Image"
+  },
+  {
+    "id": "vflow.interaction.find.image",
+    "name": "Find Image"
+  },
+  {
+    "id": "vflow.interaction.find.until",
+    "name": "Find Until"
+  },
+  {
+    "id": "vflow.interaction.ocr",
+    "name": "OCR"
+  },
+  {
+    "id": "vflow.interaction.screen.operation",
+    "name": "Screen Operation"
+  },
+  {
+    "id": "vflow.interaction.ui.selector",
+    "name": "UI Selector"
+  },
+  {
+    "id": "vflow.snippet.find.until",
+    "name": "Find Until"
+  },
+  {
+    "id": "vflow.system.capture.screen",
+    "name": "Capture Screen"
+  },
+  {
+    "id": "vflow.core.bluetooth.state",
+    "name": "Get Bluetooth State"
+  },
+  {
+    "id": "vflow.core.force.stop.app",
+    "name": "Force Stop App"
+  },
+  {
+    "id": "vflow.core.front.app",
+    "name": "Get Foreground App"
+  },
+  {
+    "id": "vflow.core.get.running.apps",
+    "name": "Get Running Apps"
+  },
+  {
+    "id": "vflow.core.mobile.data.state",
+    "name": "Get Mobile Data State"
+  },
+  {
+    "id": "vflow.core.set.mobile.data",
+    "name": "Set Mobile Data"
+  },
+  {
+    "id": "vflow.core.set.wifi",
+    "name": "Set WiFi"
+  },
+  {
+    "id": "vflow.core.wifi.state",
+    "name": "Get WiFi State"
+  },
+  {
+    "id": "vflow.core.wifi",
+    "name": "WiFi Control"
+  },
+  {
+    "id": "vflow.core.volume",
+    "name": "Volume Control"
+  },
+  {
+    "id": "vflow.core.volume.state",
+    "name": "Read Volume"
+  },
+  {
+    "id": "vflow.core.nfc",
+    "name": "NFC Control"
+  },
+  {
+    "id": "vflow.core.nfc.state",
+    "name": "Read NFC State"
+  },
+  {
+    "id": "vflow.device.play.audio",
+    "name": "Play Audio"
+  }
+]

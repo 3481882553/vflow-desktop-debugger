@@ -1,0 +1,235 @@
+.props-panel-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-secondary);
+  border-left: 1px solid var(--color-border);
+}
+
+.props-panel-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--color-border-light);
+  background-color: var(--color-bg-primary);
+}
+
+.props-panel-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.props-panel-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.props-panel-badge {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  background-color: var(--color-primary-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.props-panel-id {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.props-panel-form {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.props-form-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.props-field-group {
+  margin-bottom: 0;
+}
+
+.props-label {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+.props-label-req {
+  color: var(--color-error);
+  margin-left: 4px;
+}
+
+.props-label-info {
+  margin-left: 6px;
+  cursor: help;
+  color: var(--color-text-disabled);
+}
+
+.props-input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  outline: none;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  box-sizing: border-box;
+  transition: all var(--transition-fast);
+}
+
+.props-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-bg);
+}
+
+.props-input.error {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 2px var(--color-error-bg);
+}
+
+.props-textarea {
+  min-height: 80px;
+  resize: vertical;
+  line-height: 1.5;
+  font-family: var(--font-family-mono);
+}
+
+.props-error-msg {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-error);
+  font-size: var(--font-size-xs);
+  margin-top: 4px;
+}
+
+.props-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-primary);
+  transition: all var(--transition-fast);
+}
+
+.props-switch:hover {
+  border-color: var(--color-primary);
+}
+
+.props-switch-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.props-switch-track {
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  position: relative;
+  transition: background-color var(--transition-fast);
+}
+
+.props-switch-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 2px;
+  transition: left var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.props-advanced-section {
+  margin-top: 16px;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 16px;
+}
+
+.props-advanced-toggle {
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  color: var(--color-text-secondary);
+}
+
+.props-advanced-content {
+  overflow: hidden;
+  transition: all var(--transition-normal);
+}
+
+.props-advanced-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.props-empty-state {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-disabled);
+  gap: 12px;
+}
+
+.props-empty-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Chip Group Styles */
+.props-chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.props-chip {
+  padding: 6px 12px;
+  font-size: var(--font-size-xs);
+  border-radius: 16px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.props-chip:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.props-chip.selected {
+  background-color: var(--color-primary-bg);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 500;
+}

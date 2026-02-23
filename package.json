@@ -1,0 +1,67 @@
+{
+  "name": "vflow-desktop-debugger",
+  "version": "0.1.0",
+  "description": "可视化调试 vFlow 自动化工作流的桌面工具",
+  "private": true,
+  "main": "dist/main.js",
+  "author": "ChaoMixian",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3481882553/vflow-desktop-debugger.git"
+  },
+  "keywords": [
+    "vflow",
+    "debugger",
+    "electron",
+    "react"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently \"npm:dev-main\" \"npm:dev-renderer\"",
+    "dev-main": "ts-node-esm src/main/main.ts",
+    "dev-renderer": "vite --config vite.config.mts",
+    "build": "npm run build-main && npm run build-renderer",
+    "build-main": "tsc -p tsconfig.main.json",
+    "build-renderer": "vite build --config vite.config.mts",
+    "typecheck": "tsc --noEmit -p tsconfig.renderer.json",
+    "dist": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "com.vflow.debugger",
+    "productName": "vFlow Debugger",
+    "directories": {
+      "output": "release-fixed"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "dependencies": {
+    "@monaco-editor/react": "^4.6.0",
+    "lucide-react": "^0.575.0",
+    "monaco-editor": "^0.52.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "reactflow": "^11.11.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react-swc": "^3.7.0",
+    "concurrently": "^9.1.0",
+    "electron": "^30.0.0",
+    "electron-builder": "^26.8.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.0"
+  }
+}

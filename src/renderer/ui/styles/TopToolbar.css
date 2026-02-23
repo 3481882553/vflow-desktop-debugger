@@ -1,0 +1,46 @@
+.toolbar-container {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  flex-shrink: 0;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+  box-sizing: border-box;
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.toolbar-separator {
+  width: 1px;
+  height: 20px;
+  background-color: var(--color-border-light);
+}
+
+.toolbar-btn-view {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  font-weight: 500;
+  color: var(--color-primary);
+}
+body.dark .toolbar-btn-view {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #90caf9;
+}

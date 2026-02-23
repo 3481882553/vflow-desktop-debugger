@@ -1,0 +1,66 @@
+.base-tooltip-container {
+  position: relative;
+  display: inline-flex;
+}
+
+.base-tooltip-popup {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  background-color: #222;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  animation: tooltipFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.3s; /* 稍微延迟弹出，避免误触闪烁 */
+  opacity: 0;
+}
+
+body.dark .base-tooltip-popup {
+  background-color: #eee;
+  color: #111;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.base-tooltip-container:hover .base-tooltip-popup {
+  display: block;
+}
+
+/* Positions */
+.base-tooltip-bottom {
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.base-tooltip-top {
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.base-tooltip-left {
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.base-tooltip-right {
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

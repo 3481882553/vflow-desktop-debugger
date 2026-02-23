@@ -1,0 +1,34 @@
+# 依赖
+node_modules/
+
+# 构建输出
+dist/
+release/
+release-fixed/
+
+# IDE / 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 开发工具脚本（非项目核心）
+extract_modules_zh.js
+
+# 测试文件
+test-workflow.json
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# 日志
+*.log
+npm-debug.log*

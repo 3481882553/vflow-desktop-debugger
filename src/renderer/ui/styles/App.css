@@ -1,0 +1,138 @@
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+.app-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.app-sidebar {
+  /* width: var(--left-panel-width); - now set inline */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-secondary);
+  border-right: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.app-sidebar-header {
+  padding: 12px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.app-file-input {
+  font-size: 12px;
+}
+
+.app-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-workspace-layout {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  position: relative;
+}
+
+.app-workspace-layout.split {
+  flex-direction: row;
+}
+
+.app-canvas-container {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  min-width: 0;
+}
+
+.app-split-pane {
+  flex: 1;
+  border-left: 2px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-secondary);
+  min-width: 0;
+}
+
+.app-split-header {
+  height: 32px;
+  background-color: var(--color-bg-secondary);
+  border-bottom: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.app-split-header select {
+  background: transparent;
+  border: 1px solid var(--color-border-light);
+  color: inherit;
+  font-size: 11px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.app-main-placeholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  background-color: var(--color-bg-primary);
+}
+
+.app-code-editor {
+  height: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  position: relative;
+  flex: 1;
+}
+
+
+.app-error-msg {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--color-error);
+}
+
+.app-props-panel {
+  /* width: var(--right-panel-width); - now set inline */
+  height: 100%;
+  background-color: var(--color-bg-secondary);
+  border-left: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.app-resizer {
+  width: 5px;
+  background-color: transparent;
+  cursor: col-resize;
+  position: relative;
+  z-index: 10;
+  margin: 0 -2.5px;
+  flex-shrink: 0;
+}
+
+.app-resizer:hover,
+.app-resizer:active {
+  background-color: var(--color-primary);
+  opacity: 0.5;
+}

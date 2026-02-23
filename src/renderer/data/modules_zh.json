@@ -1,0 +1,812 @@
+[
+  {
+    "id": "vflow.device.delay",
+    "name": "延迟",
+    "category": "界面交互",
+    "description": "暂停工作流一段时间"
+  },
+  {
+    "id": "vflow.device.toast",
+    "name": "显示Toast",
+    "category": "界面交互",
+    "description": "显示一条简短的提示消息"
+  },
+  {
+    "id": "vflow.system.get.clipboard",
+    "name": "读取剪贴板",
+    "category": "应用与系统",
+    "description": "执行 读取剪贴板 操作"
+  },
+  {
+    "id": "vflow.system.launch.app",
+    "name": "启动应用/活动",
+    "category": "应用与系统",
+    "description": "执行 启动应用/活动 操作"
+  },
+  {
+    "id": "vflow.system.close.app",
+    "name": "关闭应用",
+    "category": "应用与系统",
+    "description": "执行 关闭应用 操作"
+  },
+  {
+    "id": "vflow.system.brightness",
+    "name": "屏幕亮度设置",
+    "category": "应用与系统",
+    "description": "执行 屏幕亮度设置 操作"
+  },
+  {
+    "id": "vflow.system.set.clipboard",
+    "name": "写入剪贴板",
+    "category": "应用与系统",
+    "description": "执行 写入剪贴板 操作"
+  },
+  {
+    "id": "vflow.system.sleep.screen",
+    "name": "息屏",
+    "category": "应用与系统",
+    "description": "执行 息屏 操作"
+  },
+  {
+    "id": "vflow.system.wake.screen",
+    "name": "唤醒屏幕（无密码）",
+    "category": "应用与系统",
+    "description": "执行 唤醒屏幕（无密码） 操作"
+  },
+  {
+    "id": "vflow.data.input",
+    "name": "请求输入",
+    "category": "数据",
+    "description": "执行 请求输入 操作"
+  },
+  {
+    "id": "vflow.device.click",
+    "name": "点击",
+    "category": "界面交互",
+    "description": "模拟点击屏幕元素或坐标"
+  },
+  {
+    "id": "vflow.interaction.input.text",
+    "name": "输入文本",
+    "category": "界面交互",
+    "description": "执行 输入文本 操作"
+  },
+  {
+    "id": "vflow.logic.stop.workflow",
+    "name": "停止工作流",
+    "category": "逻辑控制",
+    "description": "执行 停止工作流 操作"
+  },
+  {
+    "id": "vflow.logic.break.loop",
+    "name": "跳出循环",
+    "category": "逻辑控制",
+    "description": "执行 跳出循环 操作"
+  },
+  {
+    "id": "vflow.logic.continue.loop",
+    "name": "继续循环",
+    "category": "逻辑控制",
+    "description": "执行 继续循环 操作"
+  },
+  {
+    "id": "vflow.variable.get",
+    "name": "读取变量",
+    "category": "应用与系统",
+    "description": "执行 读取变量 操作"
+  },
+  {
+    "id": "vflow.network.get.ip",
+    "name": "获取IP地址",
+    "category": "网络",
+    "description": "执行 获取IP地址 操作"
+  },
+  {
+    "id": "vflow.trigger.manual",
+    "name": "手动触发",
+    "category": "触发器",
+    "description": "执行 手动触发 操作"
+  },
+  {
+    "id": "vflow.data.file.operation",
+    "name": "文件操作",
+    "category": "文件",
+    "description": "读取、写入、删除或创建文件"
+  },
+  {
+    "id": "vflow.file.save.image",
+    "name": "保存图片",
+    "category": "文件",
+    "description": "执行 保存图片 操作"
+  },
+  {
+    "id": "vflow.notification.send.notification",
+    "name": "发送通知",
+    "category": "其他",
+    "description": "执行 发送通知 操作"
+  },
+  {
+    "id": "vflow.trigger.time",
+    "name": "定时触发",
+    "category": "触发器",
+    "description": "执行 定时触发 操作"
+  },
+  {
+    "id": "vflow.trigger.app.start",
+    "name": "应用事件",
+    "category": "触发器",
+    "description": "执行 应用事件 操作"
+  },
+  {
+    "id": "vflow.trigger.battery",
+    "name": "电量触发",
+    "category": "触发器",
+    "description": "执行 电量触发 操作"
+  },
+  {
+    "id": "vflow.trigger.bluetooth",
+    "name": "蓝牙触发器",
+    "category": "触发器",
+    "description": "执行 蓝牙触发器 操作"
+  },
+  {
+    "id": "vflow.trigger.key.event",
+    "name": "按键触发",
+    "category": "触发器",
+    "description": "执行 按键触发 操作"
+  },
+  {
+    "id": "vflow.trigger.notification",
+    "name": "通知触发",
+    "category": "触发器",
+    "description": "执行 通知触发 操作"
+  },
+  {
+    "id": "vflow.trigger.element",
+    "name": "元素触发",
+    "category": "触发器",
+    "description": "执行 元素触发 操作"
+  },
+  {
+    "id": "vflow.trigger.gkd",
+    "name": "GKD订阅触发",
+    "category": "触发器",
+    "description": "执行 GKD订阅触发 操作"
+  },
+  {
+    "id": "vflow.trigger.sms",
+    "name": "短信触发",
+    "category": "触发器",
+    "description": "执行 短信触发 操作"
+  },
+  {
+    "id": "vflow.trigger.wifi",
+    "name": "Wi-Fi触发器",
+    "category": "触发器",
+    "description": "执行 Wi-Fi触发器 操作"
+  },
+  {
+    "id": "vflow.trigger.location",
+    "name": "位置触发器",
+    "category": "触发器",
+    "description": "执行 位置触发器 操作"
+  },
+  {
+    "id": "vflow.variable.create",
+    "name": "创建变量",
+    "category": "应用与系统",
+    "description": "执行 创建变量 操作"
+  },
+  {
+    "id": "vflow.variable.load",
+    "name": "载入变量",
+    "category": "应用与系统",
+    "description": "执行 载入变量 操作"
+  },
+  {
+    "id": "vflow.variable.modify",
+    "name": "修改变量",
+    "category": "应用与系统",
+    "description": "执行 修改变量 操作"
+  },
+  {
+    "id": "vflow.variable.random",
+    "name": "创建随机变量",
+    "category": "应用与系统",
+    "description": "执行 创建随机变量 操作"
+  },
+  {
+    "id": "vflow.data.text.processing",
+    "name": "文本处理",
+    "category": "数据",
+    "description": "执行 文本处理 操作"
+  },
+  {
+    "id": "vflow.data.text.split",
+    "name": "文本分割",
+    "category": "数据",
+    "description": "执行 文本分割 操作"
+  },
+  {
+    "id": "vflow.data.text.replace",
+    "name": "文本替换",
+    "category": "数据",
+    "description": "执行 文本替换 操作"
+  },
+  {
+    "id": "vflow.data.text.extract",
+    "name": "提取文本",
+    "category": "数据",
+    "description": "执行 提取文本 操作"
+  },
+  {
+    "id": "vflow.data.calculation",
+    "name": "计算",
+    "category": "数据",
+    "description": "执行 计算 操作"
+  },
+  {
+    "id": "vflow.data.base64",
+    "name": "Base64 编解码",
+    "category": "数据",
+    "description": "执行 Base64 编解码 操作"
+  },
+  {
+    "id": "vflow.data.parse.json",
+    "name": "解析 JSON",
+    "category": "数据",
+    "description": "执行 解析 JSON 操作"
+  },
+  {
+    "id": "vflow.data.comment",
+    "name": "注释",
+    "category": "数据",
+    "description": "执行 注释 操作"
+  },
+  {
+    "id": "vflow.network.http.request",
+    "name": "HTTP 请求",
+    "category": "网络",
+    "description": "执行 HTTP 请求 操作"
+  },
+  {
+    "id": "vflow.network.feishu.upload",
+    "name": "飞书上传素材",
+    "category": "网络",
+    "description": "执行 飞书上传素材 操作"
+  },
+  {
+    "id": "vflow.device.send.key.event",
+    "name": "执行全局操作",
+    "category": "界面交互",
+    "description": "执行 执行全局操作 操作"
+  },
+  {
+    "id": "vflow.file.import.image",
+    "name": "导入图片",
+    "category": "文件",
+    "description": "执行 导入图片 操作"
+  },
+  {
+    "id": "vflow.file.apply.mask",
+    "name": "应用蒙版",
+    "category": "文件",
+    "description": "执行 应用蒙版 操作"
+  },
+  {
+    "id": "vflow.ai.autoglm",
+    "name": "AutoGLM 智能体",
+    "category": "其他",
+    "description": "执行 AutoGLM 智能体 操作"
+  },
+  {
+    "id": "vflow.ai.agent",
+    "name": "AI 智能体",
+    "category": "其他",
+    "description": "执行 AI 智能体 操作"
+  },
+  {
+    "id": "vflow.interaction.find.image",
+    "name": "查找图片",
+    "category": "界面交互",
+    "description": "执行 查找图片 操作"
+  },
+  {
+    "id": "vflow.interaction.ocr",
+    "name": "文字识别 (OCR)",
+    "category": "界面交互",
+    "description": "执行 文字识别 (OCR) 操作"
+  },
+  {
+    "id": "vflow.interaction.screen_operation",
+    "name": "屏幕操作",
+    "category": "界面交互",
+    "description": "执行 屏幕操作 操作"
+  },
+  {
+    "id": "vflow.interaction.find.until",
+    "name": "查找直到出现",
+    "category": "界面交互",
+    "description": "执行 查找直到出现 操作"
+  },
+  {
+    "id": "vflow.interaction.ui.selector",
+    "name": "UI选择器",
+    "category": "界面交互",
+    "description": "执行 UI选择器 操作"
+  },
+  {
+    "id": "vflow.snippet.find.until",
+    "name": "查找直到",
+    "category": "其他",
+    "description": "执行 查找直到 操作"
+  },
+  {
+    "id": "vflow.ai.completion",
+    "name": "AI 对话",
+    "category": "其他",
+    "description": "执行 AI 对话 操作"
+  },
+  {
+    "id": "vflow.system.capture.screen",
+    "name": "截屏",
+    "category": "应用与系统",
+    "description": "执行 截屏 操作"
+  },
+  {
+    "id": "vflow.data.quick.view",
+    "name": "快速查看",
+    "category": "数据",
+    "description": "执行 快速查看 操作"
+  },
+  {
+    "id": "vflow.device.find.text",
+    "name": "查找文本",
+    "category": "界面交互",
+    "description": "执行 查找文本 操作"
+  },
+  {
+    "id": "vflow.file.adjust.image",
+    "name": "调整图像",
+    "category": "文件",
+    "description": "执行 调整图像 操作"
+  },
+  {
+    "id": "vflow.file.rotate.image",
+    "name": "旋转图片",
+    "category": "文件",
+    "description": "执行 旋转图片 操作"
+  },
+  {
+    "id": "vflow.interaction.find.element",
+    "name": "查找控件",
+    "category": "界面交互",
+    "description": "执行 查找控件 操作"
+  },
+  {
+    "id": "vflow.interaction.operit",
+    "name": "Operit 交互",
+    "category": "界面交互",
+    "description": "执行 Operit 交互 操作"
+  },
+  {
+    "id": "vflow.logic.call.workflow",
+    "name": "调用工作流",
+    "category": "逻辑控制",
+    "description": "执行 调用工作流 操作"
+  },
+  {
+    "id": "vflow.logic.foreach.end",
+    "name": "结束遍历",
+    "category": "逻辑控制",
+    "description": "执行 结束遍历 操作"
+  },
+  {
+    "id": "vflow.logic.foreach.start",
+    "name": "遍历",
+    "category": "逻辑控制",
+    "description": "执行 遍历 操作"
+  },
+  {
+    "id": "vflow.logic.if.end",
+    "name": "结束如果",
+    "category": "逻辑控制",
+    "description": "执行 结束如果 操作"
+  },
+  {
+    "id": "vflow.logic.if.middle",
+    "name": "否则",
+    "category": "逻辑控制",
+    "description": "执行 否则 操作"
+  },
+  {
+    "id": "vflow.logic.if.start",
+    "name": "如果",
+    "category": "逻辑控制",
+    "description": "执行 如果 操作"
+  },
+  {
+    "id": "vflow.logic.jump",
+    "name": "跳转到步骤",
+    "category": "逻辑控制",
+    "description": "执行 跳转到步骤 操作"
+  },
+  {
+    "id": "vflow.logic.loop.end",
+    "name": "结束循环",
+    "category": "逻辑控制",
+    "description": "执行 结束循环 操作"
+  },
+  {
+    "id": "vflow.logic.loop.start",
+    "name": "循环",
+    "category": "逻辑控制",
+    "description": "执行 循环 操作"
+  },
+  {
+    "id": "vflow.logic.return",
+    "name": "停止并返回",
+    "category": "逻辑控制",
+    "description": "执行 停止并返回 操作"
+  },
+  {
+    "id": "vflow.logic.while.end",
+    "name": "结束循环",
+    "category": "逻辑控制",
+    "description": "执行 结束循环 操作"
+  },
+  {
+    "id": "vflow.logic.while.start",
+    "name": "循环直到",
+    "category": "逻辑控制",
+    "description": "执行 循环直到 操作"
+  },
+  {
+    "id": "vflow.notification.find",
+    "name": "查找通知",
+    "category": "其他",
+    "description": "执行 查找通知 操作"
+  },
+  {
+    "id": "vflow.notification.remove",
+    "name": "移除通知",
+    "category": "其他",
+    "description": "执行 移除通知 操作"
+  },
+  {
+    "id": "vflow.scripted",
+    "name": "动态脚本",
+    "category": "其他",
+    "description": "执行 动态脚本 操作"
+  },
+  {
+    "id": "vflow.shizuku.alipay.shortcuts",
+    "name": "支付宝",
+    "category": "其他",
+    "description": "执行 支付宝 操作"
+  },
+  {
+    "id": "vflow.shizuku.coloros.shortcuts",
+    "name": "ColorOS",
+    "category": "其他",
+    "description": "执行 ColorOS 操作"
+  },
+  {
+    "id": "vflow.shizuku.gemini.shortcut",
+    "name": "Gemini 助手",
+    "category": "其他",
+    "description": "执行 Gemini 助手 操作"
+  },
+  {
+    "id": "vflow.shizuku.shell.command",
+    "name": "执行 Shell 命令",
+    "category": "其他",
+    "description": "执行 执行 Shell 命令 操作"
+  },
+  {
+    "id": "vflow.shizuku.wechat.shortcuts",
+    "name": "微信",
+    "category": "其他",
+    "description": "执行 微信 操作"
+  },
+  {
+    "id": "vflow.system.bluetooth",
+    "name": "蓝牙设置",
+    "category": "应用与系统",
+    "description": "执行 蓝牙设置 操作"
+  },
+  {
+    "id": "vflow.system.get.usage.stats",
+    "name": "获取应用使用统计",
+    "category": "应用与系统",
+    "description": "执行 获取应用使用统计 操作"
+  },
+  {
+    "id": "vflow.system.invoke",
+    "name": "通用调用",
+    "category": "应用与系统",
+    "description": "执行 通用调用 操作"
+  },
+  {
+    "id": "vflow.system.read.sms",
+    "name": "读取短信",
+    "category": "应用与系统",
+    "description": "执行 读取短信 操作"
+  },
+  {
+    "id": "vflow.system.share",
+    "name": "分享",
+    "category": "应用与系统",
+    "description": "执行 分享 操作"
+  },
+  {
+    "id": "vflow.system.wifi",
+    "name": "Wi-Fi 设置",
+    "category": "应用与系统",
+    "description": "执行 Wi-Fi 设置 操作"
+  },
+  {
+    "id": "vflow.trigger.share",
+    "name": "接收分享",
+    "category": "触发器",
+    "description": "执行 接收分享 操作"
+  },
+  {
+    "id": "vflow.ui.activity.end",
+    "name": "结束界面",
+    "category": "其他",
+    "description": "执行 结束界面 操作"
+  },
+  {
+    "id": "vflow.ui.activity.show",
+    "name": "显示界面",
+    "category": "其他",
+    "description": "执行 显示界面 操作"
+  },
+  {
+    "id": "vflow.ui.activity.start",
+    "name": "创建界面",
+    "category": "其他",
+    "description": "执行 创建界面 操作"
+  },
+  {
+    "id": "vflow.ui.component.button",
+    "name": "按钮",
+    "category": "其他",
+    "description": "执行 按钮 操作"
+  },
+  {
+    "id": "vflow.ui.component.input",
+    "name": "输入框",
+    "category": "其他",
+    "description": "执行 输入框 操作"
+  },
+  {
+    "id": "vflow.ui.component.switch",
+    "name": "开关",
+    "category": "其他",
+    "description": "执行 开关 操作"
+  },
+  {
+    "id": "vflow.ui.component.text",
+    "name": "文本展示",
+    "category": "其他",
+    "description": "执行 文本展示 操作"
+  },
+  {
+    "id": "vflow.ui.float.end",
+    "name": "结束悬浮窗",
+    "category": "其他",
+    "description": "执行 结束悬浮窗 操作"
+  },
+  {
+    "id": "vflow.ui.float.show",
+    "name": "显示悬浮窗",
+    "category": "其他",
+    "description": "执行 显示悬浮窗 操作"
+  },
+  {
+    "id": "vflow.ui.float.start",
+    "name": "创建悬浮窗",
+    "category": "其他",
+    "description": "执行 创建悬浮窗 操作"
+  },
+  {
+    "id": "vflow.ui.interaction.exit",
+    "name": "退出活动",
+    "category": "其他",
+    "description": "执行 退出活动 操作"
+  },
+  {
+    "id": "vflow.ui.interaction.get.value",
+    "name": "获取控件",
+    "category": "其他",
+    "description": "执行 获取控件 操作"
+  },
+  {
+    "id": "vflow.ui.interaction.on.event.end",
+    "name": "结束事件监听",
+    "category": "其他",
+    "description": "执行 结束事件监听 操作"
+  },
+  {
+    "id": "vflow.ui.interaction.on.event",
+    "name": "当控件被操作",
+    "category": "其他",
+    "description": "执行 当控件被操作 操作"
+  },
+  {
+    "id": "vflow.ui.interaction.update",
+    "name": "更新控件",
+    "category": "其他",
+    "description": "执行 更新控件 操作"
+  },
+  {
+    "id": "vflow.system.lua",
+    "name": "Lua脚本",
+    "category": "应用与系统",
+    "description": "执行 Lua脚本 操作"
+  },
+  {
+    "id": "vflow.system.js",
+    "name": "JavaScript脚本",
+    "category": "应用与系统",
+    "description": "执行 JavaScript脚本 操作"
+  },
+  {
+    "id": "vflow.core.front.app",
+    "name": "获取前台应用",
+    "category": "Core (Beta)",
+    "description": "执行 获取前台应用 操作"
+  },
+  {
+    "id": "vflow.core.get.running.apps",
+    "name": "获取运行中的应用",
+    "category": "Core (Beta)",
+    "description": "执行 获取运行中的应用 操作"
+  },
+  {
+    "id": "vflow.core.mobile.data.state",
+    "name": "读取移动数据状态",
+    "category": "Core (Beta)",
+    "description": "执行 读取移动数据状态 操作"
+  },
+  {
+    "id": "vflow.core.set.mobile.data",
+    "name": "设置移动数据",
+    "category": "Core (Beta)",
+    "description": "执行 设置移动数据 操作"
+  },
+  {
+    "id": "vflow.core.set.wifi",
+    "name": "设置WiFi",
+    "category": "Core (Beta)",
+    "description": "执行 设置WiFi 操作"
+  },
+  {
+    "id": "vflow.core.bluetooth",
+    "name": "蓝牙控制",
+    "category": "Core (Beta)",
+    "description": "执行 蓝牙控制 操作"
+  },
+  {
+    "id": "vflow.core.bluetooth.state",
+    "name": "蓝牙状态",
+    "category": "Core (Beta)",
+    "description": "执行 蓝牙状态 操作"
+  },
+  {
+    "id": "vflow.core.capture.screen",
+    "name": "截图",
+    "category": "Core (Beta)",
+    "description": "执行 截图 操作"
+  },
+  {
+    "id": "vflow.core.force.stop.app",
+    "name": "强制停止应用",
+    "category": "Core (Beta)",
+    "description": "执行 强制停止应用 操作"
+  },
+  {
+    "id": "vflow.core.get.clipboard",
+    "name": "获取剪贴板",
+    "category": "Core (Beta)",
+    "description": "执行 获取剪贴板 操作"
+  },
+  {
+    "id": "vflow.core.input.text",
+    "name": "输入文本",
+    "category": "Core (Beta)",
+    "description": "执行 输入文本 操作"
+  },
+  {
+    "id": "vflow.core.press.key",
+    "name": "按键",
+    "category": "Core (Beta)",
+    "description": "执行 按键 操作"
+  },
+  {
+    "id": "vflow.core.screen.operation",
+    "name": "屏幕操作",
+    "category": "Core (Beta)",
+    "description": "执行 屏幕操作 操作"
+  },
+  {
+    "id": "vflow.core.screen.status",
+    "name": "屏幕状态",
+    "category": "Core (Beta)",
+    "description": "执行 屏幕状态 操作"
+  },
+  {
+    "id": "vflow.core.set.clipboard",
+    "name": "设置剪贴板",
+    "category": "Core (Beta)",
+    "description": "执行 设置剪贴板 操作"
+  },
+  {
+    "id": "vflow.core.shell.command",
+    "name": "Shell命令",
+    "category": "Core (Beta)",
+    "description": "执行 Shell命令 操作"
+  },
+  {
+    "id": "vflow.core.sleep.screen",
+    "name": "关闭屏幕",
+    "category": "Core (Beta)",
+    "description": "执行 关闭屏幕 操作"
+  },
+  {
+    "id": "vflow.core.touch.replay",
+    "name": "触摸回放",
+    "category": "Core (Beta)",
+    "description": "执行 触摸回放 操作"
+  },
+  {
+    "id": "vflow.core.wake.screen",
+    "name": "唤醒屏幕",
+    "category": "Core (Beta)",
+    "description": "执行 唤醒屏幕 操作"
+  },
+  {
+    "id": "vflow.core.wifi",
+    "name": "WiFi",
+    "category": "Core (Beta)",
+    "description": "执行 WiFi 操作"
+  },
+  {
+    "id": "vflow.core.wifi.state",
+    "name": "WiFi状态",
+    "category": "Core (Beta)",
+    "description": "执行 WiFi状态 操作"
+  },
+  {
+    "id": "vflow.core.volume",
+    "name": "音量控制",
+    "category": "Core (Beta)",
+    "description": "执行 音量控制 操作"
+  },
+  {
+    "id": "vflow.core.volume.state",
+    "name": "读取音量",
+    "category": "Core (Beta)",
+    "description": "执行 读取音量 操作"
+  },
+  {
+    "id": "vflow.core.nfc",
+    "name": "NFC控制",
+    "category": "Core (Beta)",
+    "description": "执行 NFC控制 操作"
+  },
+  {
+    "id": "vflow.core.nfc.state",
+    "name": "读取NFC状态",
+    "category": "Core (Beta)",
+    "description": "执行 读取NFC状态 操作"
+  },
+  {
+    "id": "vflow.device.play.audio",
+    "name": "播放音频",
+    "category": "界面交互",
+    "description": "执行 播放音频 操作"
+  }
+]

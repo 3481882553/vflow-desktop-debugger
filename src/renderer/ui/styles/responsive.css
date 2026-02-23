@@ -1,0 +1,40 @@
+/* 响应式：≤768px 时自动收起左右面板，画布全宽 */
+@media (max-width: 768px) {
+  :root {
+    --left-panel-width: 0px;
+    --right-panel-width: 0px;
+  }
+
+  /* 强制隐藏面板 */
+  .app-sidebar,
+  .app-props-panel {
+    display: none !important;
+  }
+
+  /* 画布占满 */
+  main {
+    width: 100vw;
+  }
+
+  /* 顶部工具栏按钮缩小 */
+  header button {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+  header button svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* 节点卡片略小 */
+  .node-card {
+    min-width: 140px;
+    font-size: 11px;
+  }
+
+  /* 画布内控制按钮更紧凑 */
+  .react-flow__controls {
+    transform: scale(0.8);
+    transform-origin: bottom right;
+  }
+}
