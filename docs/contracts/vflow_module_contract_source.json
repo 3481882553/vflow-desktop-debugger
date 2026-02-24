@@ -1,0 +1,2916 @@
+{
+  "meta": {
+    "generatedAt": "2026-02-24T18:02:16.920Z",
+    "source": "app/src/main/java/.../workflow/module/*.kt + app/src/main/res/values*/strings*.xml",
+    "version": 2
+  },
+  "defaultLocale": "zh-CN",
+  "availableLocales": [
+    "en",
+    "zh-CN"
+  ],
+  "moduleIds": [
+    "vflow.ai.agent",
+    "vflow.ai.autoglm",
+    "vflow.ai.completion",
+    "vflow.core.bluetooth",
+    "vflow.core.bluetooth_state",
+    "vflow.core.capture_screen",
+    "vflow.core.force_stop_app",
+    "vflow.core.get_clipboard",
+    "vflow.core.input_text",
+    "vflow.core.nfc",
+    "vflow.core.nfc_state",
+    "vflow.core.press_key",
+    "vflow.core.screen_operation",
+    "vflow.core.screen_status",
+    "vflow.core.set_clipboard",
+    "vflow.core.shell_command",
+    "vflow.core.sleep_screen",
+    "vflow.core.touch_replay",
+    "vflow.core.volume",
+    "vflow.core.volume_state",
+    "vflow.core.wake_screen",
+    "vflow.core.wifi",
+    "vflow.core.wifi_state",
+    "vflow.data.calculation",
+    "vflow.data.comment",
+    "vflow.data.file_operation",
+    "vflow.data.get_current_time",
+    "vflow.data.input",
+    "vflow.data.parse_json",
+    "vflow.data.quick_view",
+    "vflow.data.text_extract",
+    "vflow.data.text_processing",
+    "vflow.data.text_replace",
+    "vflow.data.text_split",
+    "vflow.device.click",
+    "vflow.device.delay",
+    "vflow.device.find.text",
+    "vflow.device.play_audio",
+    "vflow.device.send_key_event",
+    "vflow.device.toast",
+    "vflow.file.adjust_image",
+    "vflow.file.apply_mask",
+    "vflow.file.import_image",
+    "vflow.file.rotate_image",
+    "vflow.file.save_image",
+    "vflow.interaction.find_element",
+    "vflow.interaction.find_image",
+    "vflow.interaction.find_until",
+    "vflow.interaction.get_current_activity",
+    "vflow.interaction.input_text",
+    "vflow.interaction.ocr",
+    "vflow.interaction.operit",
+    "vflow.interaction.screen_operation",
+    "vflow.interaction.ui_selector",
+    "vflow.logic.break_loop",
+    "vflow.logic.call_workflow",
+    "vflow.logic.continue_loop",
+    "vflow.logic.jump",
+    "vflow.logic.return",
+    "vflow.logic.stop_workflow",
+    "vflow.network.feishu_upload",
+    "vflow.network.get_ip",
+    "vflow.network.http_request",
+    "vflow.notification.find",
+    "vflow.notification.remove",
+    "vflow.notification.send_notification",
+    "vflow.shizuku.alipay_shortcuts",
+    "vflow.shizuku.coloros_shortcuts",
+    "vflow.shizuku.gemini_shortcut",
+    "vflow.shizuku.shell_command",
+    "vflow.shizuku.wechat_shortcuts",
+    "vflow.snippet.find_until",
+    "vflow.system.bluetooth",
+    "vflow.system.brightness",
+    "vflow.system.capture_screen",
+    "vflow.system.close_app",
+    "vflow.system.get_clipboard",
+    "vflow.system.get_usage_stats",
+    "vflow.system.invoke",
+    "vflow.system.js",
+    "vflow.system.launch_app",
+    "vflow.system.lua",
+    "vflow.system.mobile_data",
+    "vflow.system.read_sms",
+    "vflow.system.set_clipboard",
+    "vflow.system.share",
+    "vflow.system.sleep_screen",
+    "vflow.system.systeminfo",
+    "vflow.system.wake_screen",
+    "vflow.system.wifi",
+    "vflow.trigger.app_start",
+    "vflow.trigger.battery",
+    "vflow.trigger.bluetooth",
+    "vflow.trigger.call",
+    "vflow.trigger.element",
+    "vflow.trigger.gkd",
+    "vflow.trigger.key_event",
+    "vflow.trigger.location",
+    "vflow.trigger.manual",
+    "vflow.trigger.notification",
+    "vflow.trigger.share",
+    "vflow.trigger.sms",
+    "vflow.trigger.time",
+    "vflow.trigger.wifi",
+    "vflow.ui.component.button",
+    "vflow.ui.component.input",
+    "vflow.ui.component.switch",
+    "vflow.ui.component.text",
+    "vflow.ui.interaction.exit",
+    "vflow.ui.interaction.get_value",
+    "vflow.ui.interaction.update",
+    "vflow.variable.create",
+    "vflow.variable.get",
+    "vflow.variable.load",
+    "vflow.variable.modify",
+    "vflow.variable.random"
+  ],
+  "modules": [
+    {
+      "moduleId": "vflow.ai.agent",
+      "nameStringKey": "module_vflow_ai_agent_name",
+      "descriptionStringKey": "module_vflow_ai_agent_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "AI 智能体",
+        "description": "全自动 AI 助手。基于视觉和UI结构理解屏幕，自动完成任务。",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "AI Agent",
+          "description": "Fully autonomous AI assistant. Understands screen content based on vision and UI structure to automatically complete tasks",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "AI 智能体",
+          "description": "全自动 AI 助手。基于视觉和UI结构理解屏幕，自动完成任务",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/AgentModule.kt"
+    },
+    {
+      "moduleId": "vflow.ai.autoglm",
+      "nameStringKey": "module_vflow_ai_autoglm_name",
+      "descriptionStringKey": "module_vflow_ai_autoglm_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "AutoGLM 智能体",
+        "description": "复刻 AutoGLM 项目。基于思维链(CoT)和自定义指令协议，执行复杂的手机操作任务。",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "AutoGLM Agent",
+          "description": "Replicate AutoGLM project. Execute complex mobile operation tasks based on Chain of Thought (CoT) and custom instruction protocols",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "AutoGLM 智能体",
+          "description": "复刻 AutoGLM 项目。基于思维链(CoT)和自定义指令协议，执行复杂的手机操作任务",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/AutoGLMModule.kt"
+    },
+    {
+      "moduleId": "vflow.ai.completion",
+      "nameStringKey": "module_vflow_ai_completion_name",
+      "descriptionStringKey": "module_vflow_ai_completion_desc",
+      "categoryKey": "category_network",
+      "fallback": {
+        "name": "AI 对话",
+        "description": "调用大模型 API (OpenAI/DeepSeek) 进行智能对话。",
+        "category": "网络"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "AI Chat",
+          "description": "Call LLM API (OpenAI/DeepSeek) for intelligent conversation.",
+          "category": "Network"
+        },
+        "zh-CN": {
+          "name": "AI 对话",
+          "description": "调用大模型 API (OpenAI/DeepSeek) 进行智能对话。",
+          "category": "网络"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/network/AIModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.bluetooth",
+      "nameStringKey": "module_vflow_core_bluetooth_name",
+      "descriptionStringKey": "module_vflow_core_bluetooth_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "蓝牙控制",
+        "description": "使用 vFlow Core 控制蓝牙开关状态（开启/关闭/切换）。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Bluetooth Control",
+          "description": "Use vFlow Core to control Bluetooth state (on/off/toggle).",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "蓝牙控制",
+          "description": "\"使用 vFlow Core 控制蓝牙开关状态（开启/关闭/切换）。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreBluetoothModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.bluetooth_state",
+      "nameStringKey": "module_vflow_core_bluetooth_state_name",
+      "descriptionStringKey": "module_vflow_core_bluetooth_state_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "读取蓝牙状态",
+        "description": "使用 vFlow Core 读取当前蓝牙开关状态。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get Bluetooth State",
+          "description": "Use vFlow Core to read current Bluetooth switch state.",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "蓝牙状态",
+          "description": "使用 vFlow Core 读取当前蓝牙开关状态。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreBluetoothStateModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.capture_screen",
+      "nameStringKey": "module_vflow_core_capture_screen_name",
+      "descriptionStringKey": "module_vflow_core_capture_screen_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "截屏",
+        "description": "使用 vFlow Core 捕获屏幕截图，基于scrcpy原理实现。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Capture Screen",
+          "description": "Capture screen screenshot using vFlow Core, based on scrcpy implementation",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "截图",
+          "description": "使用 vFlow Core 快速截图，无需截屏权限。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreCaptureScreenModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.force_stop_app",
+      "nameStringKey": "module_vflow_core_force_stop_app_name",
+      "descriptionStringKey": "module_vflow_core_force_stop_app_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "强制停止应用",
+        "description": "使用 vFlow Core 强制停止指定应用。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Force Stop App",
+          "description": "Use vFlow Core to force stop a specific app.",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "强制停止应用",
+          "description": "使用 vFlow Core 强制停止指定应用。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreForceStopAppModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.get_clipboard",
+      "nameStringKey": "module_vflow_core_get_clipboard_name",
+      "descriptionStringKey": "module_vflow_core_get_clipboard_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "读取剪贴板",
+        "description": "使用 vFlow Core 读取剪贴板内容。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get Clipboard",
+          "description": "Use vFlow Core to read clipboard content.",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "获取剪贴板",
+          "description": "使用 vFlow Core 获取剪贴板文本。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreGetClipboardModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.input_text",
+      "nameStringKey": "module_vflow_core_input_text_name",
+      "descriptionStringKey": "module_vflow_core_input_text_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "输入文本",
+        "description": "使用 vFlow Core 输入文本，比无障碍服务更快速稳定。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Input Text",
+          "description": "Use vFlow Core to input text, faster and more stable than accessibility service.",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "输入文本",
+          "description": "使用 vFlow Core 输入文本，比无障碍服务更快速稳定。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreInputTextModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.nfc",
+      "nameStringKey": "module_vflow_core_nfc_name",
+      "descriptionStringKey": "module_vflow_core_nfc_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "NFC控制",
+        "description": "使用 vFlow Core 控制NFC开关状态（开启/关闭/切换）。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "NFC Control",
+          "description": "Use vFlow Core to control NFC state (Enable/Disable/Toggle).",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "NFC控制",
+          "description": "使用 vFlow Core 控制NFC开关状态（开启/关闭/切换）。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreNfcModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.nfc_state",
+      "nameStringKey": "module_vflow_core_nfc_state_name",
+      "descriptionStringKey": "module_vflow_core_nfc_state_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "读取NFC状态",
+        "description": "使用 vFlow Core 读取当前NFC开关状态。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Read NFC State",
+          "description": "Use vFlow Core to read the current NFC state.",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "读取NFC状态",
+          "description": "使用 vFlow Core 读取当前NFC开关状态。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreNfcStateModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.press_key",
+      "nameStringKey": "module_vflow_core_press_key_name",
+      "descriptionStringKey": "module_vflow_core_press_key_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "按键",
+        "description": "使用 vFlow Core 发送按键事件，比无障碍服务更快速稳定。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Press Key",
+          "description": "Send key events using vFlow Core, faster and more stable than accessibility service",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "按键",
+          "description": "使用 vFlow Core 发送按键事件，比无障碍服务更快速稳定。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CorePressKeyModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.screen_operation",
+      "nameStringKey": "module_vflow_core_screen_operation_name",
+      "descriptionStringKey": "module_vflow_core_screen_operation_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "屏幕操作",
+        "description": "使用 vFlow Core 执行点击、长按或滑动操作，比无障碍服务更快速稳定。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Screen Operation",
+          "description": "Use vFlow Core to perform tap, long press, or swipe operations, faster and more stable than accessibility service.",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "屏幕操作",
+          "description": "使用 vFlow Core 执行点击、长按或滑动操作，比无障碍服务更快速稳定。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreScreenOperationModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.screen_status",
+      "nameStringKey": "module_vflow_core_screen_status_name",
+      "descriptionStringKey": "module_vflow_core_screen_status_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "读取屏幕状态",
+        "description": "使用 vFlow Core 读取当前屏幕亮屏状态。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Read Screen Status",
+          "description": "Read current screen status using vFlow Core",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "屏幕状态",
+          "description": "使用 vFlow Core 获取屏幕状态（亮/灭）。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreScreenStatusModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.set_clipboard",
+      "nameStringKey": "module_vflow_core_set_clipboard_name",
+      "descriptionStringKey": "module_vflow_core_set_clipboard_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "设置剪贴板",
+        "description": "使用 vFlow Core 设置剪贴板内容。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Set Clipboard",
+          "description": "Use vFlow Core to set clipboard content.",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "设置剪贴板",
+          "description": "使用 vFlow Core 设置剪贴板文本。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreSetClipboardModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.shell_command",
+      "nameStringKey": "module_vflow_core_shell_command_name",
+      "descriptionStringKey": "module_vflow_core_shell_command_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "执行Shell命令",
+        "description": "通过 vFlow Core 执行Shell命令（支持Shell/Root权限）。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Execute Shell Command",
+          "description": "Execute Shell commands via vFlow Core (supports Shell/Root permissions)",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "Shell命令",
+          "description": "使用 vFlow Core 执行 Shell 命令。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreShellCommandModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.sleep_screen",
+      "nameStringKey": "module_vflow_core_sleep_screen_name",
+      "descriptionStringKey": "module_vflow_core_sleep_screen_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "关闭屏幕",
+        "description": "使用 vFlow Core 关闭设备屏幕。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Sleep Screen",
+          "description": "Turn off screen using vFlow Core",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "关闭屏幕",
+          "description": "使用 vFlow Core 关闭屏幕。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreSleepScreenModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.touch_replay",
+      "nameStringKey": "module_vflow_core_touch_replay_name",
+      "descriptionStringKey": "module_vflow_core_touch_replay_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "触摸回放",
+        "description": "回放录制的触摸操作序列，可调节回放速度",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Touch Replay",
+          "description": "Replay recorded touch sequence, adjustable playback speed",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "触摸回放",
+          "description": "回放录制的触摸操作序列，可调节回放速度。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreTouchReplayModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.volume",
+      "nameStringKey": "module_vflow_core_volume_name",
+      "descriptionStringKey": "module_vflow_core_volume_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "音量控制",
+        "description": "使用 vFlow Core 控制不同音频流的音量（音乐/通知/铃声等）。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Volume Control",
+          "description": "Control volume for different audio streams using vFlow Core (music/notification/ring etc).",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "音量控制",
+          "description": "使用 vFlow Core 控制不同音频流的音量（音乐/通知/铃声等）。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreVolumeModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.volume_state",
+      "nameStringKey": "module_vflow_core_volume_state_name",
+      "descriptionStringKey": "module_vflow_core_volume_state_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "读取音量",
+        "description": "使用 vFlow Core 读取不同音频流的当前音量。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Read Volume",
+          "description": "Read current volume levels for different audio streams using vFlow Core.",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "读取音量",
+          "description": "使用 vFlow Core 读取不同音频流的当前音量。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreVolumeStateModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.wake_screen",
+      "nameStringKey": "module_vflow_core_wake_screen_name",
+      "descriptionStringKey": "module_vflow_core_wake_screen_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "唤醒屏幕",
+        "description": "使用 vFlow Core 唤醒设备屏幕。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Wake Screen",
+          "description": "Wake up screen using vFlow Core",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "唤醒屏幕",
+          "description": "使用 vFlow Core 唤醒屏幕。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreWakeScreenModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.wifi",
+      "nameStringKey": "module_vflow_core_wifi_name",
+      "descriptionStringKey": "module_vflow_core_wifi_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "WiFi控制",
+        "description": "使用 vFlow Core 控制WiFi开关状态（开启/关闭/切换）。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "WiFi Control",
+          "description": "Control WiFi state using vFlow Core (on/off/toggle).",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "WiFi",
+          "description": "使用 vFlow Core 执行 WiFi 操作。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreWifiModule.kt"
+    },
+    {
+      "moduleId": "vflow.core.wifi_state",
+      "nameStringKey": "module_vflow_core_wifi_state_name",
+      "descriptionStringKey": "module_vflow_core_wifi_state_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "读取WiFi状态",
+        "description": "使用 vFlow Core 读取当前WiFi开关状态。",
+        "category": "Core (Beta)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get WiFi State",
+          "description": "Use vFlow Core to read current WiFi switch state.",
+          "category": "Core (Beta)"
+        },
+        "zh-CN": {
+          "name": "WiFi状态",
+          "description": "使用 vFlow Core 获取或监听 WiFi 状态。",
+          "category": "Core (Beta)"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/core/CoreWifiStateModule.kt"
+    },
+    {
+      "moduleId": "vflow.data.calculation",
+      "nameStringKey": "module_vflow_data_calculation_name",
+      "descriptionStringKey": "module_vflow_data_calculation_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "计算",
+        "description": "执行两个数字之间的数学运算",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Calculate",
+          "description": "Perform mathematical operations between two numbers",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "计算",
+          "description": "执行两个数字之间的数学运算",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/CalculationModule.kt"
+    },
+    {
+      "moduleId": "vflow.data.comment",
+      "nameStringKey": "module_vflow_data_comment_name",
+      "descriptionStringKey": "module_vflow_data_comment_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "注释",
+        "description": "添加注释说明，用于记录工作流的设计思路和目的。执行时会被跳过。",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Comment",
+          "description": "Add comments to document your workflow design. Will be skipped during execution.",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "注释",
+          "description": "添加注释说明，用于记录工作流的设计思路和目的。执行时会被跳过。",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/CommentModule.kt"
+    },
+    {
+      "moduleId": "vflow.data.file_operation",
+      "nameStringKey": null,
+      "descriptionStringKey": null,
+      "categoryKey": null,
+      "fallback": {
+        "name": "vflow.data.file_operation",
+        "description": "",
+        "category": "其他"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "vflow.data.file_operation",
+          "description": "",
+          "category": "其他"
+        },
+        "zh-CN": {
+          "name": "vflow.data.file_operation",
+          "description": "",
+          "category": "其他"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/FileOperationModule.kt"
+    },
+    {
+      "moduleId": "vflow.data.get_current_time",
+      "nameStringKey": null,
+      "descriptionStringKey": null,
+      "categoryKey": null,
+      "fallback": {
+        "name": "vflow.data.get_current_time",
+        "description": "",
+        "category": "其他"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "vflow.data.get_current_time",
+          "description": "",
+          "category": "其他"
+        },
+        "zh-CN": {
+          "name": "vflow.data.get_current_time",
+          "description": "",
+          "category": "其他"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/GetCurrentTimeModule.kt"
+    },
+    {
+      "moduleId": "vflow.data.input",
+      "nameStringKey": "module_vflow_data_input_name",
+      "descriptionStringKey": "module_vflow_data_input_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "请求输入",
+        "description": "弹出一个窗口，请求用户输入文本、数字、时间或日期。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Request Input",
+          "description": "Show a dialog to request user input for text, number, time or date.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "请求输入",
+          "description": "弹出一个窗口，请求用户输入文本、数字、时间或日期。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/InputModule.kt"
+    },
+    {
+      "moduleId": "vflow.data.parse_json",
+      "nameStringKey": "module_vflow_data_parse_json_name",
+      "descriptionStringKey": "module_vflow_data_parse_json_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "解析 JSON",
+        "description": "从 JSON 文本中提取数据，支持路径语法（如 user.name、users.0.name）",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Parse JSON",
+          "description": "Extract data from JSON text, supports path syntax (e.g. user.name, users.0.name)",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "解析 JSON",
+          "description": "从 JSON 文本中提取数据，支持路径语法（如 user.name、users.0.name）",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/ParseJsonModule.kt"
+    },
+    {
+      "moduleId": "vflow.data.quick_view",
+      "nameStringKey": "module_vflow_data_quick_view_name",
+      "descriptionStringKey": "module_vflow_data_quick_view_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "快速查看",
+        "description": "在悬浮窗中显示文本、数字、图片等各种类型的内容。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Quick View",
+          "description": "Display various types of content (text, numbers, images, etc.) in a float window.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "快速查看",
+          "description": "在悬浮窗中显示文本、数字、图片等各种类型的内容。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/QuickViewModule.kt"
+    },
+    {
+      "moduleId": "vflow.data.text_extract",
+      "nameStringKey": "module_vflow_data_text_extract_name",
+      "descriptionStringKey": "module_vflow_data_text_extract_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "提取文本",
+        "description": "从文本中提取指定部分",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Extract Text",
+          "description": "Extract specified portion from text",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "提取文本",
+          "description": "从文本中提取指定部分",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/TextExtractModule.kt"
+    },
+    {
+      "moduleId": "vflow.data.text_processing",
+      "nameStringKey": "module_vflow_data_text_processing_name",
+      "descriptionStringKey": "module_vflow_data_text_processing_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "文本处理",
+        "description": "执行文本的拼接、分割、替换、正则匹配等操作",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Text Processing",
+          "description": "Perform text operations like join, split, replace, regex extraction",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "文本处理",
+          "description": "执行文本的拼接、分割、替换、正则匹配等操作",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/TextProcessingModule.kt"
+    },
+    {
+      "moduleId": "vflow.data.text_replace",
+      "nameStringKey": "module_vflow_data_text_replace_name",
+      "descriptionStringKey": "module_vflow_data_text_replace_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "文本替换",
+        "description": "将文本中的指定内容替换为新内容",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Text Replace",
+          "description": "Replace specified content in text with new content",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "文本替换",
+          "description": "将文本中的指定内容替换为新内容",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/TextReplaceModule.kt"
+    },
+    {
+      "moduleId": "vflow.data.text_split",
+      "nameStringKey": "module_vflow_data_text_split_name",
+      "descriptionStringKey": "module_vflow_data_text_split_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "文本分割",
+        "description": "将文本按分隔符分割成列表。如果分隔符为空，则逐字符分割。",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Text Split",
+          "description": "Split text into a list using a delimiter. If delimiter is empty, split by character.",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "文本分割",
+          "description": "将文本按分隔符分割成列表。如果分隔符为空，则逐字符分割。",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/TextSplitModule.kt"
+    },
+    {
+      "moduleId": "vflow.device.click",
+      "nameStringKey": "module_vflow_device_click_name",
+      "descriptionStringKey": "module_vflow_device_click_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "点击",
+        "description": "点击一个屏幕元素、坐标或视图ID",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Click",
+          "description": "Click on a screen element, coordinate or view ID",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "点击",
+          "description": "点击一个屏幕元素、坐标或视图ID",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/ClickModule.kt"
+    },
+    {
+      "moduleId": "vflow.device.delay",
+      "nameStringKey": "module_vflow_device_delay_name",
+      "descriptionStringKey": "module_vflow_device_delay_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "延迟",
+        "description": "暂停工作流一段时间",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Delay",
+          "description": "Pause workflow for a period of time",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "延迟",
+          "description": "暂停工作流一段时间",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/DelayModule.kt"
+    },
+    {
+      "moduleId": "vflow.device.find.text",
+      "nameStringKey": "module_vflow_device_find_text_name",
+      "descriptionStringKey": "module_vflow_device_find_text_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "查找文本",
+        "description": "在屏幕上查找元素",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Text",
+          "description": "Find elements on screen",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "查找文本",
+          "description": "在屏幕上查找元素",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/FindModule.kt"
+    },
+    {
+      "moduleId": "vflow.device.play_audio",
+      "nameStringKey": "module_vflow_device_play_audio_name",
+      "descriptionStringKey": "module_vflow_device_play_audio_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "播放音频",
+        "description": "播放系统自带的音频或本地音频文件，支持设置音量。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Play Audio",
+          "description": "Play built-in system sounds or local audio files, with volume control support.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "播放音频",
+          "description": "播放系统自带的音频或本地音频文件，支持设置音量。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/PlayAudioModule.kt"
+    },
+    {
+      "moduleId": "vflow.device.send_key_event",
+      "nameStringKey": "module_vflow_device_send_key_event_name",
+      "descriptionStringKey": "module_vflow_device_send_key_event_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "执行全局操作",
+        "description": "执行系统级操作，如返回、回到主屏幕、打开通知等。",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Global Action",
+          "description": "Execute system-level operations such as back, home, open notification, etc.",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "执行全局操作",
+          "description": "执行系统级操作，如返回、回到主屏幕、打开通知等",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/SendKeyEventModule.kt"
+    },
+    {
+      "moduleId": "vflow.device.toast",
+      "nameStringKey": "module_vflow_device_toast_name",
+      "descriptionStringKey": "module_vflow_device_toast_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "显示Toast",
+        "description": "在屏幕底部弹出一个简短的提示消息",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Show Toast",
+          "description": "Display a brief message at the bottom of the screen.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "显示Toast",
+          "description": "在屏幕底部弹出一个简短的提示消息。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/ToastModule.kt"
+    },
+    {
+      "moduleId": "vflow.file.adjust_image",
+      "nameStringKey": "module_vflow_file_adjust_image_name",
+      "descriptionStringKey": "module_vflow_file_adjust_image_desc",
+      "categoryKey": "category_file",
+      "fallback": {
+        "name": "调整图像",
+        "description": "调整图像的曝光、对比度、饱和度等参数。",
+        "category": "文件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Adjust Image",
+          "description": "Adjust image parameters like exposure, contrast, saturation, etc.",
+          "category": "File"
+        },
+        "zh-CN": {
+          "name": "调整图像",
+          "description": "调整图像的曝光、对比度、饱和度等参数。",
+          "category": "文件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/file/AdjustImageModule.kt"
+    },
+    {
+      "moduleId": "vflow.file.apply_mask",
+      "nameStringKey": "module_vflow_file_apply_mask_name",
+      "descriptionStringKey": "module_vflow_file_apply_mask_desc",
+      "categoryKey": "category_file",
+      "fallback": {
+        "name": "应用蒙版",
+        "description": "为图片应用 Material You 风格圆角矩形蒙版。",
+        "category": "文件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Apply Mask",
+          "description": "Apply Material You style rounded rectangle mask to image",
+          "category": "File"
+        },
+        "zh-CN": {
+          "name": "应用蒙版",
+          "description": "为图片应用 Material You 风格圆角矩形蒙版",
+          "category": "文件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/file/ApplyMaskModule.kt"
+    },
+    {
+      "moduleId": "vflow.file.import_image",
+      "nameStringKey": "module_vflow_file_import_image_name",
+      "descriptionStringKey": "module_vflow_file_import_image_desc",
+      "categoryKey": "category_file",
+      "fallback": {
+        "name": "导入图片",
+        "description": "从相册或文件中选择一张图片。",
+        "category": "文件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Import Image",
+          "description": "Select an image from gallery or files",
+          "category": "File"
+        },
+        "zh-CN": {
+          "name": "导入图片",
+          "description": "从相册或文件中选择一张图片",
+          "category": "文件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/file/ImportImageModule.kt"
+    },
+    {
+      "moduleId": "vflow.file.rotate_image",
+      "nameStringKey": "module_vflow_file_rotate_image_name",
+      "descriptionStringKey": "module_vflow_file_rotate_image_desc",
+      "categoryKey": "category_file",
+      "fallback": {
+        "name": "旋转图片",
+        "description": "将图片按指定角度旋转。",
+        "category": "文件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Rotate Image",
+          "description": "Rotate image by specified angle.",
+          "category": "File"
+        },
+        "zh-CN": {
+          "name": "旋转图片",
+          "description": "将图片按指定角度旋转。",
+          "category": "文件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/file/RotateImageModule.kt"
+    },
+    {
+      "moduleId": "vflow.file.save_image",
+      "nameStringKey": "module_vflow_file_save_image_name",
+      "descriptionStringKey": "module_vflow_file_save_image_desc",
+      "categoryKey": "category_file",
+      "fallback": {
+        "name": "保存图片",
+        "description": "将图片保存到相册",
+        "category": "文件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Save Image",
+          "description": "Save image to gallery",
+          "category": "File"
+        },
+        "zh-CN": {
+          "name": "保存图片",
+          "description": "将图片保存到相册",
+          "category": "文件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/file/SaveImageModule.kt"
+    },
+    {
+      "moduleId": "vflow.interaction.find_element",
+      "nameStringKey": "module_vflow_interaction_find_element_name",
+      "descriptionStringKey": "module_vflow_interaction_find_element_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "查找控件",
+        "description": "通过文本、ID、区域等属性查找屏幕控件，支持多属性组合过滤",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Element",
+          "description": "Find screen elements by text, ID, region and other properties, supports multi-property combination filtering",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "查找控件",
+          "description": "通过文本、ID、区域等属性查找屏幕控件，支持多属性组合过滤",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/FindElementModule.kt"
+    },
+    {
+      "moduleId": "vflow.interaction.find_image",
+      "nameStringKey": "module_vflow_interaction_find_image_name",
+      "descriptionStringKey": "module_vflow_interaction_find_image_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "查找图片",
+        "description": "在屏幕上查找与模板图片相似的区域，返回匹配位置的中心坐标。",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Image",
+          "description": "Find area on screen that matches template image, return center coordinate of match",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "查找图片",
+          "description": "在屏幕上查找与模板图片相似的区域，返回匹配位置的中心坐标",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/FindImageModule.kt"
+    },
+    {
+      "moduleId": "vflow.interaction.find_until",
+      "nameStringKey": "module_vflow_interaction_find_until_name",
+      "descriptionStringKey": "module_vflow_interaction_find_until_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "查找直到出现",
+        "description": "持续查找屏幕上的文本，直到出现或超时。支持 OCR 兜底。",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Until",
+          "description": "Continuously find text on screen until it appears or timeout. Supports OCR fallback",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "查找直到出现",
+          "description": "持续查找屏幕上的文本，直到出现或超时。支持 OCR 兜底",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/FindTextUntilModule.kt"
+    },
+    {
+      "moduleId": "vflow.interaction.get_current_activity",
+      "nameStringKey": null,
+      "descriptionStringKey": null,
+      "categoryKey": null,
+      "fallback": {
+        "name": "vflow.interaction.get_current_activity",
+        "description": "",
+        "category": "其他"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "vflow.interaction.get_current_activity",
+          "description": "",
+          "category": "其他"
+        },
+        "zh-CN": {
+          "name": "vflow.interaction.get_current_activity",
+          "description": "",
+          "category": "其他"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/GetCurrentActivityModule.kt"
+    },
+    {
+      "moduleId": "vflow.interaction.input_text",
+      "nameStringKey": "module_vflow_interaction_input_text_name",
+      "descriptionStringKey": "module_vflow_interaction_input_text_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "输入文本",
+        "description": "在当前聚焦的输入框中输入文本 (支持无障碍和Shell)",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Input Text",
+          "description": "Input text into the currently focused input field (supports Accessibility and Shell)",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "输入文本",
+          "description": "在当前聚焦的输入框中输入文本 (支持无障碍和Shell)",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/InputTextModule.kt"
+    },
+    {
+      "moduleId": "vflow.interaction.ocr",
+      "nameStringKey": "module_vflow_interaction_ocr_name",
+      "descriptionStringKey": "module_vflow_interaction_ocr_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "文字识别 (OCR)",
+        "description": "识别图片中的文字，或查找指定文字的坐标。",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "OCR",
+          "description": "Recognize text in image, or find coordinates of specified text",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "文字识别 (OCR)",
+          "description": "识别图片中的文字，或查找指定文字的坐标",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/OCRModule.kt"
+    },
+    {
+      "moduleId": "vflow.interaction.operit",
+      "nameStringKey": "module_vflow_interaction_operit_name",
+      "descriptionStringKey": "module_vflow_interaction_operit_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "Operit 交互",
+        "description": "与 Operit AI 助手交互：发送消息或触发工作流。",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Operit Interaction",
+          "description": "Interact with Operit AI assistant: send messages or trigger workflows.",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "Operit 交互",
+          "description": "与 Operit AI 助手交互：发送消息或触发工作流。",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/OperitModule.kt"
+    },
+    {
+      "moduleId": "vflow.interaction.screen_operation",
+      "nameStringKey": "module_vflow_interaction_screen_operation_name",
+      "descriptionStringKey": "module_vflow_interaction_screen_operation_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "屏幕操作",
+        "description": "在屏幕上执行点击、长按或滑动操作。",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Screen Operation",
+          "description": "Perform tap, long press, or swipe operations on screen",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "屏幕操作",
+          "description": "在屏幕上执行点击、长按或滑动操作",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/ScreenOperationModule.kt"
+    },
+    {
+      "moduleId": "vflow.interaction.ui_selector",
+      "nameStringKey": "module_vflow_interaction_ui_selector_name",
+      "descriptionStringKey": "module_vflow_interaction_ui_selector_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "UI选择器",
+        "description": "使用 GKD selector 语法查找屏幕控件。",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "UI Selector",
+          "description": "Use GKD selector syntax to find screen controls",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "UI选择器",
+          "description": "使用 GKD selector 语法查找屏幕控件",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/interaction/UiSelectorModule.kt"
+    },
+    {
+      "moduleId": "vflow.logic.break_loop",
+      "nameStringKey": "module_vflow_logic_break_loop_name",
+      "descriptionStringKey": "module_vflow_logic_break_loop_desc",
+      "categoryKey": "category_logic",
+      "fallback": {
+        "name": "跳出循环",
+        "description": "立即终止当前循环的执行，并跳转到循环体之后的步骤",
+        "category": "逻辑控制"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Break Loop",
+          "description": "Immediately terminate current loop execution and jump to steps after the loop body",
+          "category": "Logic"
+        },
+        "zh-CN": {
+          "name": "跳出循环",
+          "description": "立即终止当前循环的执行，并跳转到循环体之后的步骤",
+          "category": "逻辑控制"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/logic/BreakLoopModule.kt"
+    },
+    {
+      "moduleId": "vflow.logic.call_workflow",
+      "nameStringKey": "module_vflow_logic_call_workflow_name",
+      "descriptionStringKey": "module_vflow_logic_call_workflow_desc",
+      "categoryKey": "category_logic",
+      "fallback": {
+        "name": "调用工作流",
+        "description": "执行另一个工作流作为子程序。",
+        "category": "逻辑控制"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Call Workflow",
+          "description": "Execute another workflow as subroutine",
+          "category": "Logic"
+        },
+        "zh-CN": {
+          "name": "调用工作流",
+          "description": "将另一个工作流作为子程序执行",
+          "category": "逻辑控制"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/logic/CallWorkflowModule.kt"
+    },
+    {
+      "moduleId": "vflow.logic.continue_loop",
+      "nameStringKey": "module_vflow_logic_continue_loop_name",
+      "descriptionStringKey": "module_vflow_logic_continue_loop_desc",
+      "categoryKey": "category_logic",
+      "fallback": {
+        "name": "继续循环",
+        "description": "跳过当前循环的剩余步骤，直接进入下一次迭代",
+        "category": "逻辑控制"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Continue Loop",
+          "description": "Skip remaining steps of current loop and directly enter next iteration",
+          "category": "Logic"
+        },
+        "zh-CN": {
+          "name": "继续循环",
+          "description": "跳过当前循环的剩余步骤，直接进入下一次迭代",
+          "category": "逻辑控制"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/logic/ContinueLoopModule.kt"
+    },
+    {
+      "moduleId": "vflow.logic.jump",
+      "nameStringKey": "module_vflow_logic_jump_name",
+      "descriptionStringKey": "module_vflow_logic_jump_desc",
+      "categoryKey": "category_logic",
+      "fallback": {
+        "name": "跳转步骤",
+        "description": "跳转到工作流中指定的步骤继续执行。",
+        "category": "逻辑控制"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Jump to Step",
+          "description": "Jump to specified step in workflow and continue execution",
+          "category": "Logic"
+        },
+        "zh-CN": {
+          "name": "跳转到步骤",
+          "description": "跳转到工作流的指定步骤并继续执行",
+          "category": "逻辑控制"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/logic/JumpModule.kt"
+    },
+    {
+      "moduleId": "vflow.logic.return",
+      "nameStringKey": "module_vflow_logic_return_name",
+      "descriptionStringKey": "module_vflow_logic_return_desc",
+      "categoryKey": "category_logic",
+      "fallback": {
+        "name": "停止并返回",
+        "description": "停止当前工作流的执行并返回一个值。",
+        "category": "逻辑控制"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Stop and Return",
+          "description": "Stop current workflow execution and return a value",
+          "category": "Logic"
+        },
+        "zh-CN": {
+          "name": "停止并返回",
+          "description": "停止当前工作流执行并返回一个值",
+          "category": "逻辑控制"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/logic/StopAndReturnModule.kt"
+    },
+    {
+      "moduleId": "vflow.logic.stop_workflow",
+      "nameStringKey": "module_vflow_logic_stop_workflow_name",
+      "descriptionStringKey": "module_vflow_logic_stop_workflow_desc",
+      "categoryKey": "category_logic",
+      "fallback": {
+        "name": "停止工作流",
+        "description": "正常地、无条件地终止当前工作流的执行",
+        "category": "逻辑控制"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Stop Workflow",
+          "description": "Normally and unconditionally terminate the current workflow execution",
+          "category": "Logic"
+        },
+        "zh-CN": {
+          "name": "停止工作流",
+          "description": "正常地、无条件地终止当前工作流的执行",
+          "category": "逻辑控制"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/logic/StopWorkflowModule.kt"
+    },
+    {
+      "moduleId": "vflow.network.feishu_upload",
+      "nameStringKey": "module_vflow_network_feishu_upload_name",
+      "descriptionStringKey": "module_vflow_network_feishu_upload_desc",
+      "categoryKey": "category_network",
+      "fallback": {
+        "name": "飞书上传素材",
+        "description": "上传文件到飞书云文档",
+        "category": "网络"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Feishu Upload Media",
+          "description": "Upload files to Feishu cloud documents",
+          "category": "Network"
+        },
+        "zh-CN": {
+          "name": "飞书上传素材",
+          "description": "上传文件到飞书云文档",
+          "category": "网络"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/network/FeishuMediaUploadModule.kt"
+    },
+    {
+      "moduleId": "vflow.network.get_ip",
+      "nameStringKey": "module_vflow_network_get_ip_name",
+      "descriptionStringKey": "module_vflow_network_get_ip_desc",
+      "categoryKey": "category_network",
+      "fallback": {
+        "name": "获取IP地址",
+        "description": "获取设备的本地或外部IP地址",
+        "category": "网络"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get IP Address",
+          "description": "Get local or external IP address of the device",
+          "category": "Network"
+        },
+        "zh-CN": {
+          "name": "获取IP地址",
+          "description": "获取设备的本地或外部IP地址",
+          "category": "网络"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/network/GetIpAddressModule.kt"
+    },
+    {
+      "moduleId": "vflow.network.http_request",
+      "nameStringKey": "module_vflow_network_http_request_name",
+      "descriptionStringKey": "module_vflow_network_http_request_desc",
+      "categoryKey": "category_network",
+      "fallback": {
+        "name": "HTTP 请求",
+        "description": "发送 HTTP 请求并获取响应",
+        "category": "网络"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "HTTP Request",
+          "description": "Send HTTP request and get response",
+          "category": "Network"
+        },
+        "zh-CN": {
+          "name": "HTTP 请求",
+          "description": "发送 HTTP 请求并获取响应",
+          "category": "网络"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/network/HttpRequestModule.kt"
+    },
+    {
+      "moduleId": "vflow.notification.find",
+      "nameStringKey": "module_vflow_notification_find_name",
+      "descriptionStringKey": "module_vflow_notification_find_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "查找通知",
+        "description": "查找当前状态栏中所有可见的通知。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Notification",
+          "description": "Find all visible notifications in current status bar.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "查找通知",
+          "description": "查找当前状态栏中所有可见的通知。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/notification/FindNotificationModule.kt"
+    },
+    {
+      "moduleId": "vflow.notification.remove",
+      "nameStringKey": "module_vflow_notification_remove_name",
+      "descriptionStringKey": "module_vflow_notification_remove_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "移除通知",
+        "description": "从状态栏移除一个或多个通知。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Remove Notification",
+          "description": "Remove one or more notifications from status bar.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "移除通知",
+          "description": "从状态栏移除一个或多个通知。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/notification/RemoveNotificationModule.kt"
+    },
+    {
+      "moduleId": "vflow.notification.send_notification",
+      "nameStringKey": "module_vflow_notification_send_notification_name",
+      "descriptionStringKey": "module_vflow_notification_send_notification_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "发送通知",
+        "description": "在系统通知栏中创建一个自定义通知",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Send Notification",
+          "description": "Create a custom notification in the system notification bar",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "发送通知",
+          "description": "在系统通知栏中创建一个自定义通知",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/notification/SendNotificationModule.kt"
+    },
+    {
+      "moduleId": "vflow.shizuku.alipay_shortcuts",
+      "nameStringKey": "module_vflow_shizuku_alipay_shortcuts_name",
+      "descriptionStringKey": "module_vflow_shizuku_alipay_shortcuts_desc",
+      "categoryKey": "category_shizuku",
+      "fallback": {
+        "name": "支付宝",
+        "description": "快速打开支付宝的扫一扫、付款码、收款码等。",
+        "category": "Shizuku"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Alipay",
+          "description": "Quick access to Alipay\\'s scan, payment code, collection code, etc.",
+          "category": "Shizuku"
+        },
+        "zh-CN": {
+          "name": "支付宝",
+          "description": "快速访问支付宝的扫一扫、付款码、收款码等功能。",
+          "category": "Shizuku"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/shizuku/AppShortcutsModule.kt"
+    },
+    {
+      "moduleId": "vflow.shizuku.coloros_shortcuts",
+      "nameStringKey": "module_vflow_shizuku_coloros_shortcuts_name",
+      "descriptionStringKey": "module_vflow_shizuku_coloros_shortcuts_desc",
+      "categoryKey": "category_shizuku",
+      "fallback": {
+        "name": "ColorOS",
+        "description": "执行ColorOS系统相关的一些快捷操作。",
+        "category": "Shizuku"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "ColorOS",
+          "description": "Execute ColorOS system-related shortcuts.",
+          "category": "Shizuku"
+        },
+        "zh-CN": {
+          "name": "ColorOS",
+          "description": "执行 ColorOS 系统相关的快捷操作。",
+          "category": "Shizuku"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/shizuku/AppShortcutsModule.kt"
+    },
+    {
+      "moduleId": "vflow.shizuku.gemini_shortcut",
+      "nameStringKey": "module_vflow_shizuku_gemini_shortcut_name",
+      "descriptionStringKey": "module_vflow_shizuku_gemini_shortcut_desc",
+      "categoryKey": "category_shizuku",
+      "fallback": {
+        "name": "Gemini助理",
+        "description": "启动 Google Gemini 语音助理。",
+        "category": "Shizuku"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Gemini Assistant",
+          "description": "Launch Google Gemini voice assistant.",
+          "category": "Shizuku"
+        },
+        "zh-CN": {
+          "name": "Gemini 助手",
+          "description": "启动 Google Gemini 语音助手。",
+          "category": "Shizuku"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/shizuku/AppShortcutsModule.kt"
+    },
+    {
+      "moduleId": "vflow.shizuku.shell_command",
+      "nameStringKey": "module_vflow_shizuku_shell_command_name",
+      "descriptionStringKey": "module_vflow_shizuku_shell_command_desc",
+      "categoryKey": "category_shizuku",
+      "fallback": {
+        "name": "执行Shell命令",
+        "description": "通过 Shell 执行命令 (支持 Root/Shizuku)。",
+        "category": "Shizuku"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Execute Shell Command",
+          "description": "Execute commands via Shell (supports Root/Shizuku).",
+          "category": "Shizuku"
+        },
+        "zh-CN": {
+          "name": "执行 Shell 命令",
+          "description": "通过 Shell 执行命令（支持 Root/Shizuku）。",
+          "category": "Shizuku"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/shizuku/ShellCommandModule.kt"
+    },
+    {
+      "moduleId": "vflow.shizuku.wechat_shortcuts",
+      "nameStringKey": "module_vflow_shizuku_wechat_shortcuts_name",
+      "descriptionStringKey": "module_vflow_shizuku_wechat_shortcuts_desc",
+      "categoryKey": "category_shizuku",
+      "fallback": {
+        "name": "微信",
+        "description": "快速打开微信的收款码、付款码。",
+        "category": "Shizuku"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "WeChat",
+          "description": "Quick access to WeChat\\'s collection code, payment code.",
+          "category": "Shizuku"
+        },
+        "zh-CN": {
+          "name": "微信",
+          "description": "快速访问微信的收款码、付款码等功能。",
+          "category": "Shizuku"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/shizuku/AppShortcutsModule.kt"
+    },
+    {
+      "moduleId": "vflow.snippet.find_until",
+      "nameStringKey": "module_vflow_snippet_find_until_name",
+      "descriptionStringKey": "module_vflow_snippet_find_until_desc",
+      "categoryKey": "category_template",
+      "fallback": {
+        "name": "查找直到",
+        "description": "在屏幕上循环查找指定的文本，直到找到为止。",
+        "category": "模板"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Until",
+          "description": "Continuously find specified text on screen until found",
+          "category": "Templates"
+        },
+        "zh-CN": {
+          "name": "查找直到",
+          "description": "在屏幕上循环查找指定的文本，直到找到为止",
+          "category": "模板"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/snippet/FindTextUntilSnippet.kt"
+    },
+    {
+      "moduleId": "vflow.system.bluetooth",
+      "nameStringKey": "module_vflow_system_bluetooth_name",
+      "descriptionStringKey": "module_vflow_system_bluetooth_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "蓝牙设置",
+        "description": "开启、关闭或切换蓝牙状态。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Bluetooth Settings",
+          "description": "Turn on, off, or toggle Bluetooth state.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "蓝牙设置",
+          "description": "开启、关闭或切换蓝牙状态。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/BluetoothModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.brightness",
+      "nameStringKey": "module_vflow_system_brightness_name",
+      "descriptionStringKey": "module_vflow_system_brightness_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "屏幕亮度设置",
+        "description": "设置屏幕的亮度值",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Screen Brightness",
+          "description": "Set screen brightness value",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "屏幕亮度设置",
+          "description": "设置屏幕的亮度值",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/BrightnessModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.capture_screen",
+      "nameStringKey": "module_vflow_system_capture_screen_name",
+      "descriptionStringKey": "module_vflow_system_capture_screen_desc",
+      "categoryKey": "category_interaction",
+      "fallback": {
+        "name": "截屏",
+        "description": "捕获当前屏幕内容。",
+        "category": "界面交互"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Capture Screen",
+          "description": "Capture current screen content.",
+          "category": "Screen Interaction"
+        },
+        "zh-CN": {
+          "name": "截屏",
+          "description": "捕获当前屏幕内容。",
+          "category": "屏幕交互"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/CaptureScreenModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.close_app",
+      "nameStringKey": "module_vflow_system_close_app_name",
+      "descriptionStringKey": "module_vflow_system_close_app_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "关闭应用",
+        "description": "强制停止指定的应用程序 (需要 Shizuku 或 Root)",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Close App",
+          "description": "Force stop the specified application (requires Shizuku or Root)",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "关闭应用",
+          "description": "强制停止指定的应用程序（需要 Shizuku 或 Root）",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/CloseAppModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.get_clipboard",
+      "nameStringKey": "module_vflow_system_get_clipboard_name",
+      "descriptionStringKey": "module_vflow_system_get_clipboard_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "读取剪贴板",
+        "description": "获取系统剪贴板的当前内容（文本或图片）",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get Clipboard",
+          "description": "Get current content from system clipboard (text or image)",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "读取剪贴板",
+          "description": "获取系统剪贴板的当前内容（文本或图片）",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/GetClipboardModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.get_usage_stats",
+      "nameStringKey": "module_vflow_system_get_usage_stats_name",
+      "descriptionStringKey": "module_vflow_system_get_usage_stats_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "获取应用使用情况",
+        "description": "获取设备上应用的屏幕使用时间统计。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get App Usage Stats",
+          "description": "Get screen usage time statistics for apps on device.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "获取应用使用统计",
+          "description": "获取设备上应用的使用时间统计。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/GetAppUsageStatsModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.invoke",
+      "nameStringKey": "module_vflow_system_invoke_name",
+      "descriptionStringKey": "module_vflow_system_invoke_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "通用调用",
+        "description": "执行 Intent、打开链接、发送广播或启动服务。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "General Invoke",
+          "description": "Execute Intent, open links, send broadcasts or start services.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "通用调用",
+          "description": "执行 Intent，打开链接，发送广播或启动服务。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/InvokeModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.js",
+      "nameStringKey": "module_vflow_system_js_name",
+      "descriptionStringKey": "module_vflow_system_js_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "JavaScript脚本",
+        "description": "执行一段JavaScript脚本，可调用其他模块功能。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "JavaScript Script",
+          "description": "Execute JavaScript script, can call other module functions.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "JavaScript脚本",
+          "description": "执行一段JavaScript脚本，可调用其他模块功能。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/JsModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.launch_app",
+      "nameStringKey": "module_vflow_system_launch_app_name",
+      "descriptionStringKey": "module_vflow_system_launch_app_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "启动应用/活动",
+        "description": "启动一个指定的应用程序或其内部的某个页面(Activity)",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Launch App/Activity",
+          "description": "Launch a specified application or one of its internal pages (Activity).",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "启动应用/活动",
+          "description": "启动一个指定的应用程序或其内部的某个页面(Activity)。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/LaunchAppModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.lua",
+      "nameStringKey": "module_vflow_system_lua_name",
+      "descriptionStringKey": "module_vflow_system_lua_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "Lua脚本",
+        "description": "执行一段Lua脚本，可调用其他模块功能。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Lua Script",
+          "description": "Execute Lua script, can call other module functions.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "Lua脚本",
+          "description": "执行一段Lua脚本，可调用其他模块功能。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/LuaModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.mobile_data",
+      "nameStringKey": null,
+      "descriptionStringKey": null,
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "移动数据",
+        "description": "开启或关闭移动数据",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "移动数据",
+          "description": "开启或关闭移动数据",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "移动数据",
+          "description": "开启或关闭移动数据",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/MobileDataModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.read_sms",
+      "nameStringKey": "module_vflow_system_read_sms_name",
+      "descriptionStringKey": "module_vflow_system_read_sms_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "读取短信",
+        "description": "从收件箱中按条件查找短信，并支持提取验证码。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Read SMS",
+          "description": "Find SMS from inbox by conditions, support verification code extraction.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "读取短信",
+          "description": "按条件查找短信，支持验证码提取。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/ReadSmsModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.set_clipboard",
+      "nameStringKey": "module_vflow_system_set_clipboard_name",
+      "descriptionStringKey": "module_vflow_system_set_clipboard_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "写入剪贴板",
+        "description": "将指定的文本或图片内容写入系统剪贴板",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Set Clipboard",
+          "description": "Write specified text or image content to system clipboard",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "写入剪贴板",
+          "description": "将指定的文本或图片内容写入系统剪贴板",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/SetClipboardModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.share",
+      "nameStringKey": "module_vflow_system_share_name",
+      "descriptionStringKey": "module_vflow_system_share_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "分享",
+        "description": "调用系统分享功能来分享文本或图片。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Share",
+          "description": "Use system share function to share text or images.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "分享",
+          "description": "使用系统分享功能分享文本或图片。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/ShareModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.sleep_screen",
+      "nameStringKey": "module_vflow_system_sleep_screen_name",
+      "descriptionStringKey": "module_vflow_system_sleep_screen_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "息屏",
+        "description": "关闭屏幕，使设备进入息屏状态。需要 Shizuku 或 Root 权限。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Sleep Screen",
+          "description": "Turn off screen to put device in sleep mode. Requires Shizuku or Root permission.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "息屏",
+          "description": "关闭屏幕，使设备进入息屏状态。需要 Shizuku 或 Root 权限。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/SleepScreenModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.systeminfo",
+      "nameStringKey": null,
+      "descriptionStringKey": null,
+      "categoryKey": null,
+      "fallback": {
+        "name": "vflow.system.systeminfo",
+        "description": "",
+        "category": "其他"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "vflow.system.systeminfo",
+          "description": "",
+          "category": "其他"
+        },
+        "zh-CN": {
+          "name": "vflow.system.systeminfo",
+          "description": "",
+          "category": "其他"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/SystemInfoModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.wake_screen",
+      "nameStringKey": "module_vflow_system_wake_screen_name",
+      "descriptionStringKey": "module_vflow_system_wake_screen_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "唤醒屏幕（无密码）",
+        "description": "点亮息屏状态的屏幕并解除滑动锁屏。仅适用于未设置密码的设备，需要 Shizuku 或 Root 权限。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Wake Screen (No Password)",
+          "description": "Wake up screen and dismiss swipe lock. Only for devices without password. Requires Shizuku or Root permission.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "唤醒屏幕（无密码）",
+          "description": "点亮息屏状态的屏幕并解除滑动锁屏。仅适用于未设置密码的设备，需要 Shizuku 或 Root 权限。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/WakeScreenModule.kt"
+    },
+    {
+      "moduleId": "vflow.system.wifi",
+      "nameStringKey": "module_vflow_system_wifi_name",
+      "descriptionStringKey": "module_vflow_system_wifi_desc",
+      "categoryKey": "category_device",
+      "fallback": {
+        "name": "Wi-Fi 设置",
+        "description": "开启、关闭或切换Wi-Fi状态。",
+        "category": "应用与系统"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Wi-Fi Settings",
+          "description": "Turn on, off, or toggle Wi-Fi state.",
+          "category": "Device & System"
+        },
+        "zh-CN": {
+          "name": "Wi-Fi 设置",
+          "description": "开启、关闭或切换 Wi-Fi 状态。",
+          "category": "应用与系统"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/system/WifiModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.app_start",
+      "nameStringKey": "module_vflow_trigger_app_start_name",
+      "descriptionStringKey": "module_vflow_trigger_app_start_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "应用事件",
+        "description": "当指定的应用程序打开或关闭时，触发此工作流",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "App Event",
+          "description": "Trigger this workflow when specified app opens or closes",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "应用事件",
+          "description": "当指定的应用程序打开或关闭时，触发此工作流",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/AppStartTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.battery",
+      "nameStringKey": "module_vflow_trigger_battery_name",
+      "descriptionStringKey": "module_vflow_trigger_battery_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "电量触发",
+        "description": "当电池电量满足特定条件时触发工作流",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Battery Trigger",
+          "description": "Trigger workflow when battery level meets specific condition",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "电量触发",
+          "description": "当电池电量满足特定条件时触发工作流",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/BatteryTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.bluetooth",
+      "nameStringKey": "module_vflow_trigger_bluetooth_name",
+      "descriptionStringKey": "module_vflow_trigger_bluetooth_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "蓝牙触发器",
+        "description": "当蓝牙状态或设备连接变化时触发",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Bluetooth Trigger",
+          "description": "Trigger when Bluetooth state or device connection changes",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "蓝牙触发器",
+          "description": "当蓝牙状态或设备连接变化时触发",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/BluetoothTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.call",
+      "nameStringKey": "module_vflow_trigger_call_name",
+      "descriptionStringKey": "module_vflow_trigger_call_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "电话触发",
+        "description": "当有来电、通话接通或挂断时触发工作流",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Call Trigger",
+          "description": "Trigger workflow when there is an incoming call, call answered, or call ended",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "电话触发",
+          "description": "当有来电、通话接通或挂断时触发工作流",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/CallTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.element",
+      "nameStringKey": "module_vflow_trigger_element_name",
+      "descriptionStringKey": "module_vflow_trigger_element_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "元素触发",
+        "description": "当页面上出现匹配选择器的控件时触发工作流",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Element Trigger",
+          "description": "Trigger workflow when UI element matching the selector appears",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "元素触发",
+          "description": "当页面上出现匹配选择器的控件时触发工作流",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/ElementTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.gkd",
+      "nameStringKey": "module_vflow_trigger_gkd_name",
+      "descriptionStringKey": "module_vflow_trigger_gkd_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "GKD订阅触发",
+        "description": "解析 gkd 订阅规则并触发工作流",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "GKD Subscription Trigger",
+          "description": "Parse GKD format subscription rules and trigger workflow",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "GKD订阅触发",
+          "description": "解析 gkd 格式的订阅规则并触发工作流",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/GKDTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.key_event",
+      "nameStringKey": "module_vflow_trigger_key_event_name",
+      "descriptionStringKey": "module_vflow_trigger_key_event_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "按键触发",
+        "description": "当指定的物理按键被按下时，触发此工作流（需要Shizuku或Root）",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Key Event Trigger",
+          "description": "Trigger this workflow when specified physical key is pressed (requires Shizuku or Root)",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "按键触发",
+          "description": "当指定的物理按键被按下时，触发此工作流（需要Shizuku或Root）",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/KeyEventTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.location",
+      "nameStringKey": "module_vflow_trigger_location_name",
+      "descriptionStringKey": "module_vflow_trigger_location_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "位置触发器",
+        "description": "当进入或离开指定区域时触发工作流",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Location Trigger",
+          "description": "Trigger workflow when entering or leaving a specific area",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "位置触发器",
+          "description": "当进入或离开指定区域时触发工作流",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/LocationTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.manual",
+      "nameStringKey": "module_vflow_trigger_manual_name",
+      "descriptionStringKey": "module_vflow_trigger_manual_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "手动触发",
+        "description": "通过点击按钮手动启动此工作流",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Manual Trigger",
+          "description": "Manually start this workflow by clicking a button",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "手动触发",
+          "description": "通过点击按钮手动启动此工作流",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/ManualTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.notification",
+      "nameStringKey": "module_vflow_trigger_notification_name",
+      "descriptionStringKey": "module_vflow_trigger_notification_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "通知触发",
+        "description": "当收到符合条件的通知时触发工作流",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Notification Trigger",
+          "description": "Trigger workflow when notification matching criteria is received",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "通知触发",
+          "description": "当收到符合条件的通知时触发工作流",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/NotificationTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.share",
+      "nameStringKey": "module_vflow_trigger_share_name",
+      "descriptionStringKey": "module_vflow_trigger_share_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "接收分享",
+        "description": "当有内容（如文本、图片、文件）分享到vFlow时启动工作流。",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Receive Share",
+          "description": "Start workflow when content (text, image, file) is shared to vFlow.",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "接收分享",
+          "description": "当内容（文本、图片、文件）分享到 vFlow 时启动工作流。",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/ReceiveShareTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.sms",
+      "nameStringKey": "module_vflow_trigger_sms_name",
+      "descriptionStringKey": "module_vflow_trigger_sms_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "短信触发",
+        "description": "当收到满足特定条件的短信时触发工作流",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "SMS Trigger",
+          "description": "Trigger workflow when SMS meeting specific criteria is received",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "短信触发",
+          "description": "当收到满足特定条件的短信时触发工作流",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/SmsTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.time",
+      "nameStringKey": "module_vflow_trigger_time_name",
+      "descriptionStringKey": "module_vflow_trigger_time_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "定时触发",
+        "description": "在指定的时间和日期触发工作流，类似闹钟",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Timed Trigger",
+          "description": "Trigger workflow at specified time and date, like an alarm clock",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "定时触发",
+          "description": "在指定的时间和日期触发工作流，类似闹钟",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/TimeTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.trigger.wifi",
+      "nameStringKey": "module_vflow_trigger_wifi_name",
+      "descriptionStringKey": "module_vflow_trigger_wifi_desc",
+      "categoryKey": "category_trigger",
+      "fallback": {
+        "name": "Wi-Fi触发器",
+        "description": "当Wi-Fi状态或网络连接变化时触发工作流",
+        "category": "触发器"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Wi-Fi Trigger",
+          "description": "Trigger workflow when Wi-Fi state or network connection changes",
+          "category": "Triggers"
+        },
+        "zh-CN": {
+          "name": "Wi-Fi触发器",
+          "description": "当Wi-Fi状态或网络连接变化时触发工作流",
+          "category": "触发器"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/triggers/WifiTriggerModule.kt"
+    },
+    {
+      "moduleId": "vflow.ui.component.button",
+      "nameStringKey": "module_vflow_ui_component_button_name",
+      "descriptionStringKey": "module_vflow_ui_component_button_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "按钮",
+        "description": "点击后提交表单或触发事件。",
+        "category": "UI 组件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Button",
+          "description": "Submit form or trigger event when clicked.",
+          "category": "UI 组件"
+        },
+        "zh-CN": {
+          "name": "按钮",
+          "description": "点击时提交表单或触发事件。",
+          "category": "UI 组件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/ui/components/UiButtonModule.kt"
+    },
+    {
+      "moduleId": "vflow.ui.component.input",
+      "nameStringKey": "module_vflow_ui_component_input_name",
+      "descriptionStringKey": "module_vflow_ui_component_input_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "输入框",
+        "description": "文本输入框。",
+        "category": "UI 组件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Input Field",
+          "description": "Text input field.",
+          "category": "UI 组件"
+        },
+        "zh-CN": {
+          "name": "输入框",
+          "description": "文本输入字段。",
+          "category": "UI 组件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/ui/components/UiInputModule.kt"
+    },
+    {
+      "moduleId": "vflow.ui.component.switch",
+      "nameStringKey": "module_vflow_ui_component_switch_name",
+      "descriptionStringKey": "module_vflow_ui_component_switch_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "开关",
+        "description": "布尔值开关。",
+        "category": "UI 组件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Switch",
+          "description": "Boolean switch.",
+          "category": "UI 组件"
+        },
+        "zh-CN": {
+          "name": "开关",
+          "description": "布尔值开关。",
+          "category": "UI 组件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/ui/components/UiSwitchModule.kt"
+    },
+    {
+      "moduleId": "vflow.ui.component.text",
+      "nameStringKey": "module_vflow_ui_component_text_name",
+      "descriptionStringKey": "module_vflow_ui_component_text_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "文本展示",
+        "description": "显示一段静态文字。",
+        "category": "UI 组件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Text Display",
+          "description": "Display static text.",
+          "category": "UI 组件"
+        },
+        "zh-CN": {
+          "name": "文本展示",
+          "description": "显示静态文本。",
+          "category": "UI 组件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/ui/components/UiTextModule.kt"
+    },
+    {
+      "moduleId": "vflow.ui.interaction.exit",
+      "nameStringKey": "module_vflow_ui_interaction_exit_name",
+      "descriptionStringKey": "module_vflow_ui_interaction_exit_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "退出界面",
+        "description": "主动退出并销毁当前界面。",
+        "category": "UI 组件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Exit Activity",
+          "description": "Actively exit and destroy current activity.",
+          "category": "UI 组件"
+        },
+        "zh-CN": {
+          "name": "退出活动",
+          "description": "主动退出并销毁当前活动。",
+          "category": "UI 组件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/ui/blocks/UiListenerModules.kt"
+    },
+    {
+      "moduleId": "vflow.ui.interaction.get_value",
+      "nameStringKey": "module_vflow_ui_interaction_get_value_name",
+      "descriptionStringKey": "module_vflow_ui_interaction_get_value_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "获取组件",
+        "description": "获取UI组件对象或其值。",
+        "category": "UI 组件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get Component",
+          "description": "Get UI component object or its value.",
+          "category": "UI 组件"
+        },
+        "zh-CN": {
+          "name": "获取控件",
+          "description": "获取UI组件对象或其值。",
+          "category": "UI 组件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/ui/blocks/UiListenerModules.kt"
+    },
+    {
+      "moduleId": "vflow.ui.interaction.update",
+      "nameStringKey": "module_vflow_ui_interaction_update_name",
+      "descriptionStringKey": "module_vflow_ui_interaction_update_desc",
+      "categoryKey": null,
+      "fallback": {
+        "name": "更新组件",
+        "description": "修改组件属性（如文本、可见性、布局）。",
+        "category": "UI 组件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Update Component",
+          "description": "Modify component properties (such as text, visibility, layout).",
+          "category": "UI 组件"
+        },
+        "zh-CN": {
+          "name": "更新控件",
+          "description": "修改组件属性（如文本、可见性、布局）。",
+          "category": "UI 组件"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/ui/blocks/UiListenerModules.kt"
+    },
+    {
+      "moduleId": "vflow.variable.create",
+      "nameStringKey": "module_vflow_variable_create_name",
+      "descriptionStringKey": "module_vflow_variable_create_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "创建变量",
+        "description": "创建一个新的变量，可选择为其命名以便后续修改或读取。",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Create Variable",
+          "description": "Create a new variable, optionally name it for later modification or reading",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "创建变量",
+          "description": "创建一个新的变量，可选择为其命名以便后续修改或读取",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/CreateVariableModule.kt"
+    },
+    {
+      "moduleId": "vflow.variable.get",
+      "nameStringKey": "module_vflow_variable_get_name",
+      "descriptionStringKey": "module_vflow_variable_get_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "读取变量",
+        "description": "读取一个命名变量或魔法变量的值，使其可用于后续步骤",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get Variable",
+          "description": "Read value from a named variable or magic variable for use in subsequent steps",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "读取变量",
+          "description": "读取一个命名变量或魔法变量的值，使其可用于后续步骤",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/GetVariableModule.kt"
+    },
+    {
+      "moduleId": "vflow.variable.load",
+      "nameStringKey": "module_vflow_variable_load_name",
+      "descriptionStringKey": "module_vflow_variable_load_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "载入变量",
+        "description": "从另一个工作流获取命名变量的使用权。",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Load Variables",
+          "description": "Obtain usage rights for named variables from another workflow",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "载入变量",
+          "description": "从另一个工作流获取命名变量的使用权",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/LoadVariablesModule.kt"
+    },
+    {
+      "moduleId": "vflow.variable.modify",
+      "nameStringKey": "module_vflow_variable_modify_name",
+      "descriptionStringKey": "module_vflow_variable_modify_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "修改变量",
+        "description": "修改一个已存在的命名变量的值",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Modify Variable",
+          "description": "Modify the value of an existing named variable",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "修改变量",
+          "description": "修改一个已存在的命名变量的值",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/ModifyVariableModule.kt"
+    },
+    {
+      "moduleId": "vflow.variable.random",
+      "nameStringKey": "module_vflow_variable_random_name",
+      "descriptionStringKey": "module_vflow_variable_random_desc",
+      "categoryKey": "category_data",
+      "fallback": {
+        "name": "创建随机变量",
+        "description": "创建新的随机变量，可选择为其命名以便后续修改或读取",
+        "category": "数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Create Random Variable",
+          "description": "Create new random variable, optionally name it for later modification or reading",
+          "category": "Data Processing"
+        },
+        "zh-CN": {
+          "name": "创建随机变量",
+          "description": "创建新的随机变量，可选择为其命名以便后续修改或读取",
+          "category": "数据处理"
+        }
+      },
+      "sourceFile": "app/src/main/java/com/chaomixian/vflow/core/workflow/module/data/RandomVariableModule.kt"
+    }
+  ]
+}

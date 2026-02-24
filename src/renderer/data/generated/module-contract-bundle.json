@@ -1,0 +1,3383 @@
+{
+  "meta": {
+    "generatedAt": "2026-02-24T18:08:21.092Z",
+    "source": "app/src/main/.../workflow/module/*.kt + docs/contracts/vflow_module_contract_source.json",
+    "version": 2,
+    "appModuleCount": 116,
+    "schemaModuleCount": 142
+  },
+  "defaultLocale": "zh-CN",
+  "availableLocales": [
+    "en",
+    "zh-CN"
+  ],
+  "contracts": [
+    {
+      "moduleId": "vflow.ai.agent",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.ai.agent",
+      "deprecatedAliases": [],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "AI 智能体",
+        "category": "屏幕交互",
+        "description": "全自动 AI 助手。基于视觉和UI结构理解屏幕，自动完成任务"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "AI Agent",
+          "category": "Screen Interaction",
+          "description": "Fully autonomous AI assistant. Understands screen content based on vision and UI structure to automatically complete tasks"
+        },
+        "zh-CN": {
+          "name": "AI 智能体",
+          "category": "屏幕交互",
+          "description": "全自动 AI 助手。基于视觉和UI结构理解屏幕，自动完成任务"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.ai.autoglm",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.ai.autoglm",
+      "deprecatedAliases": [],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "AutoGLM 智能体",
+        "category": "屏幕交互",
+        "description": "复刻 AutoGLM 项目。基于思维链(CoT)和自定义指令协议，执行复杂的手机操作任务"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "AutoGLM Agent",
+          "category": "Screen Interaction",
+          "description": "Replicate AutoGLM project. Execute complex mobile operation tasks based on Chain of Thought (CoT) and custom instruction protocols"
+        },
+        "zh-CN": {
+          "name": "AutoGLM 智能体",
+          "category": "屏幕交互",
+          "description": "复刻 AutoGLM 项目。基于思维链(CoT)和自定义指令协议，执行复杂的手机操作任务"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.ai.completion",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.ai.completion",
+      "deprecatedAliases": [],
+      "categoryKey": "category_network",
+      "display": {
+        "name": "AI 对话",
+        "category": "网络",
+        "description": "调用大模型 API (OpenAI/DeepSeek) 进行智能对话。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "AI Chat",
+          "category": "Network",
+          "description": "Call LLM API (OpenAI/DeepSeek) for intelligent conversation."
+        },
+        "zh-CN": {
+          "name": "AI 对话",
+          "category": "网络",
+          "description": "调用大模型 API (OpenAI/DeepSeek) 进行智能对话。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.bluetooth",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.bluetooth",
+      "deprecatedAliases": [],
+      "categoryKey": null,
+      "display": {
+        "name": "蓝牙控制",
+        "category": "Core (Beta)",
+        "description": "\"使用 vFlow Core 控制蓝牙开关状态（开启/关闭/切换）。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Bluetooth Control",
+          "category": "Core (Beta)",
+          "description": "Use vFlow Core to control Bluetooth state (on/off/toggle)."
+        },
+        "zh-CN": {
+          "name": "蓝牙控制",
+          "category": "Core (Beta)",
+          "description": "\"使用 vFlow Core 控制蓝牙开关状态（开启/关闭/切换）。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.bluetooth_state",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.bluetooth_state",
+      "deprecatedAliases": [
+        "vflow.core.bluetooth.state"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "蓝牙状态",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 读取当前蓝牙开关状态。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get Bluetooth State",
+          "category": "Core (Beta)",
+          "description": "Use vFlow Core to read current Bluetooth switch state."
+        },
+        "zh-CN": {
+          "name": "蓝牙状态",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 读取当前蓝牙开关状态。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.capture_screen",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.capture_screen",
+      "deprecatedAliases": [
+        "vflow.core.capture.screen"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "截图",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 快速截图，无需截屏权限。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Capture Screen",
+          "category": "Core (Beta)",
+          "description": "Capture screen screenshot using vFlow Core, based on scrcpy implementation"
+        },
+        "zh-CN": {
+          "name": "截图",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 快速截图，无需截屏权限。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.force_stop_app",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.force_stop_app",
+      "deprecatedAliases": [
+        "vflow.core.force.stop.app"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "强制停止应用",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 强制停止指定应用。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Force Stop App",
+          "category": "Core (Beta)",
+          "description": "Use vFlow Core to force stop a specific app."
+        },
+        "zh-CN": {
+          "name": "强制停止应用",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 强制停止指定应用。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.get_clipboard",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.get_clipboard",
+      "deprecatedAliases": [
+        "vflow.core.get.clipboard"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "获取剪贴板",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 获取剪贴板文本。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get Clipboard",
+          "category": "Core (Beta)",
+          "description": "Use vFlow Core to read clipboard content."
+        },
+        "zh-CN": {
+          "name": "获取剪贴板",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 获取剪贴板文本。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.input_text",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.input_text",
+      "deprecatedAliases": [
+        "vflow.core.input.text"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "输入文本",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 输入文本，比无障碍服务更快速稳定。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Input Text",
+          "category": "Core (Beta)",
+          "description": "Use vFlow Core to input text, faster and more stable than accessibility service."
+        },
+        "zh-CN": {
+          "name": "输入文本",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 输入文本，比无障碍服务更快速稳定。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.nfc",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.nfc",
+      "deprecatedAliases": [],
+      "categoryKey": null,
+      "display": {
+        "name": "NFC控制",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 控制NFC开关状态（开启/关闭/切换）。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "NFC Control",
+          "category": "Core (Beta)",
+          "description": "Use vFlow Core to control NFC state (Enable/Disable/Toggle)."
+        },
+        "zh-CN": {
+          "name": "NFC控制",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 控制NFC开关状态（开启/关闭/切换）。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.nfc_state",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.nfc_state",
+      "deprecatedAliases": [
+        "vflow.core.nfc.state"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "读取NFC状态",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 读取当前NFC开关状态。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Read NFC State",
+          "category": "Core (Beta)",
+          "description": "Use vFlow Core to read the current NFC state."
+        },
+        "zh-CN": {
+          "name": "读取NFC状态",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 读取当前NFC开关状态。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.press_key",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.press_key",
+      "deprecatedAliases": [
+        "vflow.core.press.key"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "按键",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 发送按键事件，比无障碍服务更快速稳定。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Press Key",
+          "category": "Core (Beta)",
+          "description": "Send key events using vFlow Core, faster and more stable than accessibility service"
+        },
+        "zh-CN": {
+          "name": "按键",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 发送按键事件，比无障碍服务更快速稳定。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.screen_operation",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.screen_operation",
+      "deprecatedAliases": [
+        "vflow.core.screen.operation"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "屏幕操作",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 执行点击、长按或滑动操作，比无障碍服务更快速稳定。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Screen Operation",
+          "category": "Core (Beta)",
+          "description": "Use vFlow Core to perform tap, long press, or swipe operations, faster and more stable than accessibility service."
+        },
+        "zh-CN": {
+          "name": "屏幕操作",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 执行点击、长按或滑动操作，比无障碍服务更快速稳定。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.screen_status",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.screen_status",
+      "deprecatedAliases": [
+        "vflow.core.screen.status"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "屏幕状态",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 获取屏幕状态（亮/灭）。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Read Screen Status",
+          "category": "Core (Beta)",
+          "description": "Read current screen status using vFlow Core"
+        },
+        "zh-CN": {
+          "name": "屏幕状态",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 获取屏幕状态（亮/灭）。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.set_clipboard",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.set_clipboard",
+      "deprecatedAliases": [
+        "vflow.core.set.clipboard"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "设置剪贴板",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 设置剪贴板文本。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Set Clipboard",
+          "category": "Core (Beta)",
+          "description": "Use vFlow Core to set clipboard content."
+        },
+        "zh-CN": {
+          "name": "设置剪贴板",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 设置剪贴板文本。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.shell_command",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.shell_command",
+      "deprecatedAliases": [
+        "vflow.core.shell.command"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "Shell命令",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 执行 Shell 命令。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Execute Shell Command",
+          "category": "Core (Beta)",
+          "description": "Execute Shell commands via vFlow Core (supports Shell/Root permissions)"
+        },
+        "zh-CN": {
+          "name": "Shell命令",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 执行 Shell 命令。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.sleep_screen",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.sleep_screen",
+      "deprecatedAliases": [
+        "vflow.core.sleep.screen"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "关闭屏幕",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 关闭屏幕。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Sleep Screen",
+          "category": "Core (Beta)",
+          "description": "Turn off screen using vFlow Core"
+        },
+        "zh-CN": {
+          "name": "关闭屏幕",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 关闭屏幕。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.touch_replay",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.touch_replay",
+      "deprecatedAliases": [
+        "vflow.core.touch.replay"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "触摸回放",
+        "category": "Core (Beta)",
+        "description": "回放录制的触摸操作序列，可调节回放速度。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Touch Replay",
+          "category": "Core (Beta)",
+          "description": "Replay recorded touch sequence, adjustable playback speed"
+        },
+        "zh-CN": {
+          "name": "触摸回放",
+          "category": "Core (Beta)",
+          "description": "回放录制的触摸操作序列，可调节回放速度。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.volume",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.volume",
+      "deprecatedAliases": [],
+      "categoryKey": null,
+      "display": {
+        "name": "音量控制",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 控制不同音频流的音量（音乐/通知/铃声等）。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Volume Control",
+          "category": "Core (Beta)",
+          "description": "Control volume for different audio streams using vFlow Core (music/notification/ring etc)."
+        },
+        "zh-CN": {
+          "name": "音量控制",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 控制不同音频流的音量（音乐/通知/铃声等）。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.volume_state",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.volume_state",
+      "deprecatedAliases": [
+        "vflow.core.volume.state"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "读取音量",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 读取不同音频流的当前音量。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Read Volume",
+          "category": "Core (Beta)",
+          "description": "Read current volume levels for different audio streams using vFlow Core."
+        },
+        "zh-CN": {
+          "name": "读取音量",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 读取不同音频流的当前音量。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.wake_screen",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.wake_screen",
+      "deprecatedAliases": [
+        "vflow.core.wake.screen"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "唤醒屏幕",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 唤醒屏幕。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Wake Screen",
+          "category": "Core (Beta)",
+          "description": "Wake up screen using vFlow Core"
+        },
+        "zh-CN": {
+          "name": "唤醒屏幕",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 唤醒屏幕。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.wifi",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.wifi",
+      "deprecatedAliases": [],
+      "categoryKey": null,
+      "display": {
+        "name": "WiFi",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 执行 WiFi 操作。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "WiFi Control",
+          "category": "Core (Beta)",
+          "description": "Control WiFi state using vFlow Core (on/off/toggle)."
+        },
+        "zh-CN": {
+          "name": "WiFi",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 执行 WiFi 操作。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.core.wifi_state",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.core.wifi_state",
+      "deprecatedAliases": [
+        "vflow.core.wifi.state"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "WiFi状态",
+        "category": "Core (Beta)",
+        "description": "使用 vFlow Core 获取或监听 WiFi 状态。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get WiFi State",
+          "category": "Core (Beta)",
+          "description": "Use vFlow Core to read current WiFi switch state."
+        },
+        "zh-CN": {
+          "name": "WiFi状态",
+          "category": "Core (Beta)",
+          "description": "使用 vFlow Core 获取或监听 WiFi 状态。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.data.calculation",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.data.calculation",
+      "deprecatedAliases": [],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "计算",
+        "category": "数据处理",
+        "description": "执行两个数字之间的数学运算"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Calculate",
+          "category": "Data Processing",
+          "description": "Perform mathematical operations between two numbers"
+        },
+        "zh-CN": {
+          "name": "计算",
+          "category": "数据处理",
+          "description": "执行两个数字之间的数学运算"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.data.comment",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.data.comment",
+      "deprecatedAliases": [],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "注释",
+        "category": "数据处理",
+        "description": "添加注释说明，用于记录工作流的设计思路和目的。执行时会被跳过。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Comment",
+          "category": "Data Processing",
+          "description": "Add comments to document your workflow design. Will be skipped during execution."
+        },
+        "zh-CN": {
+          "name": "注释",
+          "category": "数据处理",
+          "description": "添加注释说明，用于记录工作流的设计思路和目的。执行时会被跳过。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.data.file_operation",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.data.file_operation",
+      "deprecatedAliases": [
+        "vflow.data.file.operation"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "vflow.data.file_operation",
+        "category": "其他",
+        "description": ""
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "vflow.data.file_operation",
+          "category": "其他",
+          "description": ""
+        },
+        "zh-CN": {
+          "name": "vflow.data.file_operation",
+          "category": "其他",
+          "description": ""
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.data.get_current_time",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.data.get_current_time",
+      "deprecatedAliases": [
+        "vflow.data.get.current.time"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "vflow.data.get_current_time",
+        "category": "其他",
+        "description": ""
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "vflow.data.get_current_time",
+          "category": "其他",
+          "description": ""
+        },
+        "zh-CN": {
+          "name": "vflow.data.get_current_time",
+          "category": "其他",
+          "description": ""
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.data.input",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.data.input",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "请求输入",
+        "category": "应用与系统",
+        "description": "弹出一个窗口，请求用户输入文本、数字、时间或日期。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Request Input",
+          "category": "Device & System",
+          "description": "Show a dialog to request user input for text, number, time or date."
+        },
+        "zh-CN": {
+          "name": "请求输入",
+          "category": "应用与系统",
+          "description": "弹出一个窗口，请求用户输入文本、数字、时间或日期。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.data.parse_json",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.data.parse_json",
+      "deprecatedAliases": [
+        "vflow.data.parse.json"
+      ],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "解析 JSON",
+        "category": "数据处理",
+        "description": "从 JSON 文本中提取数据，支持路径语法（如 user.name、users.0.name）"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Parse JSON",
+          "category": "Data Processing",
+          "description": "Extract data from JSON text, supports path syntax (e.g. user.name, users.0.name)"
+        },
+        "zh-CN": {
+          "name": "解析 JSON",
+          "category": "数据处理",
+          "description": "从 JSON 文本中提取数据，支持路径语法（如 user.name、users.0.name）"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.data.quick_view",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.data.quick_view",
+      "deprecatedAliases": [
+        "vflow.data.quick.view"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "快速查看",
+        "category": "应用与系统",
+        "description": "在悬浮窗中显示文本、数字、图片等各种类型的内容。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Quick View",
+          "category": "Device & System",
+          "description": "Display various types of content (text, numbers, images, etc.) in a float window."
+        },
+        "zh-CN": {
+          "name": "快速查看",
+          "category": "应用与系统",
+          "description": "在悬浮窗中显示文本、数字、图片等各种类型的内容。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.data.text_extract",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.data.text_extract",
+      "deprecatedAliases": [
+        "vflow.data.text.extract"
+      ],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "提取文本",
+        "category": "数据处理",
+        "description": "从文本中提取指定部分"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Extract Text",
+          "category": "Data Processing",
+          "description": "Extract specified portion from text"
+        },
+        "zh-CN": {
+          "name": "提取文本",
+          "category": "数据处理",
+          "description": "从文本中提取指定部分"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.data.text_processing",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.data.text_processing",
+      "deprecatedAliases": [
+        "vflow.data.text.processing"
+      ],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "文本处理",
+        "category": "数据处理",
+        "description": "执行文本的拼接、分割、替换、正则匹配等操作"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Text Processing",
+          "category": "Data Processing",
+          "description": "Perform text operations like join, split, replace, regex extraction"
+        },
+        "zh-CN": {
+          "name": "文本处理",
+          "category": "数据处理",
+          "description": "执行文本的拼接、分割、替换、正则匹配等操作"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.data.text_replace",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.data.text_replace",
+      "deprecatedAliases": [
+        "vflow.data.text.replace"
+      ],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "文本替换",
+        "category": "数据处理",
+        "description": "将文本中的指定内容替换为新内容"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Text Replace",
+          "category": "Data Processing",
+          "description": "Replace specified content in text with new content"
+        },
+        "zh-CN": {
+          "name": "文本替换",
+          "category": "数据处理",
+          "description": "将文本中的指定内容替换为新内容"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.data.text_split",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.data.text_split",
+      "deprecatedAliases": [
+        "vflow.data.text.split"
+      ],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "文本分割",
+        "category": "数据处理",
+        "description": "将文本按分隔符分割成列表。如果分隔符为空，则逐字符分割。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Text Split",
+          "category": "Data Processing",
+          "description": "Split text into a list using a delimiter. If delimiter is empty, split by character."
+        },
+        "zh-CN": {
+          "name": "文本分割",
+          "category": "数据处理",
+          "description": "将文本按分隔符分割成列表。如果分隔符为空，则逐字符分割。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.device.click",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.device.click",
+      "deprecatedAliases": [],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "点击",
+        "category": "屏幕交互",
+        "description": "点击一个屏幕元素、坐标或视图ID"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Click",
+          "category": "Screen Interaction",
+          "description": "Click on a screen element, coordinate or view ID"
+        },
+        "zh-CN": {
+          "name": "点击",
+          "category": "屏幕交互",
+          "description": "点击一个屏幕元素、坐标或视图ID"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.device.delay",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.device.delay",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "延迟",
+        "category": "应用与系统",
+        "description": "暂停工作流一段时间"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Delay",
+          "category": "Device & System",
+          "description": "Pause workflow for a period of time"
+        },
+        "zh-CN": {
+          "name": "延迟",
+          "category": "应用与系统",
+          "description": "暂停工作流一段时间"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.device.find.text",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.device.find.text",
+      "deprecatedAliases": [],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "查找文本",
+        "category": "屏幕交互",
+        "description": "在屏幕上查找元素"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Text",
+          "category": "Screen Interaction",
+          "description": "Find elements on screen"
+        },
+        "zh-CN": {
+          "name": "查找文本",
+          "category": "屏幕交互",
+          "description": "在屏幕上查找元素"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.device.play_audio",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.device.play_audio",
+      "deprecatedAliases": [
+        "vflow.device.play.audio"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "播放音频",
+        "category": "应用与系统",
+        "description": "播放系统自带的音频或本地音频文件，支持设置音量。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Play Audio",
+          "category": "Device & System",
+          "description": "Play built-in system sounds or local audio files, with volume control support."
+        },
+        "zh-CN": {
+          "name": "播放音频",
+          "category": "应用与系统",
+          "description": "播放系统自带的音频或本地音频文件，支持设置音量。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.device.send_key_event",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.device.send_key_event",
+      "deprecatedAliases": [
+        "vflow.device.send.key.event"
+      ],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "执行全局操作",
+        "category": "屏幕交互",
+        "description": "执行系统级操作，如返回、回到主屏幕、打开通知等"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Global Action",
+          "category": "Screen Interaction",
+          "description": "Execute system-level operations such as back, home, open notification, etc."
+        },
+        "zh-CN": {
+          "name": "执行全局操作",
+          "category": "屏幕交互",
+          "description": "执行系统级操作，如返回、回到主屏幕、打开通知等"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.device.toast",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.device.toast",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "显示Toast",
+        "category": "应用与系统",
+        "description": "在屏幕底部弹出一个简短的提示消息。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Show Toast",
+          "category": "Device & System",
+          "description": "Display a brief message at the bottom of the screen."
+        },
+        "zh-CN": {
+          "name": "显示Toast",
+          "category": "应用与系统",
+          "description": "在屏幕底部弹出一个简短的提示消息。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.file.adjust_image",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.file.adjust_image",
+      "deprecatedAliases": [
+        "vflow.file.adjust.image"
+      ],
+      "categoryKey": "category_file",
+      "display": {
+        "name": "调整图像",
+        "category": "文件",
+        "description": "调整图像的曝光、对比度、饱和度等参数。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Adjust Image",
+          "category": "File",
+          "description": "Adjust image parameters like exposure, contrast, saturation, etc."
+        },
+        "zh-CN": {
+          "name": "调整图像",
+          "category": "文件",
+          "description": "调整图像的曝光、对比度、饱和度等参数。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.file.apply_mask",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.file.apply_mask",
+      "deprecatedAliases": [
+        "vflow.file.apply.mask"
+      ],
+      "categoryKey": "category_file",
+      "display": {
+        "name": "应用蒙版",
+        "category": "文件",
+        "description": "为图片应用 Material You 风格圆角矩形蒙版"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Apply Mask",
+          "category": "File",
+          "description": "Apply Material You style rounded rectangle mask to image"
+        },
+        "zh-CN": {
+          "name": "应用蒙版",
+          "category": "文件",
+          "description": "为图片应用 Material You 风格圆角矩形蒙版"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.file.import_image",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.file.import_image",
+      "deprecatedAliases": [
+        "vflow.file.import.image"
+      ],
+      "categoryKey": "category_file",
+      "display": {
+        "name": "导入图片",
+        "category": "文件",
+        "description": "从相册或文件中选择一张图片"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Import Image",
+          "category": "File",
+          "description": "Select an image from gallery or files"
+        },
+        "zh-CN": {
+          "name": "导入图片",
+          "category": "文件",
+          "description": "从相册或文件中选择一张图片"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.file.rotate_image",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.file.rotate_image",
+      "deprecatedAliases": [
+        "vflow.file.rotate.image"
+      ],
+      "categoryKey": "category_file",
+      "display": {
+        "name": "旋转图片",
+        "category": "文件",
+        "description": "将图片按指定角度旋转。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Rotate Image",
+          "category": "File",
+          "description": "Rotate image by specified angle."
+        },
+        "zh-CN": {
+          "name": "旋转图片",
+          "category": "文件",
+          "description": "将图片按指定角度旋转。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.file.save_image",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.file.save_image",
+      "deprecatedAliases": [
+        "vflow.file.save.image"
+      ],
+      "categoryKey": "category_file",
+      "display": {
+        "name": "保存图片",
+        "category": "文件",
+        "description": "将图片保存到相册"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Save Image",
+          "category": "File",
+          "description": "Save image to gallery"
+        },
+        "zh-CN": {
+          "name": "保存图片",
+          "category": "文件",
+          "description": "将图片保存到相册"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.interaction.find_element",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.interaction.find_element",
+      "deprecatedAliases": [
+        "vflow.interaction.find.element"
+      ],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "查找控件",
+        "category": "屏幕交互",
+        "description": "通过文本、ID、区域等属性查找屏幕控件，支持多属性组合过滤"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Element",
+          "category": "Screen Interaction",
+          "description": "Find screen elements by text, ID, region and other properties, supports multi-property combination filtering"
+        },
+        "zh-CN": {
+          "name": "查找控件",
+          "category": "屏幕交互",
+          "description": "通过文本、ID、区域等属性查找屏幕控件，支持多属性组合过滤"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.interaction.find_image",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.interaction.find_image",
+      "deprecatedAliases": [
+        "vflow.interaction.find.image"
+      ],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "查找图片",
+        "category": "屏幕交互",
+        "description": "在屏幕上查找与模板图片相似的区域，返回匹配位置的中心坐标"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Image",
+          "category": "Screen Interaction",
+          "description": "Find area on screen that matches template image, return center coordinate of match"
+        },
+        "zh-CN": {
+          "name": "查找图片",
+          "category": "屏幕交互",
+          "description": "在屏幕上查找与模板图片相似的区域，返回匹配位置的中心坐标"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.interaction.find_until",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.interaction.find_until",
+      "deprecatedAliases": [
+        "vflow.interaction.find.until"
+      ],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "查找直到出现",
+        "category": "屏幕交互",
+        "description": "持续查找屏幕上的文本，直到出现或超时。支持 OCR 兜底"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Until",
+          "category": "Screen Interaction",
+          "description": "Continuously find text on screen until it appears or timeout. Supports OCR fallback"
+        },
+        "zh-CN": {
+          "name": "查找直到出现",
+          "category": "屏幕交互",
+          "description": "持续查找屏幕上的文本，直到出现或超时。支持 OCR 兜底"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.interaction.get_current_activity",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.interaction.get_current_activity",
+      "deprecatedAliases": [
+        "vflow.interaction.get.current.activity"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "vflow.interaction.get_current_activity",
+        "category": "其他",
+        "description": ""
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "vflow.interaction.get_current_activity",
+          "category": "其他",
+          "description": ""
+        },
+        "zh-CN": {
+          "name": "vflow.interaction.get_current_activity",
+          "category": "其他",
+          "description": ""
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.interaction.input_text",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.interaction.input_text",
+      "deprecatedAliases": [
+        "vflow.interaction.input.text"
+      ],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "输入文本",
+        "category": "屏幕交互",
+        "description": "在当前聚焦的输入框中输入文本 (支持无障碍和Shell)"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Input Text",
+          "category": "Screen Interaction",
+          "description": "Input text into the currently focused input field (supports Accessibility and Shell)"
+        },
+        "zh-CN": {
+          "name": "输入文本",
+          "category": "屏幕交互",
+          "description": "在当前聚焦的输入框中输入文本 (支持无障碍和Shell)"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.interaction.ocr",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.interaction.ocr",
+      "deprecatedAliases": [],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "文字识别 (OCR)",
+        "category": "屏幕交互",
+        "description": "识别图片中的文字，或查找指定文字的坐标"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "OCR",
+          "category": "Screen Interaction",
+          "description": "Recognize text in image, or find coordinates of specified text"
+        },
+        "zh-CN": {
+          "name": "文字识别 (OCR)",
+          "category": "屏幕交互",
+          "description": "识别图片中的文字，或查找指定文字的坐标"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.interaction.operit",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.interaction.operit",
+      "deprecatedAliases": [],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "Operit 交互",
+        "category": "屏幕交互",
+        "description": "与 Operit AI 助手交互：发送消息或触发工作流。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Operit Interaction",
+          "category": "Screen Interaction",
+          "description": "Interact with Operit AI assistant: send messages or trigger workflows."
+        },
+        "zh-CN": {
+          "name": "Operit 交互",
+          "category": "屏幕交互",
+          "description": "与 Operit AI 助手交互：发送消息或触发工作流。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.interaction.screen_operation",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.interaction.screen_operation",
+      "deprecatedAliases": [
+        "vflow.interaction.screen.operation"
+      ],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "屏幕操作",
+        "category": "屏幕交互",
+        "description": "在屏幕上执行点击、长按或滑动操作"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Screen Operation",
+          "category": "Screen Interaction",
+          "description": "Perform tap, long press, or swipe operations on screen"
+        },
+        "zh-CN": {
+          "name": "屏幕操作",
+          "category": "屏幕交互",
+          "description": "在屏幕上执行点击、长按或滑动操作"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.interaction.ui_selector",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.interaction.ui_selector",
+      "deprecatedAliases": [
+        "vflow.interaction.ui.selector"
+      ],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "UI选择器",
+        "category": "屏幕交互",
+        "description": "使用 GKD selector 语法查找屏幕控件"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "UI Selector",
+          "category": "Screen Interaction",
+          "description": "Use GKD selector syntax to find screen controls"
+        },
+        "zh-CN": {
+          "name": "UI选择器",
+          "category": "屏幕交互",
+          "description": "使用 GKD selector 语法查找屏幕控件"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.logic.break_loop",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.logic.break_loop",
+      "deprecatedAliases": [
+        "vflow.logic.break.loop"
+      ],
+      "categoryKey": "category_logic",
+      "display": {
+        "name": "跳出循环",
+        "category": "逻辑控制",
+        "description": "立即终止当前循环的执行，并跳转到循环体之后的步骤"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Break Loop",
+          "category": "Logic",
+          "description": "Immediately terminate current loop execution and jump to steps after the loop body"
+        },
+        "zh-CN": {
+          "name": "跳出循环",
+          "category": "逻辑控制",
+          "description": "立即终止当前循环的执行，并跳转到循环体之后的步骤"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.logic.call_workflow",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.logic.call_workflow",
+      "deprecatedAliases": [
+        "vflow.logic.call.workflow"
+      ],
+      "categoryKey": "category_logic",
+      "display": {
+        "name": "调用工作流",
+        "category": "逻辑控制",
+        "description": "将另一个工作流作为子程序执行"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Call Workflow",
+          "category": "Logic",
+          "description": "Execute another workflow as subroutine"
+        },
+        "zh-CN": {
+          "name": "调用工作流",
+          "category": "逻辑控制",
+          "description": "将另一个工作流作为子程序执行"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.logic.continue_loop",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.logic.continue_loop",
+      "deprecatedAliases": [
+        "vflow.logic.continue.loop"
+      ],
+      "categoryKey": "category_logic",
+      "display": {
+        "name": "继续循环",
+        "category": "逻辑控制",
+        "description": "跳过当前循环的剩余步骤，直接进入下一次迭代"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Continue Loop",
+          "category": "Logic",
+          "description": "Skip remaining steps of current loop and directly enter next iteration"
+        },
+        "zh-CN": {
+          "name": "继续循环",
+          "category": "逻辑控制",
+          "description": "跳过当前循环的剩余步骤，直接进入下一次迭代"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.logic.jump",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.logic.jump",
+      "deprecatedAliases": [],
+      "categoryKey": "category_logic",
+      "display": {
+        "name": "跳转到步骤",
+        "category": "逻辑控制",
+        "description": "跳转到工作流的指定步骤并继续执行"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Jump to Step",
+          "category": "Logic",
+          "description": "Jump to specified step in workflow and continue execution"
+        },
+        "zh-CN": {
+          "name": "跳转到步骤",
+          "category": "逻辑控制",
+          "description": "跳转到工作流的指定步骤并继续执行"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.logic.return",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.logic.return",
+      "deprecatedAliases": [],
+      "categoryKey": "category_logic",
+      "display": {
+        "name": "停止并返回",
+        "category": "逻辑控制",
+        "description": "停止当前工作流执行并返回一个值"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Stop and Return",
+          "category": "Logic",
+          "description": "Stop current workflow execution and return a value"
+        },
+        "zh-CN": {
+          "name": "停止并返回",
+          "category": "逻辑控制",
+          "description": "停止当前工作流执行并返回一个值"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.logic.stop_workflow",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.logic.stop_workflow",
+      "deprecatedAliases": [
+        "vflow.logic.stop.workflow"
+      ],
+      "categoryKey": "category_logic",
+      "display": {
+        "name": "停止工作流",
+        "category": "逻辑控制",
+        "description": "正常地、无条件地终止当前工作流的执行"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Stop Workflow",
+          "category": "Logic",
+          "description": "Normally and unconditionally terminate the current workflow execution"
+        },
+        "zh-CN": {
+          "name": "停止工作流",
+          "category": "逻辑控制",
+          "description": "正常地、无条件地终止当前工作流的执行"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.network.feishu_upload",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.network.feishu_upload",
+      "deprecatedAliases": [
+        "vflow.network.feishu.upload"
+      ],
+      "categoryKey": "category_network",
+      "display": {
+        "name": "飞书上传素材",
+        "category": "网络",
+        "description": "上传文件到飞书云文档"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Feishu Upload Media",
+          "category": "Network",
+          "description": "Upload files to Feishu cloud documents"
+        },
+        "zh-CN": {
+          "name": "飞书上传素材",
+          "category": "网络",
+          "description": "上传文件到飞书云文档"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.network.get_ip",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.network.get_ip",
+      "deprecatedAliases": [
+        "vflow.network.get.ip"
+      ],
+      "categoryKey": "category_network",
+      "display": {
+        "name": "获取IP地址",
+        "category": "网络",
+        "description": "获取设备的本地或外部IP地址"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get IP Address",
+          "category": "Network",
+          "description": "Get local or external IP address of the device"
+        },
+        "zh-CN": {
+          "name": "获取IP地址",
+          "category": "网络",
+          "description": "获取设备的本地或外部IP地址"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.network.http_request",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.network.http_request",
+      "deprecatedAliases": [
+        "vflow.network.http.request"
+      ],
+      "categoryKey": "category_network",
+      "display": {
+        "name": "HTTP 请求",
+        "category": "网络",
+        "description": "发送 HTTP 请求并获取响应"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "HTTP Request",
+          "category": "Network",
+          "description": "Send HTTP request and get response"
+        },
+        "zh-CN": {
+          "name": "HTTP 请求",
+          "category": "网络",
+          "description": "发送 HTTP 请求并获取响应"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.notification.find",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.notification.find",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "查找通知",
+        "category": "应用与系统",
+        "description": "查找当前状态栏中所有可见的通知。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Notification",
+          "category": "Device & System",
+          "description": "Find all visible notifications in current status bar."
+        },
+        "zh-CN": {
+          "name": "查找通知",
+          "category": "应用与系统",
+          "description": "查找当前状态栏中所有可见的通知。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.notification.remove",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.notification.remove",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "移除通知",
+        "category": "应用与系统",
+        "description": "从状态栏移除一个或多个通知。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Remove Notification",
+          "category": "Device & System",
+          "description": "Remove one or more notifications from status bar."
+        },
+        "zh-CN": {
+          "name": "移除通知",
+          "category": "应用与系统",
+          "description": "从状态栏移除一个或多个通知。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.notification.send_notification",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.notification.send_notification",
+      "deprecatedAliases": [
+        "vflow.notification.send.notification"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "发送通知",
+        "category": "应用与系统",
+        "description": "在系统通知栏中创建一个自定义通知"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Send Notification",
+          "category": "Device & System",
+          "description": "Create a custom notification in the system notification bar"
+        },
+        "zh-CN": {
+          "name": "发送通知",
+          "category": "应用与系统",
+          "description": "在系统通知栏中创建一个自定义通知"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.shizuku.alipay_shortcuts",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.shizuku.alipay_shortcuts",
+      "deprecatedAliases": [
+        "vflow.shizuku.alipay.shortcuts"
+      ],
+      "categoryKey": "category_shizuku",
+      "display": {
+        "name": "支付宝",
+        "category": "Shizuku",
+        "description": "快速访问支付宝的扫一扫、付款码、收款码等功能。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Alipay",
+          "category": "Shizuku",
+          "description": "Quick access to Alipay\\'s scan, payment code, collection code, etc."
+        },
+        "zh-CN": {
+          "name": "支付宝",
+          "category": "Shizuku",
+          "description": "快速访问支付宝的扫一扫、付款码、收款码等功能。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.shizuku.coloros_shortcuts",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.shizuku.coloros_shortcuts",
+      "deprecatedAliases": [
+        "vflow.shizuku.coloros.shortcuts"
+      ],
+      "categoryKey": "category_shizuku",
+      "display": {
+        "name": "ColorOS",
+        "category": "Shizuku",
+        "description": "执行 ColorOS 系统相关的快捷操作。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "ColorOS",
+          "category": "Shizuku",
+          "description": "Execute ColorOS system-related shortcuts."
+        },
+        "zh-CN": {
+          "name": "ColorOS",
+          "category": "Shizuku",
+          "description": "执行 ColorOS 系统相关的快捷操作。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.shizuku.gemini_shortcut",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.shizuku.gemini_shortcut",
+      "deprecatedAliases": [
+        "vflow.shizuku.gemini.shortcut"
+      ],
+      "categoryKey": "category_shizuku",
+      "display": {
+        "name": "Gemini 助手",
+        "category": "Shizuku",
+        "description": "启动 Google Gemini 语音助手。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Gemini Assistant",
+          "category": "Shizuku",
+          "description": "Launch Google Gemini voice assistant."
+        },
+        "zh-CN": {
+          "name": "Gemini 助手",
+          "category": "Shizuku",
+          "description": "启动 Google Gemini 语音助手。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.shizuku.shell_command",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.shizuku.shell_command",
+      "deprecatedAliases": [
+        "vflow.shizuku.shell.command"
+      ],
+      "categoryKey": "category_shizuku",
+      "display": {
+        "name": "执行 Shell 命令",
+        "category": "Shizuku",
+        "description": "通过 Shell 执行命令（支持 Root/Shizuku）。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Execute Shell Command",
+          "category": "Shizuku",
+          "description": "Execute commands via Shell (supports Root/Shizuku)."
+        },
+        "zh-CN": {
+          "name": "执行 Shell 命令",
+          "category": "Shizuku",
+          "description": "通过 Shell 执行命令（支持 Root/Shizuku）。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.shizuku.wechat_shortcuts",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.shizuku.wechat_shortcuts",
+      "deprecatedAliases": [
+        "vflow.shizuku.wechat.shortcuts"
+      ],
+      "categoryKey": "category_shizuku",
+      "display": {
+        "name": "微信",
+        "category": "Shizuku",
+        "description": "快速访问微信的收款码、付款码等功能。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "WeChat",
+          "category": "Shizuku",
+          "description": "Quick access to WeChat\\'s collection code, payment code."
+        },
+        "zh-CN": {
+          "name": "微信",
+          "category": "Shizuku",
+          "description": "快速访问微信的收款码、付款码等功能。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.snippet.find_until",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.snippet.find_until",
+      "deprecatedAliases": [
+        "vflow.snippet.find.until"
+      ],
+      "categoryKey": "category_template",
+      "display": {
+        "name": "查找直到",
+        "category": "模板",
+        "description": "在屏幕上循环查找指定的文本，直到找到为止"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Find Until",
+          "category": "Templates",
+          "description": "Continuously find specified text on screen until found"
+        },
+        "zh-CN": {
+          "name": "查找直到",
+          "category": "模板",
+          "description": "在屏幕上循环查找指定的文本，直到找到为止"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.bluetooth",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.bluetooth",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "蓝牙设置",
+        "category": "应用与系统",
+        "description": "开启、关闭或切换蓝牙状态。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Bluetooth Settings",
+          "category": "Device & System",
+          "description": "Turn on, off, or toggle Bluetooth state."
+        },
+        "zh-CN": {
+          "name": "蓝牙设置",
+          "category": "应用与系统",
+          "description": "开启、关闭或切换蓝牙状态。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.brightness",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.brightness",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "屏幕亮度设置",
+        "category": "应用与系统",
+        "description": "设置屏幕的亮度值"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Screen Brightness",
+          "category": "Device & System",
+          "description": "Set screen brightness value"
+        },
+        "zh-CN": {
+          "name": "屏幕亮度设置",
+          "category": "应用与系统",
+          "description": "设置屏幕的亮度值"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.capture_screen",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.capture_screen",
+      "deprecatedAliases": [
+        "vflow.system.capture.screen"
+      ],
+      "categoryKey": "category_interaction",
+      "display": {
+        "name": "截屏",
+        "category": "屏幕交互",
+        "description": "捕获当前屏幕内容。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Capture Screen",
+          "category": "Screen Interaction",
+          "description": "Capture current screen content."
+        },
+        "zh-CN": {
+          "name": "截屏",
+          "category": "屏幕交互",
+          "description": "捕获当前屏幕内容。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.close_app",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.close_app",
+      "deprecatedAliases": [
+        "vflow.system.close.app"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "关闭应用",
+        "category": "应用与系统",
+        "description": "强制停止指定的应用程序（需要 Shizuku 或 Root）"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Close App",
+          "category": "Device & System",
+          "description": "Force stop the specified application (requires Shizuku or Root)"
+        },
+        "zh-CN": {
+          "name": "关闭应用",
+          "category": "应用与系统",
+          "description": "强制停止指定的应用程序（需要 Shizuku 或 Root）"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.get_clipboard",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.get_clipboard",
+      "deprecatedAliases": [
+        "vflow.system.get.clipboard"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "读取剪贴板",
+        "category": "应用与系统",
+        "description": "获取系统剪贴板的当前内容（文本或图片）"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get Clipboard",
+          "category": "Device & System",
+          "description": "Get current content from system clipboard (text or image)"
+        },
+        "zh-CN": {
+          "name": "读取剪贴板",
+          "category": "应用与系统",
+          "description": "获取系统剪贴板的当前内容（文本或图片）"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.get_usage_stats",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.get_usage_stats",
+      "deprecatedAliases": [
+        "vflow.system.get.usage.stats"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "获取应用使用统计",
+        "category": "应用与系统",
+        "description": "获取设备上应用的使用时间统计。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get App Usage Stats",
+          "category": "Device & System",
+          "description": "Get screen usage time statistics for apps on device."
+        },
+        "zh-CN": {
+          "name": "获取应用使用统计",
+          "category": "应用与系统",
+          "description": "获取设备上应用的使用时间统计。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.invoke",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.invoke",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "通用调用",
+        "category": "应用与系统",
+        "description": "执行 Intent，打开链接，发送广播或启动服务。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "General Invoke",
+          "category": "Device & System",
+          "description": "Execute Intent, open links, send broadcasts or start services."
+        },
+        "zh-CN": {
+          "name": "通用调用",
+          "category": "应用与系统",
+          "description": "执行 Intent，打开链接，发送广播或启动服务。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.js",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.js",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "JavaScript脚本",
+        "category": "应用与系统",
+        "description": "执行一段JavaScript脚本，可调用其他模块功能。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "JavaScript Script",
+          "category": "Device & System",
+          "description": "Execute JavaScript script, can call other module functions."
+        },
+        "zh-CN": {
+          "name": "JavaScript脚本",
+          "category": "应用与系统",
+          "description": "执行一段JavaScript脚本，可调用其他模块功能。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.launch_app",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.launch_app",
+      "deprecatedAliases": [
+        "vflow.system.launch.app"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "启动应用/活动",
+        "category": "应用与系统",
+        "description": "启动一个指定的应用程序或其内部的某个页面(Activity)。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Launch App/Activity",
+          "category": "Device & System",
+          "description": "Launch a specified application or one of its internal pages (Activity)."
+        },
+        "zh-CN": {
+          "name": "启动应用/活动",
+          "category": "应用与系统",
+          "description": "启动一个指定的应用程序或其内部的某个页面(Activity)。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.lua",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.lua",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "Lua脚本",
+        "category": "应用与系统",
+        "description": "执行一段Lua脚本，可调用其他模块功能。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Lua Script",
+          "category": "Device & System",
+          "description": "Execute Lua script, can call other module functions."
+        },
+        "zh-CN": {
+          "name": "Lua脚本",
+          "category": "应用与系统",
+          "description": "执行一段Lua脚本，可调用其他模块功能。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.mobile_data",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.mobile_data",
+      "deprecatedAliases": [
+        "vflow.system.mobile.data"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "移动数据",
+        "category": "应用与系统",
+        "description": "开启或关闭移动数据"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "移动数据",
+          "category": "Device & System",
+          "description": "开启或关闭移动数据"
+        },
+        "zh-CN": {
+          "name": "移动数据",
+          "category": "应用与系统",
+          "description": "开启或关闭移动数据"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.read_sms",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.read_sms",
+      "deprecatedAliases": [
+        "vflow.system.read.sms"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "读取短信",
+        "category": "应用与系统",
+        "description": "按条件查找短信，支持验证码提取。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Read SMS",
+          "category": "Device & System",
+          "description": "Find SMS from inbox by conditions, support verification code extraction."
+        },
+        "zh-CN": {
+          "name": "读取短信",
+          "category": "应用与系统",
+          "description": "按条件查找短信，支持验证码提取。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.set_clipboard",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.set_clipboard",
+      "deprecatedAliases": [
+        "vflow.system.set.clipboard"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "写入剪贴板",
+        "category": "应用与系统",
+        "description": "将指定的文本或图片内容写入系统剪贴板"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Set Clipboard",
+          "category": "Device & System",
+          "description": "Write specified text or image content to system clipboard"
+        },
+        "zh-CN": {
+          "name": "写入剪贴板",
+          "category": "应用与系统",
+          "description": "将指定的文本或图片内容写入系统剪贴板"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.share",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.share",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "分享",
+        "category": "应用与系统",
+        "description": "使用系统分享功能分享文本或图片。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Share",
+          "category": "Device & System",
+          "description": "Use system share function to share text or images."
+        },
+        "zh-CN": {
+          "name": "分享",
+          "category": "应用与系统",
+          "description": "使用系统分享功能分享文本或图片。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.sleep_screen",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.sleep_screen",
+      "deprecatedAliases": [
+        "vflow.system.sleep.screen"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "息屏",
+        "category": "应用与系统",
+        "description": "关闭屏幕，使设备进入息屏状态。需要 Shizuku 或 Root 权限。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Sleep Screen",
+          "category": "Device & System",
+          "description": "Turn off screen to put device in sleep mode. Requires Shizuku or Root permission."
+        },
+        "zh-CN": {
+          "name": "息屏",
+          "category": "应用与系统",
+          "description": "关闭屏幕，使设备进入息屏状态。需要 Shizuku 或 Root 权限。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.systeminfo",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.systeminfo",
+      "deprecatedAliases": [],
+      "categoryKey": null,
+      "display": {
+        "name": "vflow.system.systeminfo",
+        "category": "其他",
+        "description": ""
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "vflow.system.systeminfo",
+          "category": "其他",
+          "description": ""
+        },
+        "zh-CN": {
+          "name": "vflow.system.systeminfo",
+          "category": "其他",
+          "description": ""
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.wake_screen",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.wake_screen",
+      "deprecatedAliases": [
+        "vflow.system.wake.screen"
+      ],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "唤醒屏幕（无密码）",
+        "category": "应用与系统",
+        "description": "点亮息屏状态的屏幕并解除滑动锁屏。仅适用于未设置密码的设备，需要 Shizuku 或 Root 权限。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Wake Screen (No Password)",
+          "category": "Device & System",
+          "description": "Wake up screen and dismiss swipe lock. Only for devices without password. Requires Shizuku or Root permission."
+        },
+        "zh-CN": {
+          "name": "唤醒屏幕（无密码）",
+          "category": "应用与系统",
+          "description": "点亮息屏状态的屏幕并解除滑动锁屏。仅适用于未设置密码的设备，需要 Shizuku 或 Root 权限。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.system.wifi",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.system.wifi",
+      "deprecatedAliases": [],
+      "categoryKey": "category_device",
+      "display": {
+        "name": "Wi-Fi 设置",
+        "category": "应用与系统",
+        "description": "开启、关闭或切换 Wi-Fi 状态。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Wi-Fi Settings",
+          "category": "Device & System",
+          "description": "Turn on, off, or toggle Wi-Fi state."
+        },
+        "zh-CN": {
+          "name": "Wi-Fi 设置",
+          "category": "应用与系统",
+          "description": "开启、关闭或切换 Wi-Fi 状态。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.app_start",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.app_start",
+      "deprecatedAliases": [
+        "vflow.trigger.app.start"
+      ],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "应用事件",
+        "category": "触发器",
+        "description": "当指定的应用程序打开或关闭时，触发此工作流"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "App Event",
+          "category": "Triggers",
+          "description": "Trigger this workflow when specified app opens or closes"
+        },
+        "zh-CN": {
+          "name": "应用事件",
+          "category": "触发器",
+          "description": "当指定的应用程序打开或关闭时，触发此工作流"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.battery",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.battery",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "电量触发",
+        "category": "触发器",
+        "description": "当电池电量满足特定条件时触发工作流"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Battery Trigger",
+          "category": "Triggers",
+          "description": "Trigger workflow when battery level meets specific condition"
+        },
+        "zh-CN": {
+          "name": "电量触发",
+          "category": "触发器",
+          "description": "当电池电量满足特定条件时触发工作流"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.bluetooth",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.bluetooth",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "蓝牙触发器",
+        "category": "触发器",
+        "description": "当蓝牙状态或设备连接变化时触发"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Bluetooth Trigger",
+          "category": "Triggers",
+          "description": "Trigger when Bluetooth state or device connection changes"
+        },
+        "zh-CN": {
+          "name": "蓝牙触发器",
+          "category": "触发器",
+          "description": "当蓝牙状态或设备连接变化时触发"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.call",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.call",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "电话触发",
+        "category": "触发器",
+        "description": "当有来电、通话接通或挂断时触发工作流"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Call Trigger",
+          "category": "Triggers",
+          "description": "Trigger workflow when there is an incoming call, call answered, or call ended"
+        },
+        "zh-CN": {
+          "name": "电话触发",
+          "category": "触发器",
+          "description": "当有来电、通话接通或挂断时触发工作流"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.element",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.element",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "元素触发",
+        "category": "触发器",
+        "description": "当页面上出现匹配选择器的控件时触发工作流"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Element Trigger",
+          "category": "Triggers",
+          "description": "Trigger workflow when UI element matching the selector appears"
+        },
+        "zh-CN": {
+          "name": "元素触发",
+          "category": "触发器",
+          "description": "当页面上出现匹配选择器的控件时触发工作流"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.gkd",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.gkd",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "GKD订阅触发",
+        "category": "触发器",
+        "description": "解析 gkd 格式的订阅规则并触发工作流"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "GKD Subscription Trigger",
+          "category": "Triggers",
+          "description": "Parse GKD format subscription rules and trigger workflow"
+        },
+        "zh-CN": {
+          "name": "GKD订阅触发",
+          "category": "触发器",
+          "description": "解析 gkd 格式的订阅规则并触发工作流"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.key_event",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.key_event",
+      "deprecatedAliases": [
+        "vflow.trigger.key.event"
+      ],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "按键触发",
+        "category": "触发器",
+        "description": "当指定的物理按键被按下时，触发此工作流（需要Shizuku或Root）"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Key Event Trigger",
+          "category": "Triggers",
+          "description": "Trigger this workflow when specified physical key is pressed (requires Shizuku or Root)"
+        },
+        "zh-CN": {
+          "name": "按键触发",
+          "category": "触发器",
+          "description": "当指定的物理按键被按下时，触发此工作流（需要Shizuku或Root）"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.location",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.location",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "位置触发器",
+        "category": "触发器",
+        "description": "当进入或离开指定区域时触发工作流"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Location Trigger",
+          "category": "Triggers",
+          "description": "Trigger workflow when entering or leaving a specific area"
+        },
+        "zh-CN": {
+          "name": "位置触发器",
+          "category": "触发器",
+          "description": "当进入或离开指定区域时触发工作流"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.manual",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.manual",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "手动触发",
+        "category": "触发器",
+        "description": "通过点击按钮手动启动此工作流"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Manual Trigger",
+          "category": "Triggers",
+          "description": "Manually start this workflow by clicking a button"
+        },
+        "zh-CN": {
+          "name": "手动触发",
+          "category": "触发器",
+          "description": "通过点击按钮手动启动此工作流"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.notification",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.notification",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "通知触发",
+        "category": "触发器",
+        "description": "当收到符合条件的通知时触发工作流"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Notification Trigger",
+          "category": "Triggers",
+          "description": "Trigger workflow when notification matching criteria is received"
+        },
+        "zh-CN": {
+          "name": "通知触发",
+          "category": "触发器",
+          "description": "当收到符合条件的通知时触发工作流"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.share",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.share",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "接收分享",
+        "category": "触发器",
+        "description": "当内容（文本、图片、文件）分享到 vFlow 时启动工作流。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Receive Share",
+          "category": "Triggers",
+          "description": "Start workflow when content (text, image, file) is shared to vFlow."
+        },
+        "zh-CN": {
+          "name": "接收分享",
+          "category": "触发器",
+          "description": "当内容（文本、图片、文件）分享到 vFlow 时启动工作流。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.sms",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.sms",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "短信触发",
+        "category": "触发器",
+        "description": "当收到满足特定条件的短信时触发工作流"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "SMS Trigger",
+          "category": "Triggers",
+          "description": "Trigger workflow when SMS meeting specific criteria is received"
+        },
+        "zh-CN": {
+          "name": "短信触发",
+          "category": "触发器",
+          "description": "当收到满足特定条件的短信时触发工作流"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.time",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.time",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "定时触发",
+        "category": "触发器",
+        "description": "在指定的时间和日期触发工作流，类似闹钟"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Timed Trigger",
+          "category": "Triggers",
+          "description": "Trigger workflow at specified time and date, like an alarm clock"
+        },
+        "zh-CN": {
+          "name": "定时触发",
+          "category": "触发器",
+          "description": "在指定的时间和日期触发工作流，类似闹钟"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.trigger.wifi",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.trigger.wifi",
+      "deprecatedAliases": [],
+      "categoryKey": "category_trigger",
+      "display": {
+        "name": "Wi-Fi触发器",
+        "category": "触发器",
+        "description": "当Wi-Fi状态或网络连接变化时触发工作流"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Wi-Fi Trigger",
+          "category": "Triggers",
+          "description": "Trigger workflow when Wi-Fi state or network connection changes"
+        },
+        "zh-CN": {
+          "name": "Wi-Fi触发器",
+          "category": "触发器",
+          "description": "当Wi-Fi状态或网络连接变化时触发工作流"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.ui.component.button",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.ui.component.button",
+      "deprecatedAliases": [],
+      "categoryKey": null,
+      "display": {
+        "name": "按钮",
+        "category": "UI 组件",
+        "description": "点击时提交表单或触发事件。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Button",
+          "category": "UI 组件",
+          "description": "Submit form or trigger event when clicked."
+        },
+        "zh-CN": {
+          "name": "按钮",
+          "category": "UI 组件",
+          "description": "点击时提交表单或触发事件。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.ui.component.input",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.ui.component.input",
+      "deprecatedAliases": [],
+      "categoryKey": null,
+      "display": {
+        "name": "输入框",
+        "category": "UI 组件",
+        "description": "文本输入字段。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Input Field",
+          "category": "UI 组件",
+          "description": "Text input field."
+        },
+        "zh-CN": {
+          "name": "输入框",
+          "category": "UI 组件",
+          "description": "文本输入字段。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.ui.component.switch",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.ui.component.switch",
+      "deprecatedAliases": [],
+      "categoryKey": null,
+      "display": {
+        "name": "开关",
+        "category": "UI 组件",
+        "description": "布尔值开关。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Switch",
+          "category": "UI 组件",
+          "description": "Boolean switch."
+        },
+        "zh-CN": {
+          "name": "开关",
+          "category": "UI 组件",
+          "description": "布尔值开关。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.ui.component.text",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.ui.component.text",
+      "deprecatedAliases": [],
+      "categoryKey": null,
+      "display": {
+        "name": "文本展示",
+        "category": "UI 组件",
+        "description": "显示静态文本。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Text Display",
+          "category": "UI 组件",
+          "description": "Display static text."
+        },
+        "zh-CN": {
+          "name": "文本展示",
+          "category": "UI 组件",
+          "description": "显示静态文本。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.ui.interaction.exit",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.ui.interaction.exit",
+      "deprecatedAliases": [],
+      "categoryKey": null,
+      "display": {
+        "name": "退出活动",
+        "category": "UI 组件",
+        "description": "主动退出并销毁当前活动。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Exit Activity",
+          "category": "UI 组件",
+          "description": "Actively exit and destroy current activity."
+        },
+        "zh-CN": {
+          "name": "退出活动",
+          "category": "UI 组件",
+          "description": "主动退出并销毁当前活动。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.ui.interaction.get_value",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.ui.interaction.get_value",
+      "deprecatedAliases": [
+        "vflow.ui.interaction.get.value"
+      ],
+      "categoryKey": null,
+      "display": {
+        "name": "获取控件",
+        "category": "UI 组件",
+        "description": "获取UI组件对象或其值。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get Component",
+          "category": "UI 组件",
+          "description": "Get UI component object or its value."
+        },
+        "zh-CN": {
+          "name": "获取控件",
+          "category": "UI 组件",
+          "description": "获取UI组件对象或其值。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.ui.interaction.update",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.ui.interaction.update",
+      "deprecatedAliases": [],
+      "categoryKey": null,
+      "display": {
+        "name": "更新控件",
+        "category": "UI 组件",
+        "description": "修改组件属性（如文本、可见性、布局）。"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Update Component",
+          "category": "UI 组件",
+          "description": "Modify component properties (such as text, visibility, layout)."
+        },
+        "zh-CN": {
+          "name": "更新控件",
+          "category": "UI 组件",
+          "description": "修改组件属性（如文本、可见性、布局）。"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.variable.create",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.variable.create",
+      "deprecatedAliases": [],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "创建变量",
+        "category": "数据处理",
+        "description": "创建一个新的变量，可选择为其命名以便后续修改或读取"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Create Variable",
+          "category": "Data Processing",
+          "description": "Create a new variable, optionally name it for later modification or reading"
+        },
+        "zh-CN": {
+          "name": "创建变量",
+          "category": "数据处理",
+          "description": "创建一个新的变量，可选择为其命名以便后续修改或读取"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.variable.get",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.variable.get",
+      "deprecatedAliases": [],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "读取变量",
+        "category": "数据处理",
+        "description": "读取一个命名变量或魔法变量的值，使其可用于后续步骤"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Get Variable",
+          "category": "Data Processing",
+          "description": "Read value from a named variable or magic variable for use in subsequent steps"
+        },
+        "zh-CN": {
+          "name": "读取变量",
+          "category": "数据处理",
+          "description": "读取一个命名变量或魔法变量的值，使其可用于后续步骤"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.variable.load",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.variable.load",
+      "deprecatedAliases": [],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "载入变量",
+        "category": "数据处理",
+        "description": "从另一个工作流获取命名变量的使用权"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Load Variables",
+          "category": "Data Processing",
+          "description": "Obtain usage rights for named variables from another workflow"
+        },
+        "zh-CN": {
+          "name": "载入变量",
+          "category": "数据处理",
+          "description": "从另一个工作流获取命名变量的使用权"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.variable.modify",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.variable.modify",
+      "deprecatedAliases": [],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "修改变量",
+        "category": "数据处理",
+        "description": "修改一个已存在的命名变量的值"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Modify Variable",
+          "category": "Data Processing",
+          "description": "Modify the value of an existing named variable"
+        },
+        "zh-CN": {
+          "name": "修改变量",
+          "category": "数据处理",
+          "description": "修改一个已存在的命名变量的值"
+        }
+      }
+    },
+    {
+      "moduleId": "vflow.variable.random",
+      "inputs": [],
+      "outputs": [],
+      "hasLocalSchema": true,
+      "schemaId": "vflow.variable.random",
+      "deprecatedAliases": [],
+      "categoryKey": "category_data",
+      "display": {
+        "name": "创建随机变量",
+        "category": "数据处理",
+        "description": "创建新的随机变量，可选择为其命名以便后续修改或读取"
+      },
+      "displayByLocale": {
+        "en": {
+          "name": "Create Random Variable",
+          "category": "Data Processing",
+          "description": "Create new random variable, optionally name it for later modification or reading"
+        },
+        "zh-CN": {
+          "name": "创建随机变量",
+          "category": "数据处理",
+          "description": "创建新的随机变量，可选择为其命名以便后续修改或读取"
+        }
+      }
+    }
+  ],
+  "canonicalModuleIds": [
+    "vflow.ai.agent",
+    "vflow.ai.autoglm",
+    "vflow.ai.completion",
+    "vflow.core.bluetooth",
+    "vflow.core.bluetooth_state",
+    "vflow.core.capture_screen",
+    "vflow.core.force_stop_app",
+    "vflow.core.get_clipboard",
+    "vflow.core.input_text",
+    "vflow.core.nfc",
+    "vflow.core.nfc_state",
+    "vflow.core.press_key",
+    "vflow.core.screen_operation",
+    "vflow.core.screen_status",
+    "vflow.core.set_clipboard",
+    "vflow.core.shell_command",
+    "vflow.core.sleep_screen",
+    "vflow.core.touch_replay",
+    "vflow.core.volume",
+    "vflow.core.volume_state",
+    "vflow.core.wake_screen",
+    "vflow.core.wifi",
+    "vflow.core.wifi_state",
+    "vflow.data.calculation",
+    "vflow.data.comment",
+    "vflow.data.file_operation",
+    "vflow.data.get_current_time",
+    "vflow.data.input",
+    "vflow.data.parse_json",
+    "vflow.data.quick_view",
+    "vflow.data.text_extract",
+    "vflow.data.text_processing",
+    "vflow.data.text_replace",
+    "vflow.data.text_split",
+    "vflow.device.click",
+    "vflow.device.delay",
+    "vflow.device.find.text",
+    "vflow.device.play_audio",
+    "vflow.device.send_key_event",
+    "vflow.device.toast",
+    "vflow.file.adjust_image",
+    "vflow.file.apply_mask",
+    "vflow.file.import_image",
+    "vflow.file.rotate_image",
+    "vflow.file.save_image",
+    "vflow.interaction.find_element",
+    "vflow.interaction.find_image",
+    "vflow.interaction.find_until",
+    "vflow.interaction.get_current_activity",
+    "vflow.interaction.input_text",
+    "vflow.interaction.ocr",
+    "vflow.interaction.operit",
+    "vflow.interaction.screen_operation",
+    "vflow.interaction.ui_selector",
+    "vflow.logic.break_loop",
+    "vflow.logic.call_workflow",
+    "vflow.logic.continue_loop",
+    "vflow.logic.jump",
+    "vflow.logic.return",
+    "vflow.logic.stop_workflow",
+    "vflow.network.feishu_upload",
+    "vflow.network.get_ip",
+    "vflow.network.http_request",
+    "vflow.notification.find",
+    "vflow.notification.remove",
+    "vflow.notification.send_notification",
+    "vflow.shizuku.alipay_shortcuts",
+    "vflow.shizuku.coloros_shortcuts",
+    "vflow.shizuku.gemini_shortcut",
+    "vflow.shizuku.shell_command",
+    "vflow.shizuku.wechat_shortcuts",
+    "vflow.snippet.find_until",
+    "vflow.system.bluetooth",
+    "vflow.system.brightness",
+    "vflow.system.capture_screen",
+    "vflow.system.close_app",
+    "vflow.system.get_clipboard",
+    "vflow.system.get_usage_stats",
+    "vflow.system.invoke",
+    "vflow.system.js",
+    "vflow.system.launch_app",
+    "vflow.system.lua",
+    "vflow.system.mobile_data",
+    "vflow.system.read_sms",
+    "vflow.system.set_clipboard",
+    "vflow.system.share",
+    "vflow.system.sleep_screen",
+    "vflow.system.systeminfo",
+    "vflow.system.wake_screen",
+    "vflow.system.wifi",
+    "vflow.trigger.app_start",
+    "vflow.trigger.battery",
+    "vflow.trigger.bluetooth",
+    "vflow.trigger.call",
+    "vflow.trigger.element",
+    "vflow.trigger.gkd",
+    "vflow.trigger.key_event",
+    "vflow.trigger.location",
+    "vflow.trigger.manual",
+    "vflow.trigger.notification",
+    "vflow.trigger.share",
+    "vflow.trigger.sms",
+    "vflow.trigger.time",
+    "vflow.trigger.wifi",
+    "vflow.ui.component.button",
+    "vflow.ui.component.input",
+    "vflow.ui.component.switch",
+    "vflow.ui.component.text",
+    "vflow.ui.interaction.exit",
+    "vflow.ui.interaction.get_value",
+    "vflow.ui.interaction.update",
+    "vflow.variable.create",
+    "vflow.variable.get",
+    "vflow.variable.load",
+    "vflow.variable.modify",
+    "vflow.variable.random"
+  ],
+  "missingSchemaIds": [],
+  "legacyAliasToCanonical": {
+    "vflow.core.bluetooth.state": "vflow.core.bluetooth_state",
+    "vflow.core.capture.screen": "vflow.core.capture_screen",
+    "vflow.core.force.stop.app": "vflow.core.force_stop_app",
+    "vflow.core.get.clipboard": "vflow.core.get_clipboard",
+    "vflow.core.input.text": "vflow.core.input_text",
+    "vflow.core.nfc.state": "vflow.core.nfc_state",
+    "vflow.core.press.key": "vflow.core.press_key",
+    "vflow.core.screen.operation": "vflow.core.screen_operation",
+    "vflow.core.screen.status": "vflow.core.screen_status",
+    "vflow.core.set.clipboard": "vflow.core.set_clipboard",
+    "vflow.core.shell.command": "vflow.core.shell_command",
+    "vflow.core.sleep.screen": "vflow.core.sleep_screen",
+    "vflow.core.touch.replay": "vflow.core.touch_replay",
+    "vflow.core.volume.state": "vflow.core.volume_state",
+    "vflow.core.wake.screen": "vflow.core.wake_screen",
+    "vflow.core.wifi.state": "vflow.core.wifi_state",
+    "vflow.data.file.operation": "vflow.data.file_operation",
+    "vflow.data.get.current.time": "vflow.data.get_current_time",
+    "vflow.data.parse.json": "vflow.data.parse_json",
+    "vflow.data.quick.view": "vflow.data.quick_view",
+    "vflow.data.text.extract": "vflow.data.text_extract",
+    "vflow.data.text.processing": "vflow.data.text_processing",
+    "vflow.data.text.replace": "vflow.data.text_replace",
+    "vflow.data.text.split": "vflow.data.text_split",
+    "vflow.device.play.audio": "vflow.device.play_audio",
+    "vflow.device.send.key.event": "vflow.device.send_key_event",
+    "vflow.file.adjust.image": "vflow.file.adjust_image",
+    "vflow.file.apply.mask": "vflow.file.apply_mask",
+    "vflow.file.import.image": "vflow.file.import_image",
+    "vflow.file.rotate.image": "vflow.file.rotate_image",
+    "vflow.file.save.image": "vflow.file.save_image",
+    "vflow.interaction.find.element": "vflow.interaction.find_element",
+    "vflow.interaction.find.image": "vflow.interaction.find_image",
+    "vflow.interaction.find.until": "vflow.interaction.find_until",
+    "vflow.interaction.get.current.activity": "vflow.interaction.get_current_activity",
+    "vflow.interaction.input.text": "vflow.interaction.input_text",
+    "vflow.interaction.screen.operation": "vflow.interaction.screen_operation",
+    "vflow.interaction.ui.selector": "vflow.interaction.ui_selector",
+    "vflow.logic.break.loop": "vflow.logic.break_loop",
+    "vflow.logic.call.workflow": "vflow.logic.call_workflow",
+    "vflow.logic.continue.loop": "vflow.logic.continue_loop",
+    "vflow.logic.stop.workflow": "vflow.logic.stop_workflow",
+    "vflow.network.feishu.upload": "vflow.network.feishu_upload",
+    "vflow.network.get.ip": "vflow.network.get_ip",
+    "vflow.network.http.request": "vflow.network.http_request",
+    "vflow.notification.send.notification": "vflow.notification.send_notification",
+    "vflow.shizuku.alipay.shortcuts": "vflow.shizuku.alipay_shortcuts",
+    "vflow.shizuku.coloros.shortcuts": "vflow.shizuku.coloros_shortcuts",
+    "vflow.shizuku.gemini.shortcut": "vflow.shizuku.gemini_shortcut",
+    "vflow.shizuku.shell.command": "vflow.shizuku.shell_command",
+    "vflow.shizuku.wechat.shortcuts": "vflow.shizuku.wechat_shortcuts",
+    "vflow.snippet.find.until": "vflow.snippet.find_until",
+    "vflow.system.capture.screen": "vflow.system.capture_screen",
+    "vflow.system.close.app": "vflow.system.close_app",
+    "vflow.system.get.clipboard": "vflow.system.get_clipboard",
+    "vflow.system.get.usage.stats": "vflow.system.get_usage_stats",
+    "vflow.system.launch.app": "vflow.system.launch_app",
+    "vflow.system.mobile.data": "vflow.system.mobile_data",
+    "vflow.system.read.sms": "vflow.system.read_sms",
+    "vflow.system.set.clipboard": "vflow.system.set_clipboard",
+    "vflow.system.sleep.screen": "vflow.system.sleep_screen",
+    "vflow.system.wake.screen": "vflow.system.wake_screen",
+    "vflow.trigger.app.start": "vflow.trigger.app_start",
+    "vflow.trigger.key.event": "vflow.trigger.key_event",
+    "vflow.ui.interaction.get.value": "vflow.ui.interaction.get_value",
+    "vflow.trigger.receive_share": "vflow.trigger.share"
+  },
+  "stats": {
+    "missingSchemaCount": 0,
+    "missingSchemaIds": []
+  },
+  "diagnostics": {
+    "schemaWithoutApp": [
+      "vflow.data.base64",
+      "vflow.data.random",
+      "vflow.data.time.get_current",
+      "vflow.logic.break",
+      "vflow.logic.comment",
+      "vflow.logic.continue",
+      "vflow.logic.for_each",
+      "vflow.logic.for_each.end",
+      "vflow.logic.if.end",
+      "vflow.logic.if.middle",
+      "vflow.logic.if.start",
+      "vflow.logic.loop",
+      "vflow.logic.loop.end",
+      "vflow.logic.stop",
+      "vflow.logic.while",
+      "vflow.logic.while.end",
+      "vflow.system.play_audio",
+      "vflow.trigger.receive_share",
+      "vflow.ui.activity.end",
+      "vflow.ui.activity.show",
+      "vflow.ui.activity.start",
+      "vflow.ui.float.end",
+      "vflow.ui.float.show",
+      "vflow.ui.float.start",
+      "vflow.ui.on_event.end",
+      "vflow.ui.on_event.start"
+    ]
+  }
+}
