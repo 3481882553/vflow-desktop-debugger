@@ -26,7 +26,7 @@ export function useModules() {
   const handleModuleUsageUpdate = useCallback((moduleId: string) => {
     setModuleOptions(prev => {
       const next = prev.map(m =>
-        m.id === moduleId ? { ...m, usageCount: (m.usageCount ?? 0) + 1 } : m
+        (m.id === moduleId && !m.isDisabled) ? { ...m, usageCount: (m.usageCount ?? 0) + 1 } : m
       );
       saveUsageCounts(next);
       return next;

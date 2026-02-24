@@ -1,5 +1,7 @@
 import { useReducer, useCallback, useRef, ChangeEvent } from "react";
 import type { VflowWorkflow, VflowActionStep } from "../domain/vflowTypes";
+import { normalizeModuleId } from "../shared/moduleIdCompat";
+import { normalizeWorkflow, validateWorkflowShape } from "../shared/workflowCompat";
 
 /* ---------- State & Action 类型 ---------- */
 
@@ -108,16 +110,33 @@ export function workspaceReducer(state: WorkspaceState, action: WorkflowAction):
     }
 
     case "LOAD_ERROR":
-      return {
-        ...state,
-        tabs: updateTab(action.tabId, t => ({
-          ...t,
-          workflow: null,
-          rawJson: action.rawJson,
-          error: action.error,
-          filename: action.filename
-        }))
-      };
+      return state.tabs.some(t => t.id === action.tabId)
+        ? {
+            ...state,
+            tabs: updateTab(action.tabId, t => ({
+              ...t,
+              workflow: null,
+              rawJson: action.rawJson,
+              error: action.error,
+              filename: action.filename
+            }))
+          }
+        : {
+            ...state,
+            tabs: [
+              ...state.tabs,
+              {
+                id: action.tabId,
+                workflow: null,
+                rawJson: action.rawJson,
+                undoStack: [],
+                redoStack: [],
+                error: action.error,
+                filename: action.filename
+              }
+            ],
+            activeTabId: action.tabId
+          };
 
     case "CLOSE_TAB": {
       const newTabs = state.tabs.filter(t => t.id !== action.tabId);
@@ -172,10 +191,20 @@ export function workspaceReducer(state: WorkspaceState, action: WorkflowAction):
         ...state,
         tabs: updateTab(action.tabId, tab => {
           try {
-            const parsed = JSON.parse(action.rawJson) as VflowWorkflow;
+            const parsed = JSON.parse(action.rawJson);
+            const checked = validateWorkflowShape(parsed);
+            if (!checked.ok) {
+              return {
+                ...tab,
+                rawJson: action.rawJson,
+                error: checked.error
+              };
+            }
+
+            const normalized = checked.workflow;
             return {
               ...tab,
-              workflow: parsed,
+              workflow: normalized,
               rawJson: action.rawJson,
               undoStack: capStack(tab.workflow ? [...tab.undoStack, tab.workflow] : [...tab.undoStack]),
               redoStack: [],
@@ -260,7 +289,7 @@ export function useWorkflow() {
   const handleAddStepFromModule = useCallback((tabId: string, moduleId: string, insertIndex?: number) => {
     const newStep: VflowActionStep = {
       id: crypto.randomUUID(),
-      moduleId,
+      moduleId: normalizeModuleId(moduleId),
       parameters: {},
       indentationLevel: 0
     };
@@ -306,11 +335,12 @@ export function useWorkflow() {
 
   const handleOpenWorkflow = useCallback((workflow: VflowWorkflow, filename: string) => {
     const tabId = crypto.randomUUID();
+    const normalized = normalizeWorkflow(workflow);
     dispatch({
       type: "LOAD_FILE",
       tabId,
-      workflow,
-      rawJson: JSON.stringify(workflow, null, 2),
+      workflow: normalized,
+      rawJson: JSON.stringify(normalized, null, 2),
       filename
     });
   }, []);
@@ -339,10 +369,11 @@ export function useWorkflow() {
       try {
         const text = String(reader.result ?? "");
         const parsed = JSON.parse(text);
-        if (!parsed || typeof parsed.id !== "string" || !Array.isArray(parsed.steps)) {
-          throw new Error("JSON 结构不是有效的 vFlow Workflow");
+        const checked = validateWorkflowShape(parsed);
+        if (!checked.ok) {
+          throw new Error(checked.error);
         }
-        const wf = parsed as VflowWorkflow;
+        const wf = checked.workflow;
         handleOpenWorkflow(wf, file.name);
       } catch (e) {
         // 对于直接上传的文件错误，我们目前无法轻易将其放入一个尚未创建的 tab，

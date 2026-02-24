@@ -36,9 +36,13 @@ contextBridge.exposeInMainWorld("vflowDesktop", {
   
   // Events
   onDebugLog: (callback: (log: { timestamp: number, level: 'INFO'|'ERROR'|'WARN', message: string }) => void) => {
-    ipcRenderer.on("debug:log", (_event, log) => callback(log));
+    const handler = (_event: unknown, log: { timestamp: number; level: "INFO" | "ERROR" | "WARN"; message: string }) => callback(log);
+    ipcRenderer.on("debug:log", handler);
+    return () => ipcRenderer.off("debug:log", handler);
   },
   onDebugStateChanged: (callback: (state: 'idle' | 'running' | 'stopped') => void) => {
-    ipcRenderer.on("debug:stateChanged", (_event, state) => callback(state));
+    const handler = (_event: unknown, state: "idle" | "running" | "stopped") => callback(state);
+    ipcRenderer.on("debug:stateChanged", handler);
+    return () => ipcRenderer.off("debug:stateChanged", handler);
   }
 });

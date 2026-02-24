@@ -6,8 +6,11 @@ export class DebugClient {
   private isConnected = false;
   private readonly port = 9999;
   private window: BrowserWindow;
+  private receiveBuffer = "";
+  private requestSeq = 0;
   private pendingSchemasResolve: ((schemas: any) => void) | null = null;
   private pendingSchemasReject: ((reason: any) => void) | null = null;
+  private pendingSchemasRequestId: string | null = null;
 
   constructor(window: BrowserWindow) {
     this.window = window;
@@ -30,10 +33,10 @@ export class DebugClient {
 
       this.socket.on('data', (data) => {
         try {
-          // Assume line-delimited JSON
-          const str = data.toString('utf-8');
-          const lines = str.split('\n').filter(l => l.trim().length > 0);
-          for (const line of lines) {
+          this.receiveBuffer += data.toString('utf-8');
+          const lines = this.receiveBuffer.split('\n');
+          this.receiveBuffer = lines.pop() ?? "";
+          for (const line of lines.filter((l) => l.trim().length > 0)) {
             const parsed = JSON.parse(line);
             this.handleIncoming(parsed);
           }
@@ -47,6 +50,8 @@ export class DebugClient {
         console.log('[DebugClient] Connection closed');
         this.isConnected = false;
         this.socket = null;
+        this.receiveBuffer = "";
+        this.pendingSchemasRequestId = null;
         this.window.webContents.send('debug:stateChanged', 'stopped');
         this.sendLog('INFO', 'Disconnected from device.');
       });
@@ -66,6 +71,8 @@ export class DebugClient {
     }
     this.isConnected = false;
     this.socket = null;
+    this.receiveBuffer = "";
+    this.pendingSchemasRequestId = null;
   }
 
   public sendWorkflow(workflowJson: string) {
@@ -95,19 +102,22 @@ export class DebugClient {
     }
     
     return new Promise((resolve, reject) => {
+      const requestId = `schemas_${Date.now()}_${++this.requestSeq}`;
       this.pendingSchemasResolve = resolve;
       this.pendingSchemasReject = reject;
+      this.pendingSchemasRequestId = requestId;
       
       try {
-        const payload = JSON.stringify({ action: 'get_schemas' });
+        const payload = JSON.stringify({ action: 'get_schemas', requestId });
         this.socket!.write(payload + '\n');
         
         // Timeout after 5 seconds
         setTimeout(() => {
-          if (this.pendingSchemasReject) {
+          if (this.pendingSchemasReject && this.pendingSchemasRequestId === requestId) {
             this.pendingSchemasReject(new Error('Timeout waiting for schemas from device.'));
             this.pendingSchemasReject = null;
             this.pendingSchemasResolve = null;
+            this.pendingSchemasRequestId = null;
           }
         }, 5000);
       } catch (e: any) {
@@ -133,9 +143,13 @@ export class DebugClient {
           break;
         case 'SCHEMAS_RESULT':
           if (this.pendingSchemasResolve) {
+            if (this.pendingSchemasRequestId && data.requestId && data.requestId !== this.pendingSchemasRequestId) {
+              break;
+            }
             this.pendingSchemasResolve(data.schemas);
             this.pendingSchemasResolve = null;
             this.pendingSchemasReject = null;
+            this.pendingSchemasRequestId = null;
           }
           break;
         default:

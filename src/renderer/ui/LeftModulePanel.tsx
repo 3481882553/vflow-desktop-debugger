@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { Search, ChevronDown, ChevronRight, Inbox } from "lucide-react";
 import { VflowModuleOption } from "../domain/vflowTypes";
+import { getCategoryOrderIndex } from "../shared/moduleUtils";
 import "./styles/LeftModulePanel.css";
 
 interface LeftModulePanelProps {
@@ -13,7 +14,7 @@ export const LeftModulePanel: React.FC<LeftModulePanelProps> = ({
   onDragStart
 }) => {
   const [search, setSearch] = useState("");
-  const [openCats, setOpenCats] = useState<Set<string>>(new Set(["常用", "界面交互", "网络", "应用与系统"]));
+  const [openCats, setOpenCats] = useState<Set<string>>(new Set(["常用"]));
 
   const grouped = useMemo(() => {
     const map = new Map<string, VflowModuleOption[]>();
@@ -29,11 +30,14 @@ export const LeftModulePanel: React.FC<LeftModulePanelProps> = ({
       .slice(0, 12);
     if (frequent.length) map.set("常用", frequent);
     // 排序
-    const order = ["常用", "触发器", "界面交互", "逻辑控制", "数据", "文件", "网络", "应用与系统", "Core (Beta)", "其他"];
     return Array.from(map.entries()).sort((a, b) => {
-      const ia = order.indexOf(a[0]);
-      const ib = order.indexOf(b[0]);
-      return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+      if (a[0] === "常用") return -1;
+      if (b[0] === "常用") return 1;
+      const sampleA = a[1][0];
+      const sampleB = b[1][0];
+      const ia = getCategoryOrderIndex(sampleA?.categoryKey, a[0]);
+      const ib = getCategoryOrderIndex(sampleB?.categoryKey, b[0]);
+      return ia - ib;
     });
   }, [modules]);
 
@@ -78,6 +82,15 @@ export const LeftModulePanel: React.FC<LeftModulePanelProps> = ({
       setOpenCats(new Set(filteredGroups.map(([cat]) => cat)));
     }
   }, [search, filteredGroups]);
+
+  useEffect(() => {
+    if (search || grouped.length === 0) return;
+    const defaults = grouped
+      .filter(([cat]) => cat !== "常用")
+      .slice(0, 3)
+      .map(([cat]) => cat);
+    setOpenCats(new Set(["常用", ...defaults]));
+  }, [grouped, search]);
 
   return (
     <div className="module-panel-container">
@@ -128,10 +141,17 @@ export const LeftModulePanel: React.FC<LeftModulePanelProps> = ({
                   {list.map(m => (
                       <div
                         key={m.id}
-                        draggable
-                        onDragStart={e => onDragStart(e, m.id)}
-                        title={m.description || m.id}
+                        draggable={!m.isDisabled}
+                        onDragStart={e => {
+                          if (m.isDisabled) return;
+                          onDragStart(e, m.id);
+                        }}
+                        title={m.isDisabled ? (m.disabledReason || "模块不可用") : (m.description || m.id)}
                         className="module-panel-item"
+                        style={{
+                          opacity: m.isDisabled ? 0.45 : 1,
+                          cursor: m.isDisabled ? "not-allowed" : "grab"
+                        }}
                       >
                       <div
                         aria-hidden="true"
@@ -146,6 +166,9 @@ export const LeftModulePanel: React.FC<LeftModulePanelProps> = ({
                         </div>
                         {m.usageCount ? (
                           <div className="module-panel-item-usage">使用 {m.usageCount} 次</div>
+                        ) : null}
+                        {m.isDisabled ? (
+                          <div className="module-panel-item-usage">不可用</div>
                         ) : null}
                       </div>
                     </div>

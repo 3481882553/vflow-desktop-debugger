@@ -14,6 +14,8 @@ import { useModules } from "../hooks/useModules";
 import { useTheme } from "../hooks/useTheme";
 import { ConsolePanel, type LogEntry } from "./ConsolePanel";
 import { TabStrip } from "./TabStrip";
+import { normalizeModuleId } from "../shared/moduleIdCompat";
+import { normalizeWorkflow, validateWorkflowShape } from "../shared/workflowCompat";
 import "./styles/App.css";
 
 /* ---------- 主组件 ---------- */
@@ -75,16 +77,22 @@ export const App: React.FC = () => {
 
 
   useEffect(() => {
+    const disposers: Array<() => void> = [];
     if (window.vflowDesktop?.onDebugLog) {
-      window.vflowDesktop.onDebugLog((log) => {
+      const dispose = window.vflowDesktop.onDebugLog((log) => {
         setLogs(prev => [...prev, log]);
       });
+      if (typeof dispose === "function") disposers.push(dispose);
     }
     if (window.vflowDesktop?.onDebugStateChanged) {
-      window.vflowDesktop.onDebugStateChanged((state) => {
+      const dispose = window.vflowDesktop.onDebugStateChanged((state) => {
         setDebugState(state);
       });
+      if (typeof dispose === "function") disposers.push(dispose);
     }
+    return () => {
+      disposers.forEach((fn) => fn());
+    };
   }, []);
 
   const handleLeftResize = useCallback((e: React.PointerEvent) => {
@@ -150,7 +158,7 @@ export const App: React.FC = () => {
   /* ----- 保存 / 导出 / 运行 ----- */
   const handleSave = useCallback(() => {
     if (!activeTab?.workflow) return;
-    const { workflow } = activeTab;
+    const workflow = normalizeWorkflow(activeTab.workflow);
     const blob = new Blob([JSON.stringify(workflow, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -162,7 +170,7 @@ export const App: React.FC = () => {
 
   const handleExport = useCallback(() => {
     if (!activeTab?.workflow) return;
-    const { workflow } = activeTab;
+    const workflow = normalizeWorkflow(activeTab.workflow);
     const blob = new Blob([JSON.stringify(workflow, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -177,9 +185,10 @@ export const App: React.FC = () => {
     setLogs(prev => [...prev, { timestamp: Date.now(), level: "INFO", message: "🚀 正在推送流程到安卓端..." }]);
     try {
       if (window.vflowDesktop?.runDebugWorkflow) {
-        const result = await window.vflowDesktop.runDebugWorkflow(JSON.stringify(activeTab.workflow));
+        const normalized = normalizeWorkflow(activeTab.workflow);
+        const result = await window.vflowDesktop.runDebugWorkflow(JSON.stringify(normalized));
         if (result?.success) {
-          setLogs(prev => [...prev, { timestamp: Date.now(), level: "INFO", message: "✅ 推送成功，由于安卓端尚未实现 Server，手机端暂不会有反应。" }]);
+          setLogs(prev => [...prev, { timestamp: Date.now(), level: "INFO", message: "✅ 推送成功，已使用兼容层规范化 moduleId。" }]);
         } else {
           setLogs(prev => [...prev, { timestamp: Date.now(), level: "ERROR", message: `❌ 推送失败: ${result?.error || "未知错误"}` }]);
         }
@@ -308,7 +317,7 @@ export const App: React.FC = () => {
     [activeTab, selectedStepId]
   );
   const currentSchema = useMemo(
-    () => (selectedStep ? schemas[selectedStep.moduleId] ?? [] : []),
+    () => (selectedStep ? schemas[normalizeModuleId(selectedStep.moduleId)] ?? [] : []),
     [selectedStep, schemas]
   );
 
@@ -316,16 +325,21 @@ export const App: React.FC = () => {
   const renderWorkspace = (tab: typeof activeTab, isSecondary = false) => {
     if (!tab) return <div className="app-main-placeholder">未打开工作流</div>;
     const { workflow, rawJson, error, id } = tab;
+    const checked = workflow ? validateWorkflowShape(workflow) : null;
+    const graphWorkflow = checked && checked.ok ? checked.workflow : null;
 
     return (
       <div className={`app-canvas-container ${isSecondary ? "secondary" : ""}`}>
+        {workflow && checked && !checked.ok && (
+          <div className="app-error-msg">工作流结构无效：{checked.error}</div>
+        )}
         {viewMode === "graph" && (
           <WorkflowGraph
-            workflow={workflow}
+            workflow={graphWorkflow}
             selectedStepId={selectedStepId}
             selectedStepIds={selectedStepIds}
             moduleOptions={moduleOptions}
-            onStepClick={(sid, ctrl, shift) => handleStepClick(id, workflow, sid, ctrl, shift)}
+            onStepClick={(sid, ctrl, shift) => handleStepClick(id, graphWorkflow, sid, ctrl, shift)}
             onReorder={(ids) => handleReorder(id, ids)}
             onAddStepFromModule={(mid, idx) => handleAddStepFromModule(id, mid, idx)}
             onEditStep={sid => setSelectedStepId(sid)}
@@ -392,6 +406,11 @@ export const App: React.FC = () => {
           <LeftModulePanel
             modules={moduleOptions}
             onDragStart={(e, moduleId) => {
+              const mod = moduleOptions.find(m => m.id === moduleId);
+              if (mod?.isDisabled) {
+                e.preventDefault();
+                return;
+              }
               e.dataTransfer.setData("application/reactflow-module", moduleId);
               e.dataTransfer.effectAllowed = "move";
             }}
@@ -445,4 +464,3 @@ export const App: React.FC = () => {
     </div>
   );
 };
-

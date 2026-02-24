@@ -89,7 +89,7 @@ export const WorkflowGraph: React.FC<WorkflowGraphProps> = ({
     const position = dropPosition;
     setDropPosition(null);
 
-    if (!workflow) {
+    if (!workflow || !Array.isArray(workflow.steps)) {
       showDropHint("请先在左侧加载一个 Workflow JSON。");
       return;
     }
@@ -115,9 +115,14 @@ export const WorkflowGraph: React.FC<WorkflowGraphProps> = ({
     // 处理外部模块拖入
     const moduleId = e.dataTransfer.getData("application/reactflow-module");
     if (moduleId) {
-      const exists = moduleOptions.some(m => m.id === moduleId);
+      const module = moduleOptions.find(m => m.id === moduleId);
+      const exists = Boolean(module);
       if (!exists) {
         showDropHint("当前模块列表中不存在该模块，可能与 vFlow 版本不匹配");
+        return;
+      }
+      if (module?.isDisabled) {
+        showDropHint(module.disabledReason || "该模块当前不可用");
         return;
       }
       onModuleUsageUpdate(moduleId);
@@ -135,7 +140,8 @@ export const WorkflowGraph: React.FC<WorkflowGraphProps> = ({
 
   // 渲染每个步骤的“积木”
   const renderBlocks = () => {
-    if (!workflow || workflow.steps.length === 0) {
+    const steps = Array.isArray(workflow?.steps) ? workflow.steps : [];
+    if (!workflow || steps.length === 0) {
       return (
         <div 
           className="workflow-empty-hint"
@@ -147,7 +153,7 @@ export const WorkflowGraph: React.FC<WorkflowGraphProps> = ({
       );
     }
 
-    return workflow.steps.map((step, index) => {
+    return steps.map((step, index) => {
       const displayName = getModuleName(moduleOptions, step.moduleId);
       const color = getModuleColor(moduleOptions, step.moduleId);
       const isSelected = selectedStepIds.has(step.id);
@@ -195,13 +201,14 @@ export const WorkflowGraph: React.FC<WorkflowGraphProps> = ({
 
   // 生成右侧目录
   const renderOutline = () => {
-    if (!workflow || workflow.steps.length === 0) return null;
+    const steps = Array.isArray(workflow?.steps) ? workflow.steps : [];
+    if (!workflow || steps.length === 0) return null;
     
     return (
       <div className="json-outline" style={{ right: 8, top: 8, bottom: 8 }}>
         <div className="json-outline-title">执行目录</div>
         <div className="json-outline-list">
-          {workflow.steps.map((step, index) => {
+          {steps.map((step, index) => {
             const displayName = getModuleName(moduleOptions, step.moduleId);
             const isActive = step.id === selectedStepId;
             return (

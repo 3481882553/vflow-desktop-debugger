@@ -1,8 +1,26 @@
 import { useState, useEffect, useCallback } from "react";
-import { PARAM_SCHEMAS as DEFAULT_SCHEMAS } from "../data/schemas";
-import type { InputDefinition } from "../domain/vflowTypes";
+import { MODULE_SCHEMAS as DEFAULT_MODULE_SCHEMAS } from "../data/schemas";
+import type { InputDefinition, ModuleSchema } from "../domain/vflowTypes";
+import { getCanonicalModuleIdSet, normalizeModuleId } from "../shared/moduleIdCompat";
 
 const SCHEMAS_STORAGE_KEY = "vflowDesktop.dynamicSchemas";
+
+function migrateModuleSchema(moduleSchema: any): ModuleSchema {
+  // 如果已经是新格式，直接返回
+  if (moduleSchema.inputs && moduleSchema.outputs) {
+    return {
+      inputs: migrateSchema(moduleSchema.inputs),
+      outputs: moduleSchema.outputs || []
+    };
+  }
+  
+  // 如果是旧格式（只有inputs数组），转换为新格式
+  const inputs = Array.isArray(moduleSchema) ? moduleSchema : moduleSchema.inputs || [];
+  return {
+    inputs: migrateSchema(inputs),
+    outputs: []
+  };
+}
 
 function migrateSchema(list: any[]): InputDefinition[] {
   if (!Array.isArray(list)) return [];
@@ -19,7 +37,20 @@ function migrateSchema(list: any[]): InputDefinition[] {
 }
 
 export function useSchemas() {
-  const [schemas, setSchemas] = useState<Record<string, InputDefinition[]>>(DEFAULT_SCHEMAS);
+  const canonicalIds = getCanonicalModuleIdSet();
+  // 转换MODULE_SCHEMAS为按主项目契约归一化后的格式
+  const convertedSchemas: Record<string, InputDefinition[]> = {};
+  Object.keys(DEFAULT_MODULE_SCHEMAS).forEach(key => {
+    const normalized = normalizeModuleId(key);
+    if (canonicalIds.has(normalized)) {
+      convertedSchemas[normalized] = DEFAULT_MODULE_SCHEMAS[key].inputs;
+    }
+  });
+  for (const id of canonicalIds) {
+    if (!convertedSchemas[id]) convertedSchemas[id] = [];
+  }
+  
+  const [schemas, setSchemas] = useState<Record<string, InputDefinition[]>>(convertedSchemas);
   const [isSyncing, setIsSyncing] = useState(false);
 
   // 初始化时从本地缓存加载
@@ -31,7 +62,10 @@ export function useSchemas() {
         if (typeof parsed === "object" && parsed !== null) {
           const migrated: Record<string, InputDefinition[]> = {};
           Object.keys(parsed).forEach(k => {
-            migrated[k] = migrateSchema(parsed[k]);
+            const normalized = normalizeModuleId(k);
+            if (canonicalIds.has(normalized)) {
+              migrated[normalized] = migrateSchema(parsed[k]);
+            }
           });
           setSchemas((prev) => ({ ...prev, ...migrated }));
         }
@@ -53,9 +87,14 @@ export function useSchemas() {
       if (res.success && res.schemas) {
         const migrated: Record<string, InputDefinition[]> = {};
         Object.keys(res.schemas).forEach(k => {
-          migrated[k] = migrateSchema(res.schemas[k]);
+          const normalized = normalizeModuleId(k);
+          if (canonicalIds.has(normalized)) {
+            migrated[normalized] = migrateSchema(res.schemas[k]);
+          }
         });
-        
+        for (const id of canonicalIds) {
+          if (!migrated[id]) migrated[id] = convertedSchemas[id] ?? [];
+        }
         setSchemas(migrated);
         window.localStorage.setItem(SCHEMAS_STORAGE_KEY, JSON.stringify(migrated));
         setIsSyncing(false);
