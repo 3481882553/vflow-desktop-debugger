@@ -49,7 +49,7 @@ test.describe("vFlow Desktop Debugger E2E", () => {
       await expect(window.getByText("次要视图 (只读参考)")).toBeVisible();
       await ws.splitSelect.selectOption({ index: 1 });
 
-      await modules.search.fill("屏幕操作");
+      await modules.search.fill("screen_operation");
       await expect(modules.item("vflow.interaction.screen_operation")).toBeVisible();
 
       await dragModuleToCanvas(window, "vflow.interaction.screen_operation");
@@ -117,7 +117,7 @@ test.describe("vFlow Desktop Debugger E2E", () => {
       await expect(window.getByText("次要视图 (只读参考)")).toBeVisible();
       await ws.splitSelect.selectOption({ index: 1 });
 
-      await modules.search.fill("屏幕操作");
+      await modules.search.fill("screen_operation");
       await expect(modules.item("vflow.interaction.screen_operation")).toBeVisible();
 
       await dragModuleToCanvas(window, "vflow.interaction.screen_operation");
