@@ -356,7 +356,7 @@ export const App: React.FC = () => {
           />
         )}
         {viewMode === "code" && (
-          <div className="app-code-editor">
+          <div className="app-code-editor" data-testid={!isSecondary ? "code-editor" : undefined}>
             <Editor
               language="json"
               theme={darkMode ? "vs-dark" : "vs"}
@@ -366,7 +366,11 @@ export const App: React.FC = () => {
               options={{ fontSize: 12, minimap: { enabled: false }, scrollBeyondLastLine: false, wordWrap: "on", automaticLayout: true }}
             />
             <JsonOutline rawJson={rawJson} editorRef={monacoEditor} activeLine={activeLine} moduleOptions={moduleOptions} />
-            {error && <div className="app-error-msg">{error}</div>}
+            {error && (
+              <div className="app-error-msg" data-testid={!isSecondary ? "json-error" : undefined}>
+                {error}
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -427,13 +431,14 @@ export const App: React.FC = () => {
             onTabClose={(id, e) => { e.stopPropagation(); handleCloseTab(id); }}
           />
 
-          <div className={`app-workspace-layout ${layoutMode}`}>
+          <div className={`app-workspace-layout ${layoutMode}`} data-testid="app-workspace">
             {renderWorkspace(activeTab)}
             {layoutMode === "split" && (
               <div className="app-split-pane">
                 <div className="app-split-header">
                   <span>次要视图 (只读参考)</span>
                   <select 
+                    data-testid="split-select"
                     value={secondaryTabId || ""} 
                     onChange={e => handleSwitchTab(e.target.value, "secondary")}
                   >

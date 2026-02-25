@@ -145,6 +145,7 @@ export const WorkflowGraph: React.FC<WorkflowGraphProps> = ({
       return (
         <div 
           className="workflow-empty-hint"
+          data-testid="workflow-empty"
           onDragOver={e => handleDragOver(e)}
           onDrop={e => handleDrop(e)}
         >
@@ -178,6 +179,7 @@ export const WorkflowGraph: React.FC<WorkflowGraphProps> = ({
           <div
             ref={el => { if (el) blockRefs.current.set(step.id, el); }}
             className={`workflow-block ${isSelected ? "selected" : ""} ${isPrimarySelected && selectedStepIds.size > 1 ? "primary-selected" : ""} ${isDragged ? "dragged" : ""}`}
+            data-testid="workflow-block"
             style={{ borderLeftColor: color }}
             draggable
             onDragStart={e => handleDragStart(e, step.id)}
@@ -235,6 +237,7 @@ export const WorkflowGraph: React.FC<WorkflowGraphProps> = ({
     <div className="workflow-container">
       <div 
         className="workflow-blocks-wrapper"
+        data-testid="workflow-canvas"
         onDragOver={e => {
           e.preventDefault();
           setDropTargetId(null);

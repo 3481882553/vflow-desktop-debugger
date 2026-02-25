@@ -101,6 +101,7 @@ export const LeftModulePanel: React.FC<LeftModulePanelProps> = ({
           onChange={e => setSearch(e.target.value)}
           placeholder="搜索模块..."
           className="module-panel-search-input"
+          data-testid="module-search"
         />
       </div>
 
@@ -142,6 +143,8 @@ export const LeftModulePanel: React.FC<LeftModulePanelProps> = ({
                       <div
                         key={m.id}
                         draggable={!m.isDisabled}
+                        data-testid="module-item"
+                        data-module-id={m.id}
                         onDragStart={e => {
                           if (m.isDisabled) return;
                           onDragStart(e, m.id);

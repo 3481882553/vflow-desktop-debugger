@@ -11,6 +11,7 @@ export class DebugClient {
   private pendingSchemasResolve: ((schemas: any) => void) | null = null;
   private pendingSchemasReject: ((reason: any) => void) | null = null;
   private pendingSchemasRequestId: string | null = null;
+  private pendingSchemasTimeout: ReturnType<typeof setTimeout> | null = null;
 
   constructor(window: BrowserWindow) {
     this.window = window;
@@ -32,17 +33,17 @@ export class DebugClient {
       });
 
       this.socket.on('data', (data) => {
-        try {
-          this.receiveBuffer += data.toString('utf-8');
-          const lines = this.receiveBuffer.split('\n');
-          this.receiveBuffer = lines.pop() ?? "";
-          for (const line of lines.filter((l) => l.trim().length > 0)) {
+        this.receiveBuffer += data.toString('utf-8');
+        const lines = this.receiveBuffer.split('\n');
+        this.receiveBuffer = lines.pop() ?? "";
+        for (const line of lines.filter((l) => l.trim().length > 0)) {
+          try {
             const parsed = JSON.parse(line);
             this.handleIncoming(parsed);
+          } catch (e) {
+            console.error('[DebugClient] Parse error:', e);
+            this.sendLog('ERROR', `Data parse error: ${line}`);
           }
-        } catch (e) {
-          console.error('[DebugClient] Parse error:', e);
-          this.sendLog('ERROR', `Data parse error: ${data.toString('utf-8')}`);
         }
       });
 
@@ -51,7 +52,7 @@ export class DebugClient {
         this.isConnected = false;
         this.socket = null;
         this.receiveBuffer = "";
-        this.pendingSchemasRequestId = null;
+        this.rejectPendingSchemas(new Error('Connection closed before schemas response.'));
         this.window.webContents.send('debug:stateChanged', 'stopped');
         this.sendLog('INFO', 'Disconnected from device.');
       });
@@ -59,6 +60,7 @@ export class DebugClient {
       this.socket.on('error', (err) => {
         console.error('[DebugClient] Socket error:', err.message);
         this.isConnected = false;
+        this.rejectPendingSchemas(new Error(`Socket Error: ${err.message}`));
         this.sendLog('ERROR', `Socket Error: ${err.message}`);
         resolve(false);
       });
@@ -72,7 +74,7 @@ export class DebugClient {
     this.isConnected = false;
     this.socket = null;
     this.receiveBuffer = "";
-    this.pendingSchemasRequestId = null;
+    this.rejectPendingSchemas(new Error('Connection closed before schemas response.'));
   }
 
   public sendWorkflow(workflowJson: string) {
@@ -112,12 +114,9 @@ export class DebugClient {
         this.socket!.write(payload + '\n');
         
         // Timeout after 5 seconds
-        setTimeout(() => {
+        this.pendingSchemasTimeout = setTimeout(() => {
           if (this.pendingSchemasReject && this.pendingSchemasRequestId === requestId) {
-            this.pendingSchemasReject(new Error('Timeout waiting for schemas from device.'));
-            this.pendingSchemasReject = null;
-            this.pendingSchemasResolve = null;
-            this.pendingSchemasRequestId = null;
+            this.rejectPendingSchemas(new Error('Timeout waiting for schemas from device.'));
           }
         }, 5000);
       } catch (e: any) {
@@ -147,9 +146,7 @@ export class DebugClient {
               break;
             }
             this.pendingSchemasResolve(data.schemas);
-            this.pendingSchemasResolve = null;
-            this.pendingSchemasReject = null;
-            this.pendingSchemasRequestId = null;
+            this.clearPendingSchemas();
           }
           break;
         default:
@@ -163,5 +160,22 @@ export class DebugClient {
     if (this.window && !this.window.isDestroyed()) {
       this.window.webContents.send('debug:log', { timestamp: Date.now(), level, message });
     }
+  }
+
+  private clearPendingSchemas() {
+    if (this.pendingSchemasTimeout) {
+      clearTimeout(this.pendingSchemasTimeout);
+      this.pendingSchemasTimeout = null;
+    }
+    this.pendingSchemasResolve = null;
+    this.pendingSchemasReject = null;
+    this.pendingSchemasRequestId = null;
+  }
+
+  private rejectPendingSchemas(reason: Error) {
+    if (this.pendingSchemasReject) {
+      this.pendingSchemasReject(reason);
+    }
+    this.clearPendingSchemas();
   }
 }

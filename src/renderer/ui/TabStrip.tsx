@@ -22,12 +22,13 @@ export const TabStrip: React.FC<TabStripProps> = ({
   onTabClose
 }) => {
   return (
-    <div className="tab-strip-container">
+    <div className="tab-strip-container" data-testid="tab-strip">
       <div className="tab-strip-scroll">
         {tabs.map(tab => (
           <div
             key={tab.id}
             className={`tab-item ${tab.id === activeTabId ? "active" : ""}`}
+            data-testid="tab-item"
             onClick={() => onTabClick(tab.id)}
           >
             <FileCode size={14} className="tab-icon" />
@@ -37,6 +38,7 @@ export const TabStrip: React.FC<TabStripProps> = ({
             {tab.isModified && <div className="tab-modified-dot" />}
             <button
               className="tab-close-btn"
+              data-testid="tab-close"
               onClick={(e) => onTabClose(tab.id, e)}
             >
               <X size={12} />

@@ -77,6 +77,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
             <Button
               onClick={onNew}
               variant="secondary"
+              data-testid="toolbar-new"
               icon={<FilePlus {...iconProps} />}
             />
           </Tooltip>
@@ -85,6 +86,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
             <Button
               onClick={onImport}
               variant="secondary"
+              data-testid="toolbar-open"
               icon={<FolderOpen {...iconProps} />}
             />
           </Tooltip>
@@ -96,6 +98,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
               onClick={onUndo}
               disabled={!canUndo || isRunning}
               variant="secondary"
+              data-testid="toolbar-undo"
               icon={<Undo2 {...iconProps} />}
             />
           </Tooltip>
@@ -105,6 +108,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
               onClick={onRedo}
               disabled={!canRedo || isRunning}
               variant="secondary"
+              data-testid="toolbar-redo"
               icon={<Redo2 {...iconProps} />}
             />
           </Tooltip>
@@ -117,6 +121,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
             onClick={onSave}
             variant="secondary"
             disabled={isRunning}
+            data-testid="toolbar-save"
             icon={<Save {...iconProps} />}
           >
             保存
@@ -129,6 +134,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
               onClick={onRun}
               variant="danger"
               style={{ backgroundColor: "var(--color-success)" }}
+              data-testid="toolbar-run"
               icon={<Play {...iconProps} />}
             >
               运行
@@ -139,6 +145,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
             <Button
               onClick={onStop}
               variant="danger"
+              data-testid="toolbar-stop"
               icon={<Play {...iconProps} style={{ transform: "rotate(90deg)" }} />}
             >
               停止
@@ -151,6 +158,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
             onClick={onSync}
             variant="secondary"
             disabled={isSyncing}
+            data-testid="toolbar-sync"
             icon={isSyncing ? <Loader2 {...iconProps} className="toolbar-spinner" /> : <CloudDownload {...iconProps} />}
           >
             {isSyncing ? "同步中" : "同步模块"}
@@ -161,6 +169,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
           <Button
             onClick={onExport}
             variant="secondary"
+            data-testid="toolbar-export"
             icon={<Download {...iconProps} />}
           >
             导出
@@ -174,6 +183,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
             onClick={onToggleView}
             variant="secondary"
             className="toolbar-btn-view"
+            data-testid="toolbar-toggle-view"
           >
             {viewMode === "graph" ? "</> 代码" : "◎ 图形"}
           </Button>
@@ -185,6 +195,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
           <Button
             onClick={toggleDark}
             variant="secondary"
+            data-testid="toolbar-toggle-theme"
             icon={darkMode ? <Sun {...iconProps} /> : <Moon {...iconProps} />}
           >
             {darkMode ? "浅色" : "深色"}
@@ -199,6 +210,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
           <Button
             onClick={onToggleLayout}
             variant={layoutMode === "split" ? "secondary" : "ghost"}
+            data-testid="toolbar-toggle-layout"
             icon={<Columns {...iconProps} />}
           />
         </Tooltip>
@@ -209,6 +221,7 @@ export const TopToolbar: React.FC<TopToolbarProps> = ({
           <Button
             onClick={onTogglePropsPanel}
             variant={isPropsPanelOpen ? "secondary" : "ghost"}
+            data-testid="toolbar-toggle-props"
             icon={isPropsPanelOpen ? <PanelRightClose {...iconProps} /> : <PanelRightOpen {...iconProps} />}
           />
         </Tooltip>

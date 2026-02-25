@@ -28,7 +28,7 @@ export const ConsolePanel: React.FC<ConsolePanelProps> = ({ logs, onClear, isOpe
 
   if (!isOpen) {
     return (
-      <div className="console-panel-collapsed" onClick={onToggle}>
+      <div className="console-panel-collapsed" data-testid="console-toggle" onClick={onToggle}>
         <Terminal size={14} />
         <span>调试控制台 ({logs.length})</span>
       </div>
@@ -36,14 +36,14 @@ export const ConsolePanel: React.FC<ConsolePanelProps> = ({ logs, onClear, isOpe
   }
 
   return (
-    <div className="console-panel">
+    <div className="console-panel" data-testid="console-panel">
       <div className="console-header">
-        <div className="console-title" onClick={onToggle}>
+        <div className="console-title" data-testid="console-toggle" onClick={onToggle}>
           <Terminal size={14} />
           <span>调试控制台</span>
         </div>
         <div className="console-actions">
-          <Button variant="ghost" size="sm" onClick={onClear} icon={<ListX size={14} />}>
+          <Button variant="ghost" size="sm" data-testid="console-clear" onClick={onClear} icon={<ListX size={14} />}>
             清空
           </Button>
         </div>
@@ -56,7 +56,7 @@ export const ConsolePanel: React.FC<ConsolePanelProps> = ({ logs, onClear, isOpe
             const timeStr = new Date(log.timestamp).toLocaleTimeString();
             let Icon = log.level === "ERROR" ? AlertTriangle : (log.level === "WARN" ? AlertTriangle : Info);
             return (
-              <div key={index} className={`console-log-row level-${log.level.toLowerCase()}`}>
+              <div key={index} className={`console-log-row level-${log.level.toLowerCase()}`} data-testid="console-log">
                 <span className="log-time">[{timeStr}]</span>
                 <span className="log-icon"><Icon size={12} /></span>
                 <span className="log-msg">{log.message}</span>
