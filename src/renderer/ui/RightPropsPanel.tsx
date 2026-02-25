@@ -246,8 +246,8 @@ export const RightPropsPanel: React.FC<RightPropsPanelProps> = ({
 
   if (!step) {
     return (
-      <div className="props-empty-state">
-        <div className="props-empty-icon">
+      <div className="props-empty-state" data-testid="props-panel">
+        <div className="props-empty-icon" data-testid="props-empty">
           <Info size={24} color="var(--color-text-disabled)" />
         </div>
         <p style={{ fontSize: "var(--font-size-sm)" }}>请选择一个节点以编辑属性</p>
@@ -256,7 +256,7 @@ export const RightPropsPanel: React.FC<RightPropsPanelProps> = ({
   }
 
   return (
-    <div className="props-panel-container">
+    <div className="props-panel-container" data-testid="props-panel">
       {/* 头部 */}
       <div className="props-panel-header">
         <h2 className="props-panel-title">
@@ -274,7 +274,7 @@ export const RightPropsPanel: React.FC<RightPropsPanelProps> = ({
       <div className="props-panel-form">
         <div className="props-form-layout">
           {basicFields.map(f => (
-            <div key={f.id} className="props-field-group">
+            <div key={f.id} className="props-field-group" data-testid={`props-field-${f.id}`}>
               <label className="props-label">
                 {f.name}
                 {f.required && <span className="props-label-req">*</span>}
@@ -299,6 +299,7 @@ export const RightPropsPanel: React.FC<RightPropsPanelProps> = ({
               <Button
                 variant="ghost"
                 size="sm"
+                data-testid="props-advanced-toggle"
                 onClick={() => setAdvancedOpen(!advancedOpen)}
                 className="props-advanced-toggle"
                 icon={advancedOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
@@ -315,7 +316,7 @@ export const RightPropsPanel: React.FC<RightPropsPanelProps> = ({
               >
                 <div className="props-advanced-inner">
                   {advancedFields.map(f => (
-                    <div key={f.id}>
+                    <div key={f.id} data-testid={`props-field-${f.id}`}>
                       <label className="props-label">
                         {f.name}
                         {f.description && (
