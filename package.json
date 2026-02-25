@@ -28,7 +28,13 @@
     "build-main": "tsc -p tsconfig.main.json",
     "build-renderer": "vite build --config vite.config.mts",
     "typecheck": "tsc --noEmit -p tsconfig.renderer.json",
-    "dist": "npm run build && electron-builder"
+    "dist": "npm run build && electron-builder",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "node scripts/run-e2e.mjs auto",
+    "test:e2e:mock": "node scripts/run-e2e.mjs mock warn_skip none",
+    "test:e2e:real": "node scripts/run-e2e.mjs real strict_fail none",
+    "test:e2e:release": "node scripts/run-e2e.mjs real strict_fail release"
   },
   "build": {
     "appId": "com.vflow.debugger",
@@ -57,15 +63,21 @@
     "reactflow": "^11.11.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^22.10.1",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react-swc": "^3.7.0",
+    "@vitest/coverage-v8": "^4.0.18",
     "concurrently": "^9.1.0",
     "electron": "^30.0.0",
     "electron-builder": "^26.8.1",
+    "jsdom": "^28.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3",
-    "vite": "^6.0.0"
+    "vite": "^6.0.0",
+    "vitest": "^4.0.18"
   }
 }
