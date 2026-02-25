@@ -1,0 +1,42 @@
+name: CI Device
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"
+
+jobs:
+  device-gate:
+    runs-on: [self-hosted, windows]
+    timeout-minutes: 45
+    env:
+      E2E_DEVICE_POLICY: strict_fail
+      E2E_REQUIRE_DEVICE_FOR: release
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Show ADB status
+        shell: pwsh
+        run: |
+          adb kill-server
+          adb start-server
+          adb devices
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Unit and integration tests
+        run: npm run test
+
+      - name: E2E real device gate
+        run: npm run test:e2e:release
